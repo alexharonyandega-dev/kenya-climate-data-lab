@@ -1,0 +1,12 @@
+pandas==3.0.6
+numpy==2.4.6
+scikit-learn==1.9.1
+matplotlib==3.11.2
+seaborn==0.13.2
+streamlit==1.64.0
+joblib==1.6.0
+xgboost==3.2.0
+netCDF4==1.7.4
+xarray==2026.7.0
+openpyxl==3.1.5
+requests==2.34.2
