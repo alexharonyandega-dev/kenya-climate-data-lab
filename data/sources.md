@@ -81,8 +81,8 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
   - Portal: https://kmddl.meteo.go.ke
   - Email: data@meteo.go.ke
 - **Requested:** Daily rainfall, 5 counties (Nakuru, Kakamega, Bungoma, Trans Nzoia, Uasin Gishu), 1981–2024
-- **Status:** Requested on [DATE]. Awaiting response.
+- **Status:** Requested on 2026-09-22. Awaiting response.
 
 ---
 
-*Last updated: [DATE]*
+*Last updated: 2026-09-22*
