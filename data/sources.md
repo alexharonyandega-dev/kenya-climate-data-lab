@@ -74,14 +74,16 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
 - **Units:** Kelvin (subtract 273.15 for °C)
 - **Notes:** Served as Zarr store, sliced and saved as NetCDF with zlib compression level 9 → 40.6 MB.
 
-## 9. KMD — Rainfall (Pending)
+## 9. KMD — Rainfall (Not obtained)
 
-- **File:** `data/raw/kmd_rainfall_1981_2024.csv` (pending)
-- **Source:** Kenya Meteorological Department
+- **File:** `data/raw/kmd_rainfall_1981_2024.csv` (not obtained)
+- **Source:** Kenya Meteorological Department, ENACTS daily rainfall
+  - Dataset: `SOURCES/.KMD/.Kenya_v03r05/.ALL/.Rainfall/.daily/.precip/`
   - Portal: https://kmddl.meteo.go.ke
   - Email: data@meteo.go.ke
-- **Requested:** Daily rainfall, 5 counties (Nakuru, Kakamega, Bungoma, Trans Nzoia, Uasin Gishu), 1981–2024
-- **Status:** Requested on 2026-09-22. Awaiting response.
+- **Requested:** Daily rainfall for Nakuru, Kakamega, Bungoma, Trans Nzoia, Uasin Gishu, 1981–2024
+- **Status (2026-09-22):** KMD's IRI Data Library server returns "too large for netcdf file" for every subset request, and DODS endpoints are not exposed. Web interface tabs (Data Selection, Data Files) return 404. Email request sent to data@meteo.go.ke; awaiting response.
+- **Substitute:** CHIRPS 2.0 daily precipitation (see entry 3) is used as the primary rainfall dataset. Same spatial resolution (0.05°) and overlapping period (2010–2024). CHIRPS is the standard alternative in Kenyan climate-maize research.
 
 ---
 
