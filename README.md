@@ -19,6 +19,23 @@ Everything is public: datasets, notebooks, models, and weekly write-ups. No prop
 
 ---
 
+## Connect with the project
+
+<p align="left">
+  <a href="https://kenyaclimatelab.substack.com">
+    <img src="https://img.shields.io/badge/Substack-Kenya%20Climate%20Lab-FF6719?style=for-the-badge&logo=substack&logoColor=white" alt="Substack">
+  </a>
+  <a href="https://x.com/KenyaClimateLab">
+    <img src="https://img.shields.io/badge/X-@KenyaClimateLab-000000?style=for-the-badge&logo=x" alt="Follow on X">
+  </a>
+  <a href="https://www.instagram.com/kenyaclimatedatalab/">
+    <img src="https://img.shields.io/badge/Instagram-@kenyaclimatedatalab-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Follow on Instagram">
+  </a>
+</p>
+
+
+---
+
 ## Why maize
 
 Maize is the staple crop for millions of Kenyan families. Climate variability is making its production increasingly unpredictable — and county-level agricultural decisions need county-level models, not national averages.
