@@ -82,7 +82,7 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
   - Portal: https://kmddl.meteo.go.ke
   - Email: data@meteo.go.ke
 - **Requested:** Daily rainfall for Nakuru, Kakamega, Bungoma, Trans Nzoia, Uasin Gishu, 1981–2024
-- **Status (2026-09-22):** KMD's IRI Data Library server returns "too large for netcdf file" for every subset request, and DODS endpoints are not exposed. Web interface tabs (Data Selection, Data Files) return 404. Email request sent to data@meteo.go.ke; awaiting response.
+- **Status (2026-09-23):** Attempted exhaustively over two days. All web interface tabs return 404 (Data Selection, Data Files, Data Tables). Direct `data.nc`, `dods`, and `data.tsv` endpoints on both v02 and v03r05 datasets return 404. Server runs Ingrid 0.9 with unfixable bugs. Email sent to data@meteo.go.ke; no response. **KMD ENACTS is not retrievable via any known method.**
 - **Substitute:** CHIRPS 2.0 daily precipitation (see entry 3) is used as the primary rainfall dataset. Same spatial resolution (0.05°) and overlapping period (2010–2024). CHIRPS is the standard alternative in Kenyan climate-maize research.
 
 ---

@@ -1,1 +1,20 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+
+# Large raw data (kept in Google Drive)
 data/raw/chirps_daily/
+data/raw/*.nc
