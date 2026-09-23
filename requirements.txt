@@ -10,3 +10,11 @@ netCDF4==1.7.4
 xarray==2026.7.0
 openpyxl==3.1.5
 requests==2.34.2
+# Data processing extras (Week 2+)
+zarr==3.1.6
+fsspec
+cdsapi
+pdfplumber
+pyreadr
+rdata
+pypdfium2
