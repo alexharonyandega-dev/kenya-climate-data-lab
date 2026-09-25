@@ -40,4 +40,7 @@
 ### chirps_daily/*/*.tif.gz
 - One GeoTIFF per day, 0.05° resolution
 - Units: mm/day
-- Kenya coverage within Africa tile
+- CRS: EPSG:4326
+- Coverage: full Africa tile (lon -20 to 55, lat -40 to 40); Kenya inside
+- **Important:** nodata sentinel is -9999 but NOT declared in file metadata
+- Must mask manually in code: `arr = np.where(arr == -9999, np.nan, arr)`
