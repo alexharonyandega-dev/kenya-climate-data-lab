@@ -97,11 +97,12 @@ See `data/metadata/sources.md` for full details.
 
 ## Current status
 
-- **Phase:** Foundation (Week 1 of 72)
-- **Repository:** Bootstrapped
-- **Environment:** Configured with Python 3.11
-- **Data:** 8 raw datasets acquired and documented
-- **Next milestone:** Week 2 — CHIRPS extraction and first exploration notebook
+- **Phase:** Foundation (Week 2 of 72)
+- **Repository:** Bootstrapped with structured notebook and figures
+- **Environment:** Python 3.11 with all Week 2 dependencies pinned
+- **Data:** 9 CSV datasets + 1 NetCDF + 5,449 CHIRPS GeoTIFFs, all loaded and profiled
+- **First processed artifact:** `data/processed/chirps_kenya_daily_2021_2022.csv` — Kenya daily rainfall time series (730 rows, Dec 2021 gap documented)
+- **Next milestone:** Week 3 — county-level CHIRPS aggregation, ERA5 county means, master table build
 
 See the full weekly log in the [Substack](https://kenyaclimatelab.substack.com).
 
