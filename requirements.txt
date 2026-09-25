@@ -18,3 +18,7 @@ pdfplumber
 pyreadr
 rdata
 pypdfium2
+
+# Geospatial (Week 2+)
+rioxarray==0.19.0
+rasterio==1.4.4
