@@ -129,4 +129,4 @@ This project welcomes contributions from anyone working in Kenyan agriculture, c
 alexharonyandega@gmail.com
 Nairobi, Kenya
 
-[GitHub](https://github.com/alexharonyandega-dev) · [X](https://x.com/KenyaClimateLab) · [Substack](https://kenyaclimatelab.substack.com)
+[GitHub](https://github.com/alexharonyandega-dev) · [X](https://x.com/KenyaClimateLab) · [Substack](https://kenyaclimatelab.substack.com) · [Email](mailto:alexharonyandega@gmail.com)
