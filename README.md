@@ -28,8 +28,8 @@ Everything is public: datasets, notebooks, models, and weekly write-ups. No prop
   <a href="https://x.com/KenyaClimateLab">
     <img src="https://img.shields.io/badge/X-@KenyaClimateLab-000000?style=for-the-badge&logo=x" alt="Follow on X">
   </a>
-  <a href="https://www.instagram.com/kenyaclimatedatalab/">
-    <img src="https://img.shields.io/badge/Instagram-@kenyaclimatedatalab-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Follow on Instagram">
+  <a href="mailto:alexharonyandega@gmail.com">
+    <img src="https://img.shields.io/badge/Email-alexharonyandega@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
   </a>
 </p>
 
