@@ -105,7 +105,10 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
     zinc_extractable (ppm)
   - Physical: bulk_density (g/cm3), clay_content (%), sand_content (%),
     silt_content (%)
-- **Notes:** Queried at county centroid (not area-averaged) because the API
-  is point-based. For a fully representative county value, a raster mask
-  over the county polygon would be needed. This is a known limitation.
+- **Notes:** Data collected in two stages:
+  1. **Centroid-only** (`isda_soil_properties_by_county.csv`) — single point per county, kept for reference only.
+  2. **15-point spatial sample** (`isda_soil_properties_by_county_sampled.csv`) — 15 random points sampled within each county polygon (from geoBoundaries ADM1), queried individually, then averaged. **This is the authoritative version.**
+  3. Raw per-point data in `isda_soil_properties_points_raw.csv`.
+  4. Centroid sampling was found to be systematically biased: Nakuru, Kakamega, and Bungoma centroids sit on town areas with disturbed/compacted soils, unrepresentative of the surrounding agricultural land. Corrections as large as +93% (Bungoma organic carbon) and −39% (Nakuru phosphorus) confirm this.
+  5. iSDAsoil API rate limit observed near ~700 calls/hour. Script throttles at 0.4 s/call to stay safe. One Nakuru point (13/15) failed during sampling and was excluded from the average.
 
