@@ -88,3 +88,24 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
 ---
 
 *Last updated: 2026-09-22*
+
+## 10. iSDAsoil — Soil Properties
+
+- **File:** `data/raw/isda_soil_properties_by_county.csv`
+- **Source:** iSDA (Innovative Solutions for Decision Agriculture)
+  - API: https://api.isda-africa.com/isdasoil/v2/soilproperty
+  - Docs: https://isda-africa.com/api/registration/
+  - Login: email/password (environment variables `ISDA_USERNAME` / `ISDA_PASSWORD`)
+- **Coverage:** 5 target counties (Nakuru, Kakamega, Bungoma, Trans Nzoia, Uasin Gishu)
+- **Variables:** 14 properties at 0–20 cm depth:
+  - Chemical: nitrogen_total (g/kg), phosphorous_extractable (ppm),
+    potassium_extractable (ppm), carbon_organic (g/kg), ph,
+    cation_exchange_capacity (cmol/kg), sulphur_extractable (ppm),
+    magnesium_extractable (ppm), calcium_extractable (ppm),
+    zinc_extractable (ppm)
+  - Physical: bulk_density (g/cm3), clay_content (%), sand_content (%),
+    silt_content (%)
+- **Notes:** Queried at county centroid (not area-averaged) because the API
+  is point-based. For a fully representative county value, a raster mask
+  over the county polygon would be needed. This is a known limitation.
+
