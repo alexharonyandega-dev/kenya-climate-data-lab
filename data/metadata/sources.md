@@ -112,3 +112,18 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
   4. Centroid sampling was found to be systematically biased: Nakuru, Kakamega, and Bungoma centroids sit on town areas with disturbed/compacted soils, unrepresentative of the surrounding agricultural land. Corrections as large as +93% (Bungoma organic carbon) and −39% (Nakuru phosphorus) confirm this.
   5. iSDAsoil API rate limit observed near ~700 calls/hour. Script throttles at 0.4 s/call to stay safe. One Nakuru point (13/15) failed during sampling and was excluded from the average.
 
+### iSDAsoil — three versions (in order of accuracy)
+
+1. `isda_soil_properties_by_county.csv` — **centroid only** (1 point/county). Kept for reference. Systematically biased.
+2. `isda_soil_properties_by_county_sampled.csv` — **15-point API sample**. Good but rate-limited. Nakuru point 13/15 failed.
+3. `isda_soil_raster_zonal.csv` — **raster zonal statistics (AUTHORITATIVE)**. Reads every pixel from the cloud-optimized GeoTIFF on S3, masks to the county polygon, computes area-weighted mean, standard deviation, and pixel count for both 0-20 cm and 20-50 cm depths.
+
+Back-transformation applied per iSDAsoil convention (verified empirically against API values):
+- `ph` — divided by 10 (stored as pH × 10)
+- `nitrogen_total` — `exp(x/100) − 1`
+- `phosphorous_extractable`, `potassium_extractable`, `carbon_organic`, `cation_exchange_capacity` — `exp(x/10) − 1`
+- `clay_content`, `sand_content` — stored as raw percentages
+
+Coverage: ~20 million pixels per property for the 5 target counties, including both depth layers and uncertainty (std dev) bands.
+
+The raster version supersedes the API versions for modelling. The API versions remain as cross-validation references.
