@@ -14,9 +14,10 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
 
 - **File:** `data/raw/faostat_maize_yield_kenya.csv`
 - **Source:** https://www.fao.org/faostat/en/#data/QCL
-- **Coverage:** Kenya, Maize, Yield, 2010–2024 (15 rows)
+- **Coverage:** Kenya, Maize, Yield, 1961–2024 (64 rows)
 - **Fields:** Domain, Area, Element, Item, Year, Unit, Value, Flag, etc.
 - **Notes:** Unit is **kg/ha** (not hg/ha as the original plan stated) — divide by 1,000 for t/ha.
+- **Extended 2026-09-26:** Originally downloaded 2010–2024 (15 rows). Re-downloaded with full 1961–2024 range (64 rows) to pair with the extended CHIRPS/ERA5 climate history. Value range: 1071–2071 kg/ha across 64 years. Pre-2010 rows are flagged as "Estimated value" in the `Flag` column; post-2010 rows are "Official value".
 
 ## 3. CHIRPS 2.0 — Precipitation
 
