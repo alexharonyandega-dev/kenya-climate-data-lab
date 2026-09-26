@@ -63,16 +63,24 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
 - **Fields:** County, Year, Area_Ha, Production_Tons
 - **Notes:** Extracted from PDF Annex 1 using pypdfium2. Only rows for Nakuru, Kakamega, Bungoma, Trans Nzoia, Uasin Gishu retained.
 
-## 8. ERA5-Land — Temperature
+## 8. ERA5-Land — Climate variables (extended)
 
-- **File:** `data/raw/era5_temperature_2010_2024.nc`
+- **Files:** `data/raw/era5_variables/era5_{var}_2010_2024.nc` (9 files)
 - **Source:** Earth Data Hub — ERA5-Land Daily UTC v1
   - URL: https://data.earthdatahub.destine.eu/era5/era5-land-daily-utc-v1.zarr
   - Registration: https://earthdatahub.destine.eu
 - **Coverage:** Kenya bbox (Lat −4.7 to 5.0, Lon 33.9 to 41.9), daily mean 2m temperature, 2010–2024
 - **Dimensions:** 5,479 days × 97 latitude × 80 longitude
 - **Units:** Kelvin (subtract 273.15 for °C)
-- **Notes:** Served as Zarr store, sliced and saved as NetCDF with zlib compression level 9 → 40.6 MB.
+- **Variables (9):** `t2m` (2m temperature), `d2m` (2m dewpoint), `ssrd` (surface solar radiation downwards), `swvl1` + `swvl2` (volumetric soil water layers 1 & 2), `tp` (total precipitation), `u10` + `v10` (10m wind U/V), `pev` (potential evaporation).
+- **Units & conventions:**
+  - `t2m`, `d2m` — Kelvin (subtract 273.15 for °C)
+  - `ssrd` — J/m² (cumulative daily; divide by 86400 for W/m² average)
+  - `swvl1`, `swvl2` — m³/m³ (volumetric water content, 0–1)
+  - `tp` — metres of water (multiply by 1000 for mm)
+  - `u10`, `v10` — m/s (can be negative)
+  - `pev` — metres of water, **NEGATIVE by ERA5 convention** (negative = evaporation). Multiply by −1 to get positive evaporation rate.
+- **Notes:** Served as Zarr store via Earth Data Hub, sliced to Kenya bbox, saved per-variable with zlib compression level 9. Enables calculation of the three highest-value agronomic features: **GDD** (t2m + ssrd), **VPD** (t2m + d2m), **drought stress** (swvl1 + swvl2 + tp).
 
 ## 9. KMD — Rainfall (Not obtained)
 
