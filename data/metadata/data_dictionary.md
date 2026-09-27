@@ -343,3 +343,37 @@ months for each county.
 
 *Last updated: 2026-09-27*  
 *Companion documents: `docs/DECISIONS_LOG.md`, `docs/architecture.md`*
+
+## ERA5-Land county daily (split by variable)
+
+Location: `data/processed/era5_counties/`
+Files: 9 CSVs, one per variable (`era5_<var>_counties_daily.csv`)
+Rows per file: 600,848 (47 counties x 12,784 days)
+Date range: 1990-01-01 to 2024-12-31
+Source: ERA5-Land reanalysis, clipped to Kenya bbox
+Combined file: `era5_counties_daily.csv` (218 MB, gitignored; regenerate via `scripts/extract_era5_counties.py`)
+
+| Column | Type | Description |
+|--------|------|-------------|
+| date | string | ISO YYYY-MM-DD |
+| county | string | County name (matches shapeName in kenya_counties.geojson) |
+| value | float | Daily mean of the variable across all county pixels |
+
+Variables:
+
+| File | Variable | Units | Meaning |
+|------|----------|-------|---------|
+| era5_t2m_counties_daily.csv | t2m | C | 2m air temperature (converted from K) |
+| era5_d2m_counties_daily.csv | d2m | K | 2m dewpoint temperature |
+| era5_tp_counties_daily.csv | tp | m | Total precipitation |
+| era5_pev_counties_daily.csv | pev | m | Potential evaporation |
+| era5_ssrd_counties_daily.csv | ssrd | J/m2 | Surface solar radiation downwards |
+| era5_swvl1_counties_daily.csv | swvl1 | m3/m3 | Volumetric soil water, layer 1 (0-7 cm) |
+| era5_swvl2_counties_daily.csv | swvl2 | m3/m3 | Volumetric soil water, layer 2 (7-28 cm) |
+| era5_u10_counties_daily.csv | u10 | m/s | 10m u-component of wind |
+| era5_v10_counties_daily.csv | v10 | m/s | 10m v-component of wind |
+
+Notes:
+- Temperature is the only variable converted from native units (K to C).
+- Missing-value policy: none applied; ERA5 is gap-free over land.
+- Combined long-format file gitignored (>100 MB GitHub limit). Split files are canonical.

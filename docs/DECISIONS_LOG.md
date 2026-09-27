@@ -329,3 +329,15 @@ This log exists so that future-you (or an advisor, or a reviewer) can answer
 | Infrastructure | D28–D30 |
 
 **Total: 32 numbered decisions.**
+
+### D33 - ERA5 county aggregation split by variable
+
+**Decision:** Commit ERA5 county daily data as 9 per-variable CSVs under `data/processed/era5_counties/`, gitignore the combined long-format file.
+
+**Reason:** Combined file (`era5_counties_daily.csv`) is 218 MB, exceeding GitHub's 100 MB per-file hard limit. Split yields 9 files of ~23-24 MB each, safely under the limit. Combined file remains on disk and is regenerable in ~30 min via `scripts/extract_era5_counties.py`.
+
+**Data affected:** `data/processed/era5_counties/*.csv` (committed), `data/processed/era5_counties_daily.csv` (gitignored).
+
+**Trade-off:** Downstream code reads 9 files instead of 1. Mitigation: a loader helper can concatenate on demand.
+
+**Date:** $(date -u +%Y-%m-%d)

@@ -45,3 +45,9 @@ and validated the full pipeline in two days.
 - **Reproducibility**: PASS
 
 **Week 3 Substack post:** https://kenyaclimatelab.substack.com
+
+### ERA5 county aggregation — COMPLETE
+- 5,407,632 rows generated (47 counties x 9 vars x 12,784 days)
+- Split into 9 per-variable CSVs (~23-24 MB each, 213 MB total)
+- Combined file (218 MB) gitignored (>100 MB GitHub limit)
+- Script: scripts/extract_era5_counties.py (committed 3fd7f04)
