@@ -168,19 +168,30 @@ except Exception as e:
     print(f"  ERA5 aggregation skipped: {e}")
     merged["mean_temp_c"] = np.nan
 
-# --- Add Kaggle yield (national by year) ---
+# --- Add Kaggle yield (national by year, deduplicated) ---
 kaggle_clean = kaggle.copy()
 if "Area" in kaggle_clean.columns:
     kaggle_clean = kaggle_clean[kaggle_clean["Area"] == "Kenya"]
 if "hg/ha_yield" in kaggle_clean.columns:
     kaggle_clean["yield_t_ha"] = kaggle_clean["hg/ha_yield"] / 10000
 
-# Kaggle is national-scale (same value for all counties in a year).
-# Repeat it per county as a placeholder for national reference.
-kaggle_nat = kaggle_clean[["Year", "yield_t_ha"]].rename(columns={"Year": "year"})
+# CRITICAL: the raw Kaggle file has many rows per year (one per record
+# in the original international database). Deduplicate to one national
+# value per year before merging, otherwise the join produces a cartesian
+# product.
+kaggle_nat = (
+    kaggle_clean.groupby("Year", as_index=False)["yield_t_ha"]
+    .mean()
+    .rename(columns={"Year": "year"})
+)
+kaggle_nat["year"] = kaggle_nat["year"].astype(int)
+
+merged["year"] = merged["year"].astype(int)
 merged = merged.merge(kaggle_nat, on="year", how="left")
 
 # --- Finalize ---
+# Keep only maize-growing seasons
+merged = merged[merged["season"].isin(["long_rains", "short_rains"])]
 merged = merged.sort_values(["county", "year", "season"]).reset_index(drop=True)
 merged = merged[[
     "county", "year", "season",
