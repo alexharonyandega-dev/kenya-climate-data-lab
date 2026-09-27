@@ -4,7 +4,7 @@
 |---|---|---|---|---|
 | 1 | Kaggle Maize | ✅ fixed | 1990–2013 | Original data, no upgrade possible |
 | 2 | FAOSTAT Yield | ✅ maxed | 1961–2024 (64 rows) | Extended from 15 to 64 years |
-| 3 | CHIRPS Rainfall | ⚠️ partial | 2010–2024 (5,448 files) | Could extend to 1981 |
+| 3 | CHIRPS Rainfall | ✅ sufficient | 2010–2024 (5,449 files) | Extension to 1990 evaluated and deferred |
 | 4 | HDX Indicators | ✅ complete | 1960–2025 (1,709 rows) | Whole World Bank file |
 | 5 | Mendeley | ✅ complete | 4 seasons | All 3 sheets |
 | 6 | Zenodo Push-Pull | ✅ complete | 2005–2016 | Both files |
@@ -21,3 +21,19 @@
 
 ## Remaining gap
 CHIRPS extension from 2010 to 1990 would increase Kaggle-Chirps overlap from 4 to 24 years.
+
+## CHIRPS extension decision (2026-09-27)
+
+Considered extending CHIRPS back to 1990 to match the Kaggle maize
+dataset's start year. Decision: **deferred.**
+
+Reasons:
+1. UCSB server rate was 0.1-0.2 files/s, giving an estimated 12+ hours.
+   The original 2010-2024 download ran at ~9 files/s, so the slowdown
+   is server-side and not fixable from the client.
+2. Pre-2000 CHIRPS uses fewer satellite inputs and is less accurate.
+3. Not needed for the first model — all components are already in place.
+4. Reversible — if the first model reveals a need, retry when the
+   server is faster.
+
+The deferred script is at scripts/fetch_chirps_1990_2009_DEFERRED.py.
