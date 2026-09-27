@@ -17,3 +17,5 @@
 | Date | Activity | Category | Output | Metric | Link | Next |
 |---|---|---|---|---|---|---|
 | 2026-09-27 | Pivot to stress monitor + 47-county extraction + GEE NDVI + composite index | Technical | 5 processed CSVs, 4 figures, 8 scripts, crop calendar | 47 counties, 96 months, 2,922 days, 1 drought detected | [fig_stress_october_series.png](https://github.com/alexharonyandega-dev/kenya-climate-data-lab/blob/main/paper/figures/fig_stress_october_series.png) | Weekly dashboard + 2025 data feed |
+
+**Week 3 Substack post:** https://kenyaclimatelab.substack.com
