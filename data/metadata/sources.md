@@ -160,3 +160,12 @@ relative technique.
 County ranking is geographically correct:
 - Wettest: Vihiga, Kakamega, Kisii, Nyamira, Nandi (western highlands)
 - Driest: Isiolo, Marsabit, Turkana, Wajir, Mandera (northern ASALs)
+
+## Project links
+
+- **Substack (weekly journal):** https://kenyaclimatelab.substack.com
+- **X / Twitter:** https://x.com/KenyaClimateLab
+- **GitHub:** https://github.com/alexharonyandega-dev/kenya-climate-data-lab
+
+The Substack is where the project narrative lives - methodology decisions,
+weekly progress, and figures. The GitHub repo is the technical side.

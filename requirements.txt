@@ -22,3 +22,21 @@ pypdfium2
 # Geospatial (Week 2+)
 rioxarray==0.19.0
 rasterio==1.4.4
+
+# Geospatial (Week 2-3)
+geopandas>=1.0.0
+shapely>=2.0.0
+pyogrio>=0.7.0
+rasterio>=1.4.0
+rioxarray>=0.19.0
+
+# Jupyter
+jupyterlab>=4.0.0
+nbformat>=5.10.0
+nbconvert>=7.16.0
+ipykernel>=7.0.0
+
+# Cloud storage + APIs
+zarr>=3.0.0
+fsspec>=2024.1.0
+cdsapi
