@@ -28,3 +28,4 @@ data/external/*.cpg
 
 # Keep the GEE upload zip
 !data/external/kenya_counties_shp.zip
+data/processed/era5_counties_daily.csv
