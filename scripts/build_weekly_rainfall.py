@@ -45,6 +45,13 @@ weekly_long["rainfall_anomaly"] = (
     weekly_long["rain_clim_std"].replace(0, np.nan)
 )
 
+# Filter out ISO-year edge rows (Jan 1-3 -> prior year; Dec 30-31 -> next year)
+# Keeps only ISO years 2017-2024. Added to fix script/file drift discovered
+# in the reproducibility audit (2026-09-27).
+weekly_long = weekly_long[
+    (weekly_long["iso_year"] >= 2017) & (weekly_long["iso_year"] <= 2024)
+].copy()
+
 weekly_long = weekly_long.sort_values(["county", "iso_year", "iso_week"]).reset_index(drop=True)
 
 weekly_long["rainfall_anomaly_4wk"] = (
