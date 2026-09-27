@@ -39,7 +39,7 @@ TARGET_COUNTIES = ["Nakuru", "Kakamega", "Bungoma", "Trans Nzoia", "Uasin Gishu"
 
 ROOT = Path(__file__).resolve().parent.parent
 BOUNDARIES = ROOT / "data" / "external" / "kenya_counties.geojson"
-OUT = ROOT / "data" / "raw" / "isda_soil_raster_zonal.csv"
+OUT = ROOT / "data" / "processed" / "isda_soil_raster_zonal.csv"
 
 
 def back_transform(values, kind):
