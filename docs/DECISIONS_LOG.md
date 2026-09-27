@@ -281,6 +281,22 @@ This log exists so that future-you (or an advisor, or a reviewer) can answer
 
 ---
 
+
+
+### D31 — IQR outlier flags added to master stress table
+- **Reason:** Extreme rainfall and vegetation values are often real events
+  (droughts, floods) that the model must learn from. Deleting them would
+  lose signal. Flagging preserves the data while allowing downstream
+  filtering. Follows the plan's D05 convention.
+- **Method:** 1.5 x IQR rule applied to `rainfall_mm`, `ndvi`, `stress_avg`,
+  and `stress_min`. Four boolean columns added:
+  `{col}_is_outlier`.
+- **Data affected:** `county_monthly_stress_2017_2024.csv` — 4 new columns
+  (12 -> 16 total).
+- **Date:** 2026-09-27
+
+---
+
 ## Summary by category
 
 | Category | Decisions |
@@ -295,4 +311,4 @@ This log exists so that future-you (or an advisor, or a reviewer) can answer
 | Missing-value policy | D27 |
 | Infrastructure | D28–D30 |
 
-**Total: 30 numbered decisions.**
+**Total: 31 numbered decisions.**
