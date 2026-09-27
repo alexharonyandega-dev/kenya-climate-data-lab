@@ -1,0 +1,48 @@
+county,zone,zone_description,n_seasons,long_rains_start,long_rains_end,short_rains_start,short_rains_end,primary_harvest_month
+Kakamega,highland_west,"Western highlands, bimodal, both seasons significant",2,3.0,5.0,10.0,12.0,9.0
+Bungoma,highland_west,"Western highlands, bimodal, both seasons significant",2,3.0,5.0,10.0,12.0,9.0
+Busia,highland_west,"Western highlands, bimodal, both seasons significant",2,3.0,5.0,10.0,12.0,9.0
+Vihiga,highland_west,"Western highlands, bimodal, both seasons significant",2,3.0,5.0,10.0,12.0,9.0
+Kisii,highland_west,"Western highlands, bimodal, both seasons significant",2,3.0,5.0,10.0,12.0,9.0
+Nyamira,highland_west,"Western highlands, bimodal, both seasons significant",2,3.0,5.0,10.0,12.0,9.0
+Kisumu,highland_west,"Western highlands, bimodal, both seasons significant",2,3.0,5.0,10.0,12.0,9.0
+Siaya,highland_west,"Western highlands, bimodal, both seasons significant",2,3.0,5.0,10.0,12.0,9.0
+Homa Bay,highland_west,"Western highlands, bimodal, both seasons significant",2,3.0,5.0,10.0,12.0,9.0
+Migori,highland_west,"Western highlands, bimodal, both seasons significant",2,3.0,5.0,10.0,12.0,9.0
+Nandi,highland_west,"Western highlands, bimodal, both seasons significant",2,3.0,5.0,10.0,12.0,9.0
+Kericho,highland_west,"Western highlands, bimodal, both seasons significant",2,3.0,5.0,10.0,12.0,9.0
+Bomet,highland_west,"Western highlands, bimodal, both seasons significant",2,3.0,5.0,10.0,12.0,9.0
+Narok,highland_west,"Western highlands, bimodal, both seasons significant",2,3.0,5.0,10.0,12.0,9.0
+Trans Nzoia,rift_valley,"Rift Valley and North Rift, unimodal long rains",1,3.0,8.0,,,10.0
+Uasin Gishu,rift_valley,"Rift Valley and North Rift, unimodal long rains",1,3.0,8.0,,,10.0
+Nakuru,rift_valley,"Rift Valley and North Rift, unimodal long rains",1,3.0,8.0,,,10.0
+Elgeyo-Marakwet,rift_valley,"Rift Valley and North Rift, unimodal long rains",1,3.0,8.0,,,10.0
+West Pokot,rift_valley,"Rift Valley and North Rift, unimodal long rains",1,3.0,8.0,,,10.0
+Baringo,rift_valley,"Rift Valley and North Rift, unimodal long rains",1,3.0,8.0,,,10.0
+Laikipia,rift_valley,"Rift Valley and North Rift, unimodal long rains",1,3.0,8.0,,,10.0
+Nyeri,central_highlands,"Central highlands, bimodal",2,3.0,5.0,10.0,12.0,9.0
+Murang'a,central_highlands,"Central highlands, bimodal",2,3.0,5.0,10.0,12.0,9.0
+Kiambu,central_highlands,"Central highlands, bimodal",2,3.0,5.0,10.0,12.0,9.0
+Kirinyaga,central_highlands,"Central highlands, bimodal",2,3.0,5.0,10.0,12.0,9.0
+Embu,central_highlands,"Central highlands, bimodal",2,3.0,5.0,10.0,12.0,9.0
+Meru,central_highlands,"Central highlands, bimodal",2,3.0,5.0,10.0,12.0,9.0
+Tharaka,central_highlands,"Central highlands, bimodal",2,3.0,5.0,10.0,12.0,9.0
+Nyandarua,central_highlands,"Central highlands, bimodal",2,3.0,5.0,10.0,12.0,9.0
+Machakos,eastern,"Eastern and southeastern, short rains dominant",1,,,10.0,12.0,2.0
+Makueni,eastern,"Eastern and southeastern, short rains dominant",1,,,10.0,12.0,2.0
+Kitui,eastern,"Eastern and southeastern, short rains dominant",1,,,10.0,12.0,2.0
+Kajiado,eastern,"Eastern and southeastern, short rains dominant",1,,,10.0,12.0,2.0
+Mombasa,coastal,"Coastal strip, long rains primary",2,4.0,6.0,10.0,12.0,8.0
+Kwale,coastal,"Coastal strip, long rains primary",2,4.0,6.0,10.0,12.0,8.0
+Kilifi,coastal,"Coastal strip, long rains primary",2,4.0,6.0,10.0,12.0,8.0
+Lamu,coastal,"Coastal strip, long rains primary",2,4.0,6.0,10.0,12.0,8.0
+Tana River,coastal,"Coastal strip, long rains primary",2,4.0,6.0,10.0,12.0,8.0
+Taita Taveta,coastal,"Coastal strip, long rains primary",2,4.0,6.0,10.0,12.0,8.0
+Turkana,asal_north,"Arid and semi-arid north, short rains only, unreliable",1,,,10.0,12.0,1.0
+Marsabit,asal_north,"Arid and semi-arid north, short rains only, unreliable",1,,,10.0,12.0,1.0
+Mandera,asal_north,"Arid and semi-arid north, short rains only, unreliable",1,,,10.0,12.0,1.0
+Wajir,asal_north,"Arid and semi-arid north, short rains only, unreliable",1,,,10.0,12.0,1.0
+Garissa,asal_north,"Arid and semi-arid north, short rains only, unreliable",1,,,10.0,12.0,1.0
+Isiolo,asal_north,"Arid and semi-arid north, short rains only, unreliable",1,,,10.0,12.0,1.0
+Samburu,asal_north,"Arid and semi-arid north, short rains only, unreliable",1,,,10.0,12.0,1.0
+Nairobi,urban,"Urban, negligible maize production",0,,,,,
