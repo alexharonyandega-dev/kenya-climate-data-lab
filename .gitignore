@@ -18,3 +18,13 @@ venv/
 # Large raw data (kept in Google Drive)
 data/raw/chirps_daily/
 data/raw/*.nc
+
+# Shapefile components (derived from kenya_counties.geojson)
+data/external/*.shp
+data/external/*.shx
+data/external/*.dbf
+data/external/*.prj
+data/external/*.cpg
+
+# Keep the GEE upload zip
+!data/external/kenya_counties_shp.zip
