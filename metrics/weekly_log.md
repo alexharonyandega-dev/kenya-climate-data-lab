@@ -11,3 +11,9 @@
 | Date | Activity | Category | Output | Metric | Link | Next |
 |---|---|---|---|---|---|---|
 | 2026-09-28 to 10-04 | Data exploration notebook | Technical | 01_data_exploration.ipynb + 8 figures + Week 2 reflection | 9 datasets inspected, 8 missingness/analysis figures | https://github.com/alexharonyandega-dev/kenya-climate-data-lab/blob/main/notebooks/01_data_exploration.ipynb | Start Week 3: cleaning + CHIRPS county aggregation |
+
+## Week 03 - 2026-09-28 to 2026-10-04
+
+| Date | Activity | Category | Output | Metric | Link | Next |
+|---|---|---|---|---|---|---|
+| 2026-09-27 | Pivot to stress monitor + 47-county extraction + GEE NDVI + composite index | Technical | 5 processed CSVs, 4 figures, 8 scripts, crop calendar | 47 counties, 96 months, 2,922 days, 1 drought detected | [fig_stress_october_series.png](https://github.com/alexharonyandega-dev/kenya-climate-data-lab/blob/main/paper/figures/fig_stress_october_series.png) | Weekly dashboard + 2025 data feed |
