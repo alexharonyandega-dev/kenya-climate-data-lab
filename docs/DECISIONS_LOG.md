@@ -297,6 +297,23 @@ This log exists so that future-you (or an advisor, or a reviewer) can answer
 
 ---
 
+
+
+### D32 — `merged_dataset_v1.csv` produced as optional yield-model sidecar
+- **Reason:** The plan expected a merged CSV in yield-prediction format.
+  Our pivot to stress monitoring changed the master table, but keeping a
+  sidecar preserves plan compatibility for anyone wanting to try yield
+  prediction later. It is NOT the master table.
+- **Grain:** one row per (county, year, season)
+- **Columns:** county, year, season, rainfall_mm, rainfall_anomaly,
+  mean_temp_c, ndvi_mean, ndvi_anomaly, yield_t_ha
+- **Data affected:** new file `data/processed/merged_dataset_v1.csv`
+- **Note:** The `yield_t_ha` column is Kaggle national-scale yield (same
+  value for all counties in a year), not a per-county yield.
+- **Date:** 2026-09-27
+
+---
+
 ## Summary by category
 
 | Category | Decisions |
@@ -311,4 +328,4 @@ This log exists so that future-you (or an advisor, or a reviewer) can answer
 | Missing-value policy | D27 |
 | Infrastructure | D28–D30 |
 
-**Total: 31 numbered decisions.**
+**Total: 32 numbered decisions.**
