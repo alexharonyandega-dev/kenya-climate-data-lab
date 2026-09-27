@@ -136,3 +136,27 @@ Back-transformation applied per iSDAsoil convention (verified empirically agains
 Coverage: ~20 million pixels per property for the 5 target counties, including both depth layers and uncertainty (std dev) bands.
 
 The raster version supersedes the API versions for modelling. The API versions remain as cross-validation references.
+
+### CHIRPS — known bias note (2026-09-27)
+
+County-level extraction for 47 counties shows the expected CHIRPS characteristic:
+**positive rainfall bias that grows in drier regions.**
+
+Observed vs published Kenya climatology:
+- Western highlands (Kakamega, Vihiga, Kisii): +10 to +15% vs station records
+- Central Rift (Nakuru): +15 to +20%
+- Coastal (Mombasa, Kilifi): +11 to +38%
+- Arid north (Turkana, Marsabit): +85% (computed 371 mm/yr; stations ~200-300)
+
+This is consistent with published findings that CHIRPS overestimates rainfall
+in East African semi-arid and arid regions. The bias is a well-known property
+of the cold-cloud-duration satellite input, not an error in our pipeline.
+
+**Impact on the project:** none. The stress monitor uses weekly rainfall
+anomalies (current week / same week historical mean), which cancel out a
+uniform bias. The FAOSTAT / FEWS NET / GEOGLAM approaches all use the same
+relative technique.
+
+County ranking is geographically correct:
+- Wettest: Vihiga, Kakamega, Kisii, Nyamira, Nandi (western highlands)
+- Driest: Isiolo, Marsabit, Turkana, Wajir, Mandera (northern ASALs)
