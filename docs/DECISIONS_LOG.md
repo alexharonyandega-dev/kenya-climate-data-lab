@@ -340,4 +340,4 @@ This log exists so that future-you (or an advisor, or a reviewer) can answer
 
 **Trade-off:** Downstream code reads 9 files instead of 1. Mitigation: a loader helper can concatenate on demand.
 
-**Date:** $(date -u +%Y-%m-%d)
+**Date:** 2025-09-27
