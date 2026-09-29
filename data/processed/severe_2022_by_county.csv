@@ -1,0 +1,48 @@
+county,severe_unweighted,severe_weighted,min_avg,min_weighted
+Baringo,False,False,-1.161,-0.91
+Bomet,True,True,-1.621,-1.621
+Bungoma,True,False,-1.281,-1.039
+Busia,True,True,-1.645,-1.645
+Elgeyo-Marakwet,True,False,-1.372,-1.046
+Embu,False,False,-1.194,-0.967
+Garissa,False,False,-1.031,-0.0
+Homa Bay,True,True,-1.594,-1.594
+Isiolo,False,False,-0.948,-0.0
+Kajiado,False,False,-1.235,-0.0
+Kakamega,False,False,-0.965,-0.965
+Kericho,True,True,-1.381,-1.381
+Kiambu,True,False,-1.399,-1.085
+Kilifi,True,True,-1.391,-1.261
+Kirinyaga,True,False,-1.533,-0.881
+Kisii,True,False,-1.418,-1.021
+Kisumu,False,False,-0.755,-0.528
+Kitui,False,False,-1.008,-0.0
+Kwale,True,False,-1.328,-0.93
+Laikipia,True,True,-1.468,-1.282
+Lamu,True,False,-1.269,-0.92
+Machakos,False,False,-1.205,-0.0
+Makueni,True,False,-1.429,-0.0
+Mandera,True,False,-1.324,-0.164
+Marsabit,False,False,-1.036,-0.0
+Meru,True,False,-1.532,-0.955
+Migori,True,False,-1.311,-1.177
+Mombasa,False,False,-1.027,-0.88
+Murang'a,True,False,-1.694,-1.157
+Nairobi,True,False,-1.488,
+Nakuru,False,False,-1.108,-0.925
+Nandi,True,True,-1.35,-1.35
+Narok,False,False,-1.249,-1.061
+Nyamira,True,True,-1.832,-1.832
+Nyandarua,True,False,-1.928,-0.913
+Nyeri,True,False,-1.724,-1.213
+Samburu,True,False,-1.258,-0.053
+Siaya,False,False,-1.203,-1.079
+Taita Taveta,True,False,-1.501,-1.24
+Tana River,False,False,-1.244,-1.034
+Tharaka,True,False,-1.455,-0.741
+Trans Nzoia,True,False,-1.497,-0.831
+Turkana,True,False,-1.25,-0.0
+Uasin Gishu,True,False,-1.357,-0.987
+Vihiga,True,False,-1.453,-0.642
+Wajir,False,False,-1.227,-0.0
+West Pokot,True,False,-1.281,-0.932

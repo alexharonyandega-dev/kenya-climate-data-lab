@@ -401,3 +401,31 @@ The drop is because most Kenyan counties were in harvest or fallow at peak 2022 
 - `county_monthly_stress_v3.csv` — see `data/processed/SHA256SUMS.txt`
 - `county_weekly_stress_2017_2024.csv` — see `data/processed/SHA256SUMS.txt`
 - `stress_join_audit.csv` — see `data/processed/SHA256SUMS.txt`
+
+### D38 - Week 4 hardening pass
+
+**Decision:** After the main Week 4 deliverables were committed, run four
+sensitivity tests on the two headline findings before closing the week.
+
+**Tests run:**
+1. Crop weight sensitivity (28 combinations)
+2. Within-county vs pooled lead-lag correlation
+3. Bootstrap CI on lead-lag (n=1,000)
+4. Severity table (which 8 counties)
+
+**Result:** Both findings survive all four tests. The 2022 severe-count
+is 8 across every plausible weight combination. The lead-lag correlation
+is 0.463 within-county, essentially identical to the pooled 0.461. The
+95% CI on the lead-lag is [0.436, 0.485].
+
+**Reframing adopted:** The "31 → 8" finding is a sharper claim than
+originally stated: 31 counties had severe drought; only 8 had severe
+drought while maize was actively growing. These 8 are the counties
+where the 2022 drought actually damaged maize yield.
+
+**Data affected:** Four new CSVs in data/processed/. Notebook markdown
+updated for clarity. No changes to the master data.
+
+**See:** `docs/week04_hardening.md` for full method and results.
+
+**Date:** 2026-10-18

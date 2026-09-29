@@ -1,0 +1,2 @@
+lag,point_r,ci_lo,ci_hi,n_bootstrap,n_obs
+1,0.461,0.4364,0.4853,1000,4205
