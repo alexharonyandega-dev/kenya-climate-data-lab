@@ -51,3 +51,32 @@ and validated the full pipeline in two days.
 - Split into 9 per-variable CSVs (~23-24 MB each, 213 MB total)
 - Combined file (218 MB) gitignored (>100 MB GitHub limit)
 - Script: scripts/extract_era5_counties.py (committed 3fd7f04)
+
+## Week 4 (2026-10-12 to 2026-10-18)
+
+**Theme:** Formal merge - crop calendar, ERA5, weekly product, re-validation
+
+**Deliverables:**
+- notebooks/03_integration.ipynb (55 cells)
+- county_monthly_stress_v3.csv (4,512 x 27)
+- county_weekly_stress_2017_2024.csv (19,599 x 21)
+- stress_join_audit.csv (3 joins, 0 dropped)
+- SHA256SUMS.txt
+- paper/data_notes.md
+- 4 figures: stress timeseries, three-way divergence, soil lead, lineage
+- D34-D37 in DECISIONS_LOG
+
+**Findings:**
+- Crop stage weighting: 31 -> 8 severe counties in 2022 drought
+- Soil moisture leads NDVI by 1 month (r=0.461, p=2e-220)
+- Two indices: stress_avg (drought severity) vs stress_weighted (crop damage)
+
+**Commits:**
+- 5af93e0 feat(week4): integration notebook + stress pipeline audit
+- a6e4cd5 feat(week4): crop calendar integration (D34) + audit trail
+- 8c24805 feat(week4): ERA5 integration + soil moisture lead-lag (D35)
+- 90d81ea feat(week4): weekly stress product (D36) + NaN documentation
+- 348f65c feat(week4): re-validation + three story figures (D37)
+- 01ed19b docs(week4): data notes + data lineage diagram
+
+**Next:** Week 5 - formal validation against KNBS county yield

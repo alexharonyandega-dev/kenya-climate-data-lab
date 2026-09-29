@@ -341,3 +341,63 @@ This log exists so that future-you (or an advisor, or a reviewer) can answer
 **Trade-off:** Downstream code reads 9 files instead of 1. Mitigation: a loader helper can concatenate on demand.
 
 **Date:** 2025-09-27
+
+### D34 - Crop stage weighting
+
+**Decision:** Every stress observation is weighted by crop stage, per county-month, using `data/metadata/kenya_crop_calendar.csv`.
+
+**Weights:** planting/vegetative 1.0, grain_fill 0.7, harvest 0.3, fallow 0.0, Nairobi NaN.
+
+**Reason:** A dry October means planting failure in Kakamega (bimodal, short-rains) and harvest benefit in Trans Nzoia (unimodal, Sept harvest). Unweighted stress treats them identically. Wrong.
+
+**Data affected:** `county_monthly_stress_v2.csv`, `county_monthly_stress_v3.csv`. New columns `crop_stage`, `crop_stage_weight`, `stress_weighted`.
+
+**Trade-off:** Two indices now exist. `stress_avg` measures drought; `stress_weighted` measures crop damage. Both are reported.
+
+---
+
+### D35 - ERA5 anomalies as diagnostic columns, not composite inputs
+
+**Decision:** Add `swvl1_mean_anomaly`, `swvl2_mean_anomaly`, `t2m_mean_anomaly`, `pev_mean_anomaly` as separate columns. Do NOT recompute `stress_avg`.
+
+**Reason:** The 65/35 composite already validated against the 2022 drought without calibration. Recomputing it would break that validation. The new signals sit alongside.
+
+**Data affected:** `county_monthly_stress_v3.csv`. Four new anomaly columns.
+
+**Result - the lead-lag finding:** Soil moisture anomaly (0-7cm) leads NDVI anomaly by **one month**: r = 0.461, p = 2e-220, n = 4,205. Contemporaneous correlation is r = 0.364. `swvl1_mean_anomaly` becomes the earliest signal in the weekly product.
+
+---
+
+### D36 - Weekly stress product is rainfall-led, monthly companions carried forward
+
+**Decision:** `county_weekly_stress_2017_2024.csv` updates on weekly rainfall. Every monthly signal from `stress_v3` is prefixed `latest_monthly_` and carried forward.
+
+**Reason:** NDVI is monthly. Faking weekly NDVI would fabricate satellite observations that don't exist. The prefix tells the reader exactly which numbers are fresh (weekly rainfall) and which are last-confirmed (monthly stress, NDVI, soil moisture).
+
+**Data affected:** `county_weekly_stress_2017_2024.csv` (19,599 rows, 21 columns).
+
+**Trade-off:** The product is honest about its own latency. A weekly reader sees rainfall this week, plus the most recent confirmed monthly reading.
+
+---
+
+### D37 - Two indices, two questions
+
+**Decision:** The tool reports BOTH `stress_avg` (drought severity) and `stress_weighted` (maize-crop damage).
+
+**Reason - the 2022 re-validation finding:** The 2022 drought re-validation showed:
+- Unweighted severe flags: **31 counties**
+- Weighted severe flags: **8 counties**
+
+The drop is because most Kenyan counties were in harvest or fallow at peak 2022 stress. Only 8 had maize in the ground. Weighting never creates new severe flags — no county triggered earlier under weighted than unweighted.
+
+**Data affected:** Reporting logic, blog, dashboard (future).
+
+**Trade-off:** A reader must know which index answers their question. A county agriculture officer reads `stress_weighted`. A drought response coordinator reads `stress_avg`. Both are correct.
+
+---
+
+### SHA-256 checksums (Week 4)
+
+- `county_monthly_stress_v3.csv` — see `data/processed/SHA256SUMS.txt`
+- `county_weekly_stress_2017_2024.csv` — see `data/processed/SHA256SUMS.txt`
+- `stress_join_audit.csv` — see `data/processed/SHA256SUMS.txt`
