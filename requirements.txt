@@ -1,42 +1,46 @@
-pandas==3.0.6
-numpy==2.4.6
-scikit-learn==1.9.1
-matplotlib==3.11.2
-seaborn==0.13.2
-streamlit==1.64.0
-joblib==1.6.0
-xgboost==3.2.0
-netCDF4==1.7.4
-xarray==2026.7.0
-openpyxl==3.1.5
-requests==2.34.2
-# Data processing extras (Week 2+)
-zarr==3.1.6
-fsspec
+# Core data
+pandas>=2.0
+numpy>=1.24
+
+# Scientific (lead-lag, statistics)
+scipy>=1.10
+scikit-learn>=1.3
+
+# Plotting
+matplotlib>=3.7
+seaborn>=0.13
+
+# Climate data formats
+xarray>=2024.1
+netCDF4>=1.6
+zarr>=3.0
+fsspec>=2024.1
+
+# Geospatial
+geopandas>=1.0
+shapely>=2.0
+rasterio>=1.4
+rioxarray>=0.19
+pyogrio>=0.7
+
+# Data access
+requests>=2.31
 cdsapi
+openpyxl>=3.1
+
+# PDF parsing (KNBS reports)
+pypdfium2
 pdfplumber
+
+# R data files (Mendeley)
 pyreadr
 rdata
-pypdfium2
-
-# Geospatial (Week 2+)
-rioxarray==0.19.0
-rasterio==1.4.4
-
-# Geospatial (Week 2-3)
-geopandas>=1.0.0
-shapely>=2.0.0
-pyogrio>=0.7.0
-rasterio>=1.4.0
-rioxarray>=0.19.0
 
 # Jupyter
-jupyterlab>=4.0.0
-nbformat>=5.10.0
-nbconvert>=7.16.0
-ipykernel>=7.0.0
+jupyterlab>=4.0
+nbformat>=5.10
+nbconvert>=7.16
+ipykernel>=7.0
 
-# Cloud storage + APIs
-zarr>=3.0.0
-fsspec>=2024.1.0
-cdsapi
+# Dashboard (planned)
+streamlit>=1.30
