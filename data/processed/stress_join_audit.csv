@@ -1,1 +1,2 @@
 join,left_rows,right_rows,type,keys,result_rows,dropped,unmatched
+J01_calendar,4512,564,left,"county, month_num",4512,0,0
