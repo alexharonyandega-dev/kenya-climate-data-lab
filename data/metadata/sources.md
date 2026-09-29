@@ -169,3 +169,31 @@ County ranking is geographically correct:
 
 The Substack is where the project narrative lives - methodology decisions,
 weekly progress, and figures. The GitHub repo is the technical side.
+
+## 9. Kenya Crop Calendar (compiled)
+
+- **File:** `data/metadata/kenya_crop_calendar.csv`
+- **Source:** Compiled by Alex Haro Nyandega from zone descriptions in
+  FEWS NET Kenya livelihood profiles, FAO crop calendars, and county
+  agronomy extension reports.
+- **Coverage:** 47 counties, 7 agro-ecological zones
+- **Fields:** county, zone, zone_description, n_seasons, long_rains_start,
+  long_rains_end, short_rains_start, short_rains_end, primary_harvest_month
+- **Script:** `scripts/build_crop_calendar.py`
+- **Notes:** Used in Week 4 (D34) to weight stress observations by crop
+  stage. Weight mapping: planting/vegetative 1.0, grain_fill 0.7,
+  harvest 0.3, fallow 0.0, Nairobi NaN.
+
+## 10. ERA5-Land — County Aggregation
+
+- **Files:** `data/processed/era5_counties/era5_<var>_counties_daily.csv`
+  (9 files, ~600,848 rows each, ~24 MB per file)
+- **Source:** ERA5-Land reanalysis, clipped to Kenya bounding box
+- **Original:** `data/raw/era5_variables/` (18 NetCDF files, 9 variables
+  x 2 periods: 1990-2007, 2008-2024)
+- **Variables:** t2m, d2m, tp, pev, ssrd, swvl1, swvl2, u10, v10
+- **Script:** `scripts/extract_era5_counties.py` (~30 min runtime)
+- **Notes:** Combined file `era5_counties_daily.csv` (218 MB) is
+  gitignored. The 9 split files are the committed artifact. Temperature
+  converted K -> C on output; other variables native units. Used in
+  Week 4 (D35) for soil moisture lead-lag analysis.

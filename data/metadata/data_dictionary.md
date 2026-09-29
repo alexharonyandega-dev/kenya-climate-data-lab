@@ -377,3 +377,161 @@ Notes:
 - Temperature is the only variable converted from native units (K to C).
 - Missing-value policy: none applied; ERA5 is gap-free over land.
 - Combined long-format file gitignored (>100 MB GitHub limit). Split files are canonical.
+
+## 8. `county_monthly_stress_v3.csv`
+
+**The Week 4 master table.** Supersedes `county_monthly_stress_2017_2024.csv`.
+Location: `data/processed/county_monthly_stress_v3.csv`
+Rows: 4,512 (47 counties x 96 months) · Columns: 27
+Grain: one row per `(county, month_start)`. No duplicates.
+
+### Core identification
+| Column | Type | Description |
+|---|---|---|
+| county | string | County name (matches `shapeName` in boundaries GeoJSON) |
+| year | int | Calendar year |
+| month | int | Calendar month 1-12 |
+| date | date | First-of-month date (ISO) |
+| month_start | datetime | Alias for `date`, used as merge key |
+| month_num | int | Month number 1-12, used as merge key for crop calendar |
+| season | string | `long_rains` or `short_rains` |
+
+### Rainfall
+| Column | Type | Description |
+|---|---|---|
+| rainfall_mm | float | Monthly rainfall total (mm) |
+| rainfall_anomaly | float | Standardized anomaly vs county's own climatology |
+
+### Vegetation
+| Column | Type | Description |
+|---|---|---|
+| ndvi | float | Monthly mean NDVI (Sentinel-2) |
+| ndvi_anomaly | float | Standardized anomaly vs county's own climatology |
+
+### Composite stress (D24, D26)
+| Column | Type | Description |
+|---|---|---|
+| stress_avg | float | `0.35 * rainfall_anomaly + 0.65 * ndvi_anomaly` |
+| stress_min | float | `min(rainfall_anomaly, ndvi_anomaly)` — worst signal |
+| stress_category | string | severe_stress / moderate_stress / normal / good / very_good |
+
+### Crop stage weighting (D34)
+| Column | Type | Description |
+|---|---|---|
+| crop_stage | string | planting / grain_fill / harvest / fallow (from crop calendar) |
+| crop_stage_weight | float | 1.0 / 0.7 / 0.3 / 0.0 (NaN for Nairobi) |
+| stress_weighted | float | `stress_avg * crop_stage_weight` — crop-damage index |
+
+### ERA5 diagnostics (D35)
+| Column | Type | Description |
+|---|---|---|
+| swvl1_mean | float | Monthly mean soil moisture, 0-7 cm (m3/m3) |
+| swvl1_mean_anomaly | float | Standardized anomaly — **leads NDVI by 1 month** |
+| swvl2_mean_anomaly | float | Soil moisture anomaly, 7-28 cm |
+| t2m_mean_anomaly | float | 2m air temperature anomaly (Celsius) |
+| pev_mean_anomaly | float | Potential evaporation anomaly |
+
+### Outlier flags (D31)
+| Column | Type | Description |
+|---|---|---|
+| rainfall_mm_is_outlier | bool | IQR flag, not removed |
+| ndvi_is_outlier | bool | IQR flag, not removed |
+| stress_avg_is_outlier | bool | IQR flag, not removed |
+| stress_min_is_outlier | bool | IQR flag, not removed |
+
+---
+
+## 9. `county_weekly_stress_2017_2024.csv`
+
+**The weekly product (D36).** Rainfall updates weekly. Monthly signals
+are carried forward from the most recent confirmed month, prefixed
+`latest_monthly_` to make the freshness explicit.
+
+Location: `data/processed/county_weekly_stress_2017_2024.csv`
+Rows: 19,599 · Columns: 21
+Grain: one row per `(county, iso_year, iso_week)`.
+
+### Weekly fields (fresh)
+| Column | Type | Description |
+|---|---|---|
+| iso_year | int | ISO 8601 year |
+| iso_week | int | ISO 8601 week (1-53) |
+| county | string | County name |
+| week_start | date | Monday of the ISO week |
+| month_start | datetime | First-of-month of the week — join key to monthly companions |
+| rainfall_mm | float | Weekly rainfall total (mm) |
+| rain_clim_mean | float | Weekly climatological mean for that county-week |
+| rain_clim_std | float | Weekly climatological std |
+| n_years | int | Years contributing to the climatology |
+| rainfall_anomaly | float | Standardized weekly rainfall anomaly |
+| rainfall_anomaly_4wk | float | 4-week rolling mean of the weekly anomaly |
+
+### Monthly companions (last-confirmed, carried forward)
+| Column | Type | Description |
+|---|---|---|
+| latest_monthly_stress_avg | float | Last confirmed `stress_avg` |
+| latest_monthly_stress_weighted | float | Last confirmed `stress_weighted` |
+| latest_monthly_stress_min | float | Last confirmed `stress_min` |
+| latest_monthly_stress_category | string | Last confirmed category |
+| latest_monthly_crop_stage | string | Last confirmed crop stage |
+| latest_monthly_crop_stage_weight | float | Last confirmed weight |
+| latest_monthly_ndvi_anomaly | float | Last confirmed NDVI anomaly |
+| latest_monthly_swvl1_anomaly | float | Last confirmed soil moisture anomaly (1-month lead) |
+| latest_monthly_t2m_anomaly | float | Last confirmed temperature anomaly |
+| latest_monthly_pev_anomaly | float | Last confirmed evaporation anomaly |
+
+**NaN pattern:** two documented sources. NDVI cloud gaps (D14) propagate
+to `stress_avg` and downstream columns. Nairobi (urban) has NaN
+`crop_stage_weight` and therefore NaN `stress_weighted` (D34). No
+interpolation applied to either.
+
+---
+
+## 10. Hardening outputs (Week 4, D38)
+
+Four small verification files produced during the Week 4 hardening pass.
+
+### `sensitivity_crop_weights_2022.csv`
+84 rows · 4 columns. Grid of crop-weight alternatives tested against
+the 2022 severe-count.
+Columns: `harvest_weight`, `fallow_weight`, `grain_fill_weight`, `severe_count`.
+Result: severe-count = 8 across 28 harvest/fallow combinations;
+stable for grain_fill 0.4-0.8.
+
+### `leadlag_pooled_vs_within.csv`
+7 rows · 6 columns. Lead-lag correlation, pooled vs county-demeaned.
+Columns: `lag`, `pooled_r`, `pooled_p`, `within_r`, `within_p`, `n`.
+Result: pooled r at lag +1 = 0.4610; within-county r = 0.4634.
+
+### `leadlag_bootstrap_ci.csv`
+1 row · 6 columns. Bootstrap confidence interval on the lead-lag.
+Columns: `lag`, `point_r`, `ci_lo`, `ci_hi`, `n_bootstrap`, `n_obs`.
+Result: point r = 0.461, 95% CI [0.4364, 0.4853], n_bootstrap = 1000.
+
+### `severe_2022_by_county.csv`
+47 rows · 5 columns. Per-county 2022 severe-flag status.
+Columns: `county`, `severe_unweighted`, `severe_weighted`, `min_avg`, `min_weighted`.
+Result: 31 counties severe unweighted, 8 severe weighted. The 8:
+Bomet, Busia, Homa Bay, Kericho, Kilifi, Laikipia, Nandi, Nyamira.
+
+---
+
+## File inventory
+
+| File | Rows | Columns | Grain | Source |
+|---|---|---|---|---|
+| chirps_counties_daily_2010_2024.csv | 5,479 | 48 | county x day | CHIRPS |
+| county_weekly_rainfall_2017_2024.csv | 19,599 | 9 | county x ISO week | derived |
+| ndvi_counties_monthly_2017_2024.csv | 4,512 | 5 | county x month | Sentinel-2 |
+| county_monthly_panel_2017_2024.csv | 4,512 | 9 | county x month | joined |
+| county_monthly_stress_2017_2024.csv | 4,512 | 16 | county x month | derived (superseded) |
+| **county_monthly_stress_v3.csv** | **4,512** | **27** | **county x month** | **derived (master)** |
+| **county_weekly_stress_2017_2024.csv** | **19,599** | **21** | **county x ISO week** | **derived** |
+| isda_soil_raster_zonal.csv | 5 | 97 | county | iSDAsoil |
+| kenya_crop_calendar.csv | 47 | 9 | county | compiled |
+| sensitivity_crop_weights_2022.csv | 84 | 4 | weight combo | hardening |
+| leadlag_pooled_vs_within.csv | 7 | 6 | lag | hardening |
+| leadlag_bootstrap_ci.csv | 1 | 6 | summary | hardening |
+| severe_2022_by_county.csv | 47 | 5 | county | hardening |
+| merged_dataset_v1.csv | 1,457 | 22 | county-year (sidecar) | yield model |
+| era5_counties/ (9 files) | 600,848 each | 3 | county x day | ERA5-Land |
