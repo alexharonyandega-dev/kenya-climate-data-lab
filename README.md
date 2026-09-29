@@ -96,8 +96,25 @@ See `data/metadata/sources.md` for full details.
 
 ## Current status
 
-- **Phase:** Foundation (Week 3 of 72)
-- **Stress monitor:** Working prototype, monthly resolution
+- **Phase:** Foundation (Week 4 of 72)
+- **Master table:** `county_monthly_stress_v3.csv` — 4,512 rows x 27 cols
+- **Weekly product:** `county_weekly_stress_2017_2024.csv` — 19,599 rows
+- **Stress monitor:** Working, monthly composite + weekly rainfall
+- **2022 drought validation:** Detected without calibration. 31 counties severe unweighted, 8 crop-severe weighted
+- **Soil moisture lead-lag:** 1 month, r=0.461, 95% CI [0.436, 0.485]
+
+## Week 4 highlights
+
+- **Crop calendar integration:** Stress is weighted by maize growth stage (planting 1.0, grain_fill 0.7, harvest 0.3, fallow 0.0). A dry October in Trans Nzoia (harvest) now scores differently than a dry October in Kakamega (planting).
+- **ERA5 integration:** Soil moisture, temperature, and evaporation anomalies joined as diagnostic columns.
+- **Weekly product:** Rainfall updates weekly; monthly companions carry forward the last-confirmed stress reading.
+- **Hardening pass:** Crop-weight sensitivity (28 combos), within-county lead-lag verification, bootstrap CI, and a per-county 2022 severity table. See `docs/week04_hardening.md`.
+
+## The two findings
+
+1. **Drought ≠ crop damage.** Of 31 counties with severe drought in 2022, only 8 had severe drought while maize was actively growing: Bomet, Busia, Homa Bay, Kericho, Kilifi, Laikipia, Nandi, Nyamira.
+
+2. **Soil moisture leads vegetation by 1 month.** r = 0.461 (95% CI [0.436, 0.485], p = 6e-223). Entirely temporal — survives county demeaning without shrinkage.
 - **Coverage:** All 47 Kenyan counties, 2017-2024
 - **Validated against:** 2022 Horn of Africa drought (detected without calibration)
 - **Next milestone:** Weekly update resolution + public dashboard

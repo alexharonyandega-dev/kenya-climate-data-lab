@@ -165,3 +165,70 @@ into code.earthengine.google.com, download the resulting CSV from Drive.
 - FAO Agricultural Stress Index (ASI)
 - FEWS NET Kenya
 - KNBS National Agriculture Production Report
+
+---
+
+## Week 4 additions
+
+### Crop stage weighting (D34)
+
+Every stress observation is weighted by maize growth stage, per
+county-month, using `data/metadata/kenya_crop_calendar.csv`.
+
+| Stage | Weight | Reasoning |
+|---|---|---|
+| planting / vegetative | 1.0 | Failure = no crop |
+| grain_fill | 0.7 | Stress reduces yield, doesn't kill |
+| harvest | 0.3 | Dry is *good* for harvest |
+| fallow | 0.0 | No crop to stress |
+| Nairobi | NaN | Urban, no crop signal |
+
+New column: `stress_weighted = stress_avg * crop_stage_weight`
+
+**Effect on 2022 drought:** unweighted flagged 31 counties severe,
+weighted flagged 8. Robust across 28 harvest/fallow weight combinations
+(see `docs/week04_hardening.md`).
+
+### ERA5 integration (D35)
+
+Four ERA5-Land variables are aggregated to monthly anomalies per
+county-month and joined as diagnostic columns (not composite inputs):
+
+- `swvl1_mean_anomaly` — soil moisture 0-7 cm (the lead signal)
+- `swvl2_mean_anomaly` — soil moisture 7-28 cm
+- `t2m_mean_anomaly` — 2m air temperature
+- `pev_mean_anomaly` — potential evaporation
+
+**Lead-lag finding:** `swvl1_mean_anomaly` at t-1 predicts `ndvi_anomaly`
+at t with r = 0.461 (95% CI [0.436, 0.485], p = 6e-223). Survives
+county demeaning without shrinkage (within-county r = 0.4634).
+
+### Weekly stress product (D36)
+
+`county_weekly_stress_2017_2024.csv` — 19,599 rows.
+Weekly rainfall is fresh. Monthly companions are prefixed
+`latest_monthly_` and carried forward from the most recent confirmed
+month.
+
+**Design principle:** we do not interpolate NDVI to weekly cadence.
+That would fabricate satellite observations that never happened.
+
+### Two indices (D37)
+
+The tool reports both:
+
+- `stress_avg` — drought severity (any land use)
+- `stress_weighted` — maize-crop damage specifically
+
+A county agriculture officer reads `stress_weighted`. A drought
+response coordinator reads `stress_avg`. Both are correct.
+
+### Hardening (D38)
+
+Four robustness tests run before closing Week 4. Full method and
+results in `docs/week04_hardening.md`. Artifacts:
+
+- `sensitivity_crop_weights_2022.csv` — 84 weight combinations
+- `leadlag_pooled_vs_within.csv` — spatial vs temporal test
+- `leadlag_bootstrap_ci.csv` — 1,000-resample CI
+- `severe_2022_by_county.csv` — per-county severity table
