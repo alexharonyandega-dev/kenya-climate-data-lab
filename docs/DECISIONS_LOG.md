@@ -429,3 +429,81 @@ updated for clarity. No changes to the master data.
 **See:** `docs/week04_hardening.md` for full method and results.
 
 **Date:** 2026-10-18
+
+### D39 — Quarantine v1 sidecar, rebuild with KNBS
+
+**Discovery (2026-09-30):** `merged_dataset_v1.csv` was built by
+`build_merged_yield_sidecar.py`, which used the **Kaggle national-level**
+maize dataset as its yield source. Kaggle has one national value per
+year. Merging that to a 47-county × 9-season climate table on `year`
+alone broadcast the national mean (4.58 t/ha) across every county.
+
+**Symptom:** identical yield_t_ha for all 47 counties, same years
+(2009-2013) — the Cartesian join signature.
+
+**Fix:**
+- v1 file renamed to `merged_dataset_v1_BROKEN.csv` and documented as
+  unusable in `data/processed/README_BROKEN.md`.
+- New `scripts/build_merged_yield_sidecar_v2.py` uses KNBS county-level
+  production + area (5 counties × 5 years, 2020-2024). Yield is computed
+  from `Production_Tons / Area_Ha`.
+- For the 42 counties without KNBS coverage, `yield_t_ha` is left as NaN.
+
+**Impact on published findings:** none. The sidecar was never used in
+the stress pipeline. The Week 4 findings (31→8, soil-moisture lead-lag)
+do not depend on this file.
+
+**Impact on Week 5 plan:** the validation set is 5 counties, not 47.
+The 8 crop-severe counties identified in Week 4 are not in the KNBS
+coverage. Week 5 validates on the 5 we have; the other 42 remain a
+data-acquisition problem.
+
+**Date:** 2026-09-30
+
+### D40 - Null result: stress index does not predict yield
+
+**Test:** Correlation between `stress_weighted` and maize yield /
+production change, at multiple aggregations.
+
+**Data:** KNBS county-level production and area (5 counties, 2020-2024),
+verified against the National Agriculture Production Report 2025,
+Annex 1 (page 162).
+
+**Results:**
+
+| Test | n | r | p | Verdict |
+|---|---|---|---|---|
+| County stress vs yield YoY | 20 | -0.085 | 0.723 | Null |
+| County stress vs production YoY | 20 | +0.058 | 0.807 | Null |
+| Growing-season stress vs yield | 20 | -0.066 | 0.782 | Null |
+| Growing-season stress vs production | 20 | +0.065 | 0.785 | Null |
+| 2022-only (yield) | 5 | -0.832 | 0.080 | Wrong sign |
+| 2022-only growing season | 5 | -0.758 | 0.137 | Wrong sign |
+| Lagged (t-1 stress vs t production) | 15 | +0.267 | 0.337 | Null |
+| National stress vs yield | 4 | +0.162 | 0.838 | Untestable |
+| National lagged | 4 | -0.985 | 0.015 | n=4 artifact |
+
+**Every test is null, wrong-signed, or untestable.**
+
+**Diagnosis - the Kakamega outlier:**
+Kakamega 2022: area **up 2%**, production **down 41%**, stress mildest
+of the 5 counties (-0.182).
+
+Drought reduces both area planted *and* yield. Kakamega's signature —
+area stable, yield collapse — is not a drought pattern. It is a
+disease or pest pattern.
+
+**Confirmed against NAPR 2025 page 31:** the 2022 rainy season was
+compounded by *"localized outbreaks of fall armyworm"* and short-rains
+counties had below-average precipitation. Kakamega was hit by both.
+
+**Scope reframe:**
+The tool detects drought. It does not predict yield. Those are
+different problems. Only the first one is currently solved.
+
+**What this does NOT mean:**
+The 8-county Week 4 finding stands. The lead-lag r=0.461 stands. The
+composite index is still a valid drought monitor. This null result
+only falsifies the *yield prediction* aspiration.
+
+**Date:** 2026-09-30

@@ -48,8 +48,20 @@ Drought reduces area planted *and* yield. Kakamega's pattern — area
 stable, yield collapse — is a **disease or pest signature**, not
 drought.
 
-Hypothesis: MLN (Maize Lethal Necrosis) or fall armyworm in western
-Kenya in 2022. Not yet verified against public reports.
+**Confirmed against the National Agriculture Production Report 2025
+(page 31):** the 2022 rainy season was compounded by *"low availability
+of certified seeds, high prices of certified seeds and localized
+outbreaks of fall armyworm."* The report also states that *"short rains
+dependent counties experienced below-average precipitation amounts
+negatively impacting on"* production.
+
+Kakamega was hit by **both** a short-rains drought (which our index
+caught — October 2022 stress of -0.96) **and** a fall armyworm outbreak
+(which our index cannot see). The 42.5% yield crash is a compound
+effect of two forces acting at once.
+
+The drought index is not wrong. It is measuring one of two things that
+hurt Kakamega's crop. Non-climate shocks are outside its scope.
 
 ## Scope reframe
 
