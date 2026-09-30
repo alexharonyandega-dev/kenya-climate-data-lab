@@ -14,7 +14,7 @@ self-contained: run with the `kenya-climate` conda env activated.
 | `build_county_monthly_panel.py` | `data/processed/county_monthly_panel_2017_2024.csv` | < 30 s |
 | `compute_stress_index.py` | `data/processed/county_monthly_stress_2017_2024.csv` | < 10 s |
 | `add_outlier_flags.py` | Adds IQR boolean columns | < 5 s |
-| `build_merged_yield_sidecar.py` | `data/processed/merged_dataset_v1.csv` | < 10 s |
+| `build_merged_yield_sidecar_v2.py` | `data/processed/merged_dataset_v1.csv` (KNBS-sourced) | < 10 s |
 | `split_era5.py` | Splits combined ERA5 by variable (git-limit workaround) | < 1 min |
 | `recompress_era5.py` | int16 recompression of ERA5 NetCDFs | < 5 min |
 
@@ -62,3 +62,16 @@ extraction. Run once per year range. ~20 min per export.
 - Scripts are idempotent — running twice produces the same output.
 - Pipeline outputs go to `data/processed/` and are committed if under
   100 MB per file (larger files are split by variable or gitignored).
+
+
+## Week 5 diagnostic scripts
+
+| Script | Purpose |
+|---|---|
+| `preliminary_knbs_check.py` | First-pass correlation: stress vs yield |
+| `week05_aggregation_test.py` | Three aggregations tested against 2022 yield |
+| `week05_verification_round1.py` | Production vs yield YoY, all years |
+| `week05_national_test.py` | National-mean stress vs national yield |
+| `diagnose_kakamega.py` | Monthly stress profile for the 5 KNBS counties |
+
+**Findings:** see `docs/week05_null_result.md` and `docs/week05_reflection.md`.
