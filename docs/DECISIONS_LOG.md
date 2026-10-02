@@ -507,3 +507,33 @@ composite index is still a valid drought monitor. This null result
 only falsifies the *yield prediction* aspiration.
 
 **Date:** 2026-09-30
+
+### D41 - Email outreach blocked by government spam filters
+
+**Discovery (2026-10-02):** All 13 emails sent to KNBS, Nakuru,
+Kakamega, and Bungoma county governments bounced. Zero delivered.
+
+**Cause:** Kenyan government .go.ke mail servers reject email from
+free providers (@gmail.com). The rejection returns "Address not
+found" — a misleading error that suggests the address is wrong when
+actually the sender is filtered.
+
+**Impact:** Cannot reach county agriculture officers or KNBS via
+cold email from a Gmail account.
+
+**Response:**
+1. Register a custom domain (alexharonyandegа.org or
+   kenyaclimatelab.org) with Zoho Mail — 30-min setup, ~$10/year.
+2. Reach the named officials via LinkedIn DM.
+3. Publish an open letter to county agriculture officers on
+   Substack — public, indexed, cannot bounce.
+4. Call the county phone numbers for working email addresses.
+
+**Data affected:** None. This is an outreach infrastructure decision,
+not a data or pipeline decision.
+
+**Documented in:** `docs/outreach_notes.md` (full writeup with all
+13 attempts, lessons for other student researchers, and phone
+numbers).
+
+**Date:** 2026-10-02
