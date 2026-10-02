@@ -80,3 +80,37 @@ and validated the full pipeline in two days.
 - 01ed19b docs(week4): data notes + data lineage diagram
 
 **Next:** Week 5 - formal validation against KNBS county yield
+
+## Week 5 (2026-09-28 to 2026-10-05)
+
+**Theme:** Null result + first public outreach
+
+**Deliverables:**
+- docs/week05_null_result.md — null result on yield prediction
+- docs/week05_reflection.md — Week 5 reflection
+- docs/data_acquisition_plan.md — plan to close the data gap
+- docs/outreach_notes.md — outreach barrier documented
+- metrics/outreach_log.csv — 17 rows
+- paper/one_pager/Kenya_Climate_Data_Lab_One_Pager.pdf
+
+**Public artifacts:**
+- Blog post: "I Tried to Validate My Tool. It Failed."
+- Open letter: "An open letter to Kenya's county agriculture officers"
+- Both cross-posted on X
+
+**Findings:**
+- Stress index does not predict county-level yield loss (n=5 to n=20)
+- Kakamega outlier — fall armyworm compounded the 2022 drought
+- 13/13 emails to .go.ke bounced (D41)
+
+**Commits:**
+- 5d07e96 docs(week5): commit all diagnostics + D40 + armyworm confirmation
+- ee5517a docs(week5): reflection
+- 0b448d9 docs(week5): data acquisition plan
+- 237868f docs: update scripts/README
+- 149128f feat: one-page outreach PDF generator
+- ce11feb docs: D41 — outreach blocked by government spam filters
+- 4667b5b docs: link Week 5 blog post from README
+- 651c20d docs: log blog post and open letter
+
+**Next:** Week 6 — draft preprint abstract and methods
