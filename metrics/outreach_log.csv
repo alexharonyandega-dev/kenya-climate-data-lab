@@ -1,5 +1,14 @@
-date,org,contact,subject,status,followup_due
-2026-10-05,KNBS,datarequest@knbs.or.ke,Data request — 47-county maize production 2017-2024,sent,2026-10-12
-2026-10-05,Nakuru County,info@nakuru.go.ke,Free drought monitor for Nakuru,sent,2026-10-12
-2026-10-05,Kakamega County,cec-agriculture@kakamega.go.ke,Kakamega was one of 8 counties hit hardest in 2022,sent,2026-10-12
-2026-10-05,Bungoma County,info@bungoma.go.ke,Bungoma was one of 8 counties hit hardest in 2022,sent,2026-10-12
+date,org,contact,subject,status,followup_due,notes
+2026-10-02,KNBS,datarequest@knbs.or.ke,Data request — 47-county maize production 2017-2024,bounced,2026-10-12,"500 error on first send"
+2026-10-02,KNBS,info@knbs.or.ke,Data request — 47-county maize production 2017-2024,bounced,2026-10-12,"Address not found"
+2026-10-02,KNBS,directorgeneral@knbs.or.ke,Data request — 47-county maize production 2017-2024,bounced,2026-10-12,"Address not found"
+2026-10-02,Nakuru County,info@nakuru.go.ke,Free drought monitor for Nakuru,bounced,2026-10-12,"Address not found"
+2026-10-02,Nakuru County,lmmaculate.njuthe.maina@nakuru.go.ke,Free drought monitor for Nakuru,bounced,2026-10-12,"Address not found"
+2026-10-02,Nakuru County,supplychain@nakuru.go.ke,Free drought monitor for Nakuru,bounced,2026-10-12,"Address not found"
+2026-10-02,Kakamega County,cec-agriculture@kakamega.go.ke,Kakamega was one of 8 counties hit hardest in 2022,bounced,2026-10-12,"Address not found"
+2026-10-02,Kakamega County,co-agriculture@kakamega.go.ke,Kakamega was one of 8 counties hit hardest in 2022,bounced,2026-10-12,"Address not found"
+2026-10-02,Kakamega County,agriculture@kakamega.go.ke,Kakamega was one of 8 counties hit hardest in 2022,bounced,2026-10-12,"Address not found"
+2026-10-02,Kakamega County,info@kakamega.go.ke,Kakamega was one of 8 counties hit hardest in 2022,bounced,2026-10-12,"Address not found"
+2026-10-02,Bungoma County,info@bungoma.go.ke,Bungoma was one of 8 counties hit hardest in 2022,bounced,2026-10-12,"Address not found"
+2026-10-02,Bungoma County,bungomacountygov@gmail.com,Bungoma was one of 8 counties hit hardest in 2022,bounced,2026-10-12,"Address not found"
+2026-10-02,Bungoma County,bungomacountygovt@gmail.com,Bungoma was one of 8 counties hit hardest in 2022,bounced,2026-10-12,"Address not found"
