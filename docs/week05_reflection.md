@@ -65,9 +65,21 @@ failures that show up in the wrong calendar year.
 
 - `docs/week05_null_result.md` ✓
 - 6 diagnostic scripts committed ✓
-- D39 + D40 in DECISIONS_LOG ✓
+- D39 + D40 + D41 in DECISIONS_LOG ✓
 - Armyworm confirmation from NAPR 2025 ✓
 - Broken sidecar quarantined ✓
+- Blog post published on Substack ✓
+- Open letter published on Substack ✓
+- One-pager PDF ✓
+- 13 emails attempted, all bounced (D41) — pivot to public channels
+
+## Week 5's unexpected lesson
+
+The plan called for cold email. Cold email failed. The alternative —
+publishing publicly on Substack and X — is the fallback that worked.
+Not because the tool is wrong, but because Kenyan government mail
+servers reject Gmail. That is an infrastructure barrier, not a
+project failure. Documented as D41.
 
 ## Week 5 in one sentence
 
