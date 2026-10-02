@@ -61,3 +61,19 @@ before we can claim (or deny) that the index predicts yield loss.
 2. Disaggregate by season
 3. Include non-climate covariates in the model
 4. Pre-register the hypothesis before looking at the data
+
+
+## Channel update (2026-10-05)
+
+The email channel is blocked (D41 — Gmail rejected by .go.ke servers).
+The plan below is updated to reflect the working channels.
+
+| Channel | Status | First attempt |
+|---|---|---|
+| Email (Gmail → .go.ke) | ❌ Blocked | 13 attempts, all bounced |
+| LinkedIn | ❌ Unavailable on current setup | n/a |
+| Substack open letter | ✅ Published | 2026-10-05 |
+| X cross-post | ✅ Published | 2026-10-05 |
+| WhatsApp forwarding | ⏳ Not yet done | — |
+| Phone calls | ⏳ Not yet done | — |
+| Physical visit (KNBS) | ⏳ Not yet done | — |
