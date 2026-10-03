@@ -6,21 +6,34 @@ Downloaded 2026-10-03.
 
 ## What is the vulnerability index?
 
-The 2018-vintage CCRPs assign each county a **vulnerability index**
-between 0 and 1. Higher = more exposed and sensitive to climate
-shocks. The national average across Kenya's 47 counties is **0.431**.
+The 2018-vintage CCRPs assign each county a climate vulnerability
+index between 0 and 1. Higher = more exposed and sensitive to
+climate shocks.
 
 The 2016-vintage CCRPs predate this methodology and do not publish
 a numeric index. The 2021-vintage CCRPs use a revised format that
-also does not include a single index number.
+also does not include a single numeric index.
 
 ## Indices found (3 of 8)
 
-| County | Report vintage | Vulnerability index | vs National (0.431) |
-|---|---|---|---|
-| Bomet | 2018 | **0.473** | +0.042 (more vulnerable) |
-| Kericho | 2018 | **0.448** | +0.017 (more vulnerable) |
-| Laikipia | 2018 | **0.384** | −0.047 (less vulnerable) |
+Each report uses a **different baseline** for comparison. This
+matters — the numbers cannot be compared against a single national
+figure across all three counties.
+
+| County | Report vintage | Index | Baseline stated in report | Interpretation |
+|---|---|---|---|---|
+| Bomet | 2018 | **0.473** | National index: **0.4311** | Bomet is 0.042 above national average |
+| Kericho | 2018 | **0.448** | ASAL average: **0.4381** | Kericho is 0.010 above ASAL average |
+| Laikipia | 2018 | **0.3841** | Not stated | No comparison possible |
+
+Direct quote from Bomet CCRP page 3: *"vulnerability index of 0.473,
+higher than the national index of 0.4311."*
+
+Direct quote from Kericho CCRP page 3: *"vulnerability index (0.448)
+relative to some ASAL average of 0.4381."*
+
+Direct quote from Laikipia CCRP page 3: *"climate vulnerability
+index of 0.3841."*
 
 ## Counties without a published index (5 of 8)
 
@@ -34,31 +47,26 @@ also does not include a single index number.
 
 ## What the 3 indices tell us
 
-All 3 counties with an index are in the crop-severe group from the
-Week 4 finding:
+**Bomet (0.473)** is above the national average (0.4311). This is
+the only county where a national-baseline comparison is possible.
 
-- **Bomet** (0.473) is more vulnerable than the national average
-- **Kericho** (0.448) is more vulnerable than the national average
-- **Laikipia** (0.384) is less vulnerable
+**Kericho (0.448)** is above the ASAL average (0.4381). This is a
+different baseline — the report compares Kericho to other ASAL
+counties, not to all 47 counties. Cannot be directly compared to
+Bomet's 0.4311 national benchmark.
 
-Bomet and Kericho were two of the 8 crop-severe counties in 2022.
-Their high vulnerability indices are consistent with the Week 4
-stress signal. Laikipia was also crop-severe despite a lower index —
-which suggests that the 2022 drought hit even counties the ministry
-classified as less vulnerable.
+**Laikipia (0.3841)** has no baseline published in the CCRP. Cannot
+be compared to anything.
 
-## Methodological note
+## Methodological limitation
 
-The CCRP series uses two different assessment frameworks across
-vintages. Cross-vintage comparison is not possible because the
-2016 reports do not produce a comparable number. Within-vintage
-comparison (2018 against 2018) is valid.
+Only 1 of 3 published indices can be compared to a national
+baseline (Bomet). The other two use different or missing baselines,
+making a consistent cross-county comparison impossible. The CCRP
+series does not publish a single national reference index across
+all reports.
 
-## Data limitation
-
-Only 3 of 8 crop-severe counties have a vulnerability index. This
-limits how much we can generalize. The comparison to the stress
-index is directional, not quantitative.
+This is a real limitation of the source data, not of the analysis.
 
 ## Sources
 

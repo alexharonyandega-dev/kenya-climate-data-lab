@@ -115,17 +115,21 @@ Full comparison: `data/external/reports/ndma/NDMA_2022_Labels.md`
 
 ### 2. County Climate Risk Profiles (Ministry of Agriculture / CGIAR)
 
-The ministry publishes vulnerability indices for Kenyan counties. Three of the eight crop-severe counties have a published index in their profile:
+The ministry publishes vulnerability indices for Kenyan counties. Three of the eight crop-severe counties have a published index in their profile. Each report uses a different baseline, so cross-county comparison is limited.
 
-| County | Index | vs National (0.431) |
-|---|---|---|
-| Bomet | 0.473 | +0.042 (more vulnerable) |
-| Kericho | 0.448 | +0.017 (more vulnerable) |
-| Laikipia | 0.384 | −0.047 (less vulnerable) |
+| County | Report vintage | Index | Baseline |
+|---|---|---|---|
+| Bomet | 2018 | 0.473 | National index = 0.4311 |
+| Kericho | 2018 | 0.448 | ASAL average = 0.4381 |
+| Laikipia | 2018 | 0.3841 | Not stated |
 
-Bomet and Kericho — two of the crop-severe counties in the 2022 signal — are independently rated as more climate-vulnerable than the national average. Laikipia is rated less vulnerable but was still crop-severe, suggesting the 2022 drought hit even counties the ministry classified as relatively resilient.
+**Bomet (0.473)** is above the national average (0.4311). Direct quote from page 3: *"vulnerability index of 0.473, higher than the national index of 0.4311."* This is the only county where a national-baseline comparison is possible.
 
-The 2016 and 2021 vintages of the profile series use different methodologies and do not publish a comparable index, so cross-vintage comparison is not possible. Only 3 of 8 crop-severe counties contribute a comparable number.
+**Kericho (0.448)** is above the ASAL average (0.4381). The report compares Kericho to other ASAL counties, not to all 47 counties. Cannot be directly compared to Bomet's national benchmark.
+
+**Laikipia (0.3841)** has no baseline published. No comparison possible.
+
+The 2016 and 2021 vintages of the profile series use different methodologies and do not publish a comparable index. Of the 8 crop-severe counties, only 1 (Bomet) has a published index with a national baseline.
 
 Full extraction: `data/external/reports/ccrp/CCRP_Summary.md`
 
