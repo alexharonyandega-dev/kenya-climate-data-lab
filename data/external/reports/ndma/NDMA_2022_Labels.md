@@ -116,18 +116,40 @@ rainfall and vegetation to its own history — a below-average long-
 rains season shows up as severe stress even when absolute rainfall
 is still enough for pasture.
 
-**Kenya had two droughts in 2022.** A pastoral drought in the north
-(NDMA's domain) and a crop drought in the west (the monitor's
-domain). Both were real. Neither system captures the other.
+**Kenya had one severe drought event in 2022, with two different
+regional manifestations.**
+
+This was verified against CHIRPS rainfall data in October 2022:
+
+| Group | Mean Oct 2022 rainfall z-score |
+|---|---|
+| Monitor severe counties | **-1.14** |
+| NDMA Alarm counties | **-0.71** |
+
+Both groups were below normal. The monitor counties were
+significantly drier. But the divergence in *which counties get
+classified as severe* is a scope difference, not a data conflict:
+
+- **NDMA** classifies ASAL counties based on cumulative multi-
+  season impact on pasture, water points, and livestock. A single
+  dry month does not trigger Alarm — NDMA looks at the whole
+  drought trajectory.
+- **The monitor** flags counties based on rainfall and vegetation
+  anomaly for the current month. It catches October-specific
+  deficits that NDMA does not weight heavily.
+
+The two systems are measuring the same drought through different
+lenses. NDMA answers "is this affecting pastoral livelihoods?" The
+monitor answers "is this month unusually dry for the crop season?"
 
 ## What this means for the tool
 
 The tool is **complementary to NDMA, not competing.** NDMA monitors
 pastoral livelihoods in 23 ASAL counties. The monitor tracks
 crop-region vegetation stress in 47 counties, including the ones
-NDMA does not classify. Both are valid scopes.
+NDMA does not classify.
 
-This is a stronger finding than a simple agreement would have been.
-It clarifies what the tool is: a crop-region drought monitor that
-fills a coverage gap in Kenya's existing drought monitoring
-infrastructure.
+This is a scope claim, verified by rainfall data. Not a claim that
+the monitor is "righter" than NDMA, and not a claim that the two
+systems are describing different droughts. They are describing the
+same event through different priority lenses.

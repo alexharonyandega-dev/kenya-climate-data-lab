@@ -107,9 +107,24 @@ The National Drought Management Authority classifies Kenya's 23 ASAL counties in
 | June 2022 | Kiambu, Kirinyaga, Meru, Murang'a, Nairobi, Tharaka | Isiolo, Laikipia, Mandera, Marsabit, Samburu, Wajir | 0 |
 | October 2022 | Bomet, Busia, Elgeyo-Marakwet, Homa Bay, Kericho, Kilifi, Nandi, Nyamira, Uasin Gishu, West Pokot | Garissa, Isiolo, Kajiado, Kitui, Laikipia, Mandera, Marsabit, Samburu, Tana River, Turkana, Wajir | 0 |
 
-This is not noise. It is a geographic signal. NDMA's Alarm counties are all in the arid north. The monitor's severe counties are in the highland maize belt and the coast. Kenya's 2022 drought had two faces — a pastoral drought (NDMA's domain) and a crop drought (the monitor's domain). Both were real. Neither system captures the other.
+This is not noise. It is a geographic signal. But it is not "two droughts."
 
-**Scope implication:** The tool is complementary to NDMA, not competing. It fills the coverage gap for the 24 non-ASAL counties that NDMA does not classify.
+CHIRPS rainfall verification (October 2022, against 2010-2021 baseline):
+
+| Group | Mean Oct 2022 z-score |
+|---|---|
+| Monitor severe counties | **-1.14** |
+| NDMA Alarm counties | **-0.71** |
+
+Both groups were below normal. Both experienced the same drought event. The monitor counties were significantly drier in October specifically. The NDMA counties experienced cumulative multi-season failure that NDMA tracks as pastoral impact.
+
+The two systems are classifying different things:
+- NDMA classifies ASAL counties by cumulative impact on pastoral livelihoods (pasture, water, livestock).
+- The monitor classifies all counties by current-month rainfall and vegetation anomaly.
+
+Neither is wrong. They are answering different questions about the same drought.
+
+**Scope implication:** The tool is complementary to NDMA, not competing. It fills the coverage gap for the 24 non-ASAL counties that NDMA does not classify, and it tracks October-specific rainfall deficits that NDMA's multi-season trajectory metric underweights.
 
 Full comparison: `data/external/reports/ndma/NDMA_2022_Labels.md`
 
