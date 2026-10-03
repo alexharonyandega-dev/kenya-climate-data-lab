@@ -114,3 +114,35 @@ and validated the full pipeline in two days.
 - 651c20d docs: log blog post and open letter
 
 **Next:** Week 6 — draft preprint abstract and methods
+
+## Week 5 — Extended session (2026-10-03)
+
+**Theme:** KCND report integration + independent validation
+
+**Deliverables:**
+- 8 County Climate Risk Profiles (Bomet, Busia, Homa Bay, Kericho, Kilifi, Laikipia, Nandi, Nyamira)
+- KMD State of the Climate 2025
+- 2 NDMA drought bulletins (June + October 2022)
+- TAMSAT-ALERT validation paper (Boult et al. 2020)
+- 4 new documentation files (CCRP_Summary, NDMA_2022_Labels, sources.md sections 11-14, cross-check in week05_null_result.md)
+
+**Findings:**
+- NDMA and monitor flagged zero overlapping counties in 2022. CHIRPS rainfall verified: monitor counties z = −1.14, NDMA counties z = −0.71. Both in drought.
+- One drought event, two tracking systems. NDMA covers pastoral (ASAL). Monitor covers crop-region (47 counties).
+- CCRP vulnerability indices: Bomet (0.473) > national (0.4311). Kericho (0.448) > ASAL (0.4381). Laikipia (0.3841) no baseline.
+- TAMSAT-ALERT validates contemporaneous soil moisture ↔ VCI (r = 0.68 MAM). Our lead-lag (r = 0.461) extends this to finer resolution.
+
+**Commits (this session):**
+- e780f72 feat: add 8 CCRPs
+- d120a79 feat: add KMD State of the Climate
+- 490f824 feat: add NDMA bulletins
+- d231042 fix: NDMA comparison interpretation
+- 0d076dc feat: add TAMSAT-ALERT paper
+- 261f2f6 docs: CCRP vulnerability indices
+- dc3d0d5 docs: sources.md sections 11-14
+- 89fcc20 docs: cross-check null result
+- a3b32d0 fix: correct CCRP baselines (fabricated 0.431 removed)
+- 736ee0d fix: correct "two droughts" framing (CHIRPS verified)
+- 5dbb827 fix: correct TAMSAT comparison
+
+**Reflection:** Three errors caught by verification scripts: a fabricated national average, an untested "two droughts" claim, and a misread of what TAMSAT tested. Every one was a claim that sounded right. The fix is in.

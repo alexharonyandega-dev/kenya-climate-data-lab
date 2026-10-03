@@ -85,3 +85,30 @@ project failure. Documented as D41.
 
 I tried to validate my tool and it failed — and that failure taught me
 more than a success would have.
+
+---
+
+## Extended session (2026-10-03): KCND integration
+
+After publishing the null result, I downloaded and integrated 12 reports from the Kenya Climate & Nature Directory. This changed how I understand the tool.
+
+**The main new finding:** NDMA and the monitor flagged completely different counties in 2022. Zero overlap. My first instinct was to frame this as "two droughts." I tested it against CHIRPS rainfall and found something more precise:
+
+| Group | Mean Oct 2022 rainfall z-score |
+|---|---|
+| Monitor severe counties | −1.14 |
+| NDMA Alarm counties | −0.71 |
+
+Both groups were in drought. The difference is not two events — it's two tracking methodologies on one event. NDMA classifies by cumulative pastoral impact. The monitor classifies by current-month rainfall and vegetation anomaly.
+
+**Three errors caught during this session:**
+
+1. I wrote "national average = 0.431" in a summary. It was fabricated. Bomet's actual national baseline is 0.4311. Fixed in `a3b32d0`.
+2. I claimed "two droughts" without testing. CHIRPS verification proved it was one drought. Fixed in `736ee0d`.
+3. I claimed Boult et al. (2020) "directly supports" our lead-lag finding. Reading their methods: they tested contemporaneous seasonal correlation (r = 0.68 MAM), not lead-lag. Fixed in `5dbb827`.
+
+**What I learned:** Every claim that sounds interesting needs to be verified. Every number needs a source. Every "supports" needs to specify *what* it supports and *what* it doesn't. The verification scripts did the work here — they're now part of the workflow.
+
+**What this means for the paper:** The contribution statement is sharper. Not "we built a monitor." Not "our tool detects a second drought." Rather:
+
+> *"Kenya's drought monitoring infrastructure has a coverage gap. NDMA tracks 23 ASAL counties by cumulative pastoral impact. This project builds a complementary monitor for all 47 counties that tracks current-month rainfall and vegetation anomaly. In 2022, these two systems flagged entirely different counties. Both were correct. They answer different questions about the same event."*
