@@ -98,12 +98,15 @@ See `data/metadata/sources.md` for full details.
 
 ## Current status
 
-- **Phase:** Foundation (Week 4 of 72)
+- **Phase:** Foundation (Week 5 of 72)
 - **Master table:** `county_monthly_stress_v3.csv` — 4,512 rows x 27 cols
 - **Weekly product:** `county_weekly_stress_2017_2024.csv` — 19,599 rows
 - **Stress monitor:** Working, monthly composite + weekly rainfall
 - **2022 drought validation:** Detected without calibration. 31 counties severe unweighted, 8 crop-severe weighted
 - **Soil moisture lead-lag:** 1 month, r=0.461, 95% CI [0.436, 0.485]
+- **Coverage:** All 47 Kenyan counties, 2017-2024
+- **Independent cross-checks:** NDMA (zero overlap, CHIRPS-verified), CCRP (3 of 8 indices), TAMSAT (contemporaneous comparison)
+- **Next milestone:** Preprint draft (Week 6)
 
 ## Week 4 highlights
 
@@ -112,14 +115,27 @@ See `data/metadata/sources.md` for full details.
 - **Weekly product:** Rainfall updates weekly; monthly companions carry forward the last-confirmed stress reading.
 - **Hardening pass:** Crop-weight sensitivity (28 combos), within-county lead-lag verification, bootstrap CI, and a per-county 2022 severity table. See `docs/week04_hardening.md`.
 
-## The two findings
+## The findings
 
-1. **Drought ≠ crop damage.** Of 31 counties with severe drought in 2022, only 8 had severe drought while maize was actively growing: Bomet, Busia, Homa Bay, Kericho, Kilifi, Laikipia, Nandi, Nyamira.
+**1. Drought ≠ crop damage.**
 
-2. **Soil moisture leads vegetation by 1 month.** r = 0.461 (95% CI [0.436, 0.485], p = 6e-223). Entirely temporal — survives county demeaning without shrinkage.
-- **Coverage:** All 47 Kenyan counties, 2017-2024
-- **Validated against:** 2022 Horn of Africa drought (detected without calibration)
-- **Next milestone:** Weekly update resolution + public dashboard
+Of 31 counties with severe drought in 2022, only 8 had severe drought while maize was actively growing: Bomet, Busia, Homa Bay, Kericho, Kilifi, Laikipia, Nandi, Nyamira. Kenya's largest maize producers aren't on the list — they had already harvested.
+
+**2. Soil moisture leads vegetation by 1 month.**
+
+r = 0.461 (95% CI [0.436, 0.485], p = 6e-223). Entirely temporal — survives county demeaning without shrinkage. Across 4,205 county-month observations.
+
+**3. The tool covers a drought regime NDMA does not classify.**
+
+Kenya's National Drought Management Authority tracks pastoral drought in 23 ASAL counties. In October 2022, NDMA flagged 11 counties as Alarm — all in the arid north. The monitor flagged a completely different set of 10 counties — the highland maize belt and the coast. Zero overlap.
+
+CHIRPS verification: monitor counties averaged October 2022 rainfall z-score of **−1.14**; NDMA counties averaged **−0.71**. Both groups were in drought. The two systems track different things. NDMA tracks cumulative multi-season impact on pastoral livelihoods. The monitor tracks current-month rainfall and vegetation anomaly for all 47 counties.
+
+The tool is complementary to NDMA, not competing. Full cross-check against NDMA, CCRP, TAMSAT, and KMD is in `docs/week05_null_result.md`.
+
+**4. The tool is a drought monitor, not a yield predictor.**
+
+I tried to validate the stress index against KNBS county yield data. Every meaningful test came back null, wrong-signed, or untestable. Documented publicly: [I Tried to Validate My Tool. It Failed.](https://kenyaclimatelab.substack.com/p/i-tried-to-validate-my-tool-it-failed)
 
 ## Development
 
