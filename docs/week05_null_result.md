@@ -150,11 +150,28 @@ Full extraction: `data/external/reports/ccrp/CCRP_Summary.md`
 
 ### 3. TAMSAT-ALERT validation paper (Boult et al. 2020)
 
-The paper validates TAMSAT-ALERT soil moisture forecasts against pasture availability and maize yield in Kenya. The abstract states the metrics were *"strongly correlated with pasture availability and maize yield in Kenya and provided skilful forecasts early in key seasons."*
+**What they tested:** the correlation between TAMSAT-ALERT *seasonal mean* soil moisture and the Vegetation Condition Index (VCI, derived from NDVI) across Kenya. Results (page 10):
 
-This directly supports the soil-moisture lead-lag finding (r = 0.461). The Boult paper validates the same class of signal at national scale. Our finding is a county-level version of what they demonstrated across Kenya.
+- Soil moisture vs VCI, March–May: **r = 0.68** (contemporaneous, seasonal mean)
+- Soil moisture vs VCI, October–December: weaker but significant
+- WRSI vs maize yield, national level: **r = 0.43**
+- County-level WRSI vs yield: "varies across counties"
+
+**What they did not test:** a lead-lag relationship between soil moisture and vegetation. They compare contemporaneous seasonal means, not month t−1 vs month t. They mention "the known lag between soil moisture and vegetation" once, in the context of VCI preprocessing (they apply a 15-day lag when calculating VCI), but this is not a finding they report.
+
+**How our finding relates:** Boult et al. establish that soil moisture and vegetation condition are correlated in Kenya at seasonal scale (r = 0.68). Our finding **adds two things**:
+
+1. **Temporal specification:** soil moisture anomaly at month t−1 predicts vegetation anomaly at month t, with r = 0.461 (county-month resolution). This is a *lead-lag* result at a finer time scale than Boult's seasonal averages.
+2. **County-month resolution:** they work at 0.25° grid cells aggregated to counties; we work directly at county-month level.
+
+**Honest framing:** Boult et al. support the *general principle* that soil moisture is a useful proxy for vegetation condition in Kenya. Our finding extends this by specifying the temporal lag and working at a finer temporal resolution. It is not "the same finding at county scale" — it is a related but distinct claim.
 
 Source: `data/external/reports/tamsat/TAMSAT_ALERT_Validation_2020.pdf`
+
+Key numbers extracted:
+- Boult soil moisture vs VCI (MAM): r = 0.68, contemporaneous, seasonal
+- Boult WRSI vs yield: r = 0.43, national, contemporaneous
+- Our soil moisture (t−1) vs NDVI (t): r = 0.461, county-month, 1-month lead
 
 ### 4. KMD State of the Climate in Kenya 2025
 
