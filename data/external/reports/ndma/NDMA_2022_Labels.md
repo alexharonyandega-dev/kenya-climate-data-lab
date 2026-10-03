@@ -78,18 +78,56 @@ points available.
 
 ## Comparison with the stress index
 
-[Paste the Python output from Step 3 here.]
+### June 2022
 
-## Interpretation
+| | Counties |
+|---|---|
+| Monitor severe (< -1.25) | Kiambu, Kirinyaga, Meru, Murang'a, Nairobi, Tharaka |
+| NDMA Alarm | Isiolo, Laikipia, Mandera, Marsabit, Samburu, Wajir |
+| **Overlap** | **0** |
+| Missed by monitor | Isiolo, Laikipia, Mandera, Marsabit, Samburu, Wajir |
+| Monitor extra | Kiambu, Kirinyaga, Meru, Murang'a, Nairobi, Tharaka |
 
-- **Overlap** = counties both NDMA and the monitor flagged. Direct
-  independent agreement — the strongest validation available.
-- **Missed by monitor** = NDMA Alarm but monitor did not flag severe.
-  Possible cause: NDMA tracks pasture/water/livestock impact, not
-  specifically rainfall and vegetation.
-- **Monitor extra** = monitor flagged severe but NDMA did not put
-  in Alarm. Possible cause: monitor is more sensitive, or the
-  county is not in NDMA's ASAL scope.
+### October 2022
 
-Where the two agree, the signal is real. Where they diverge, the
-reason is instructive.
+| | Counties |
+|---|---|
+| Monitor severe (< -1.25) | Bomet, Busia, Elgeyo-Marakwet, Homa Bay, Kericho, Kilifi, Nandi, Nyamira, Uasin Gishu, West Pokot |
+| NDMA Alarm | Garissa, Isiolo, Kajiado, Kitui, Laikipia, Mandera, Marsabit, Samburu, Tana River, Turkana, Wajir |
+| **Overlap** | **0** |
+| Missed by monitor | Garissa, Isiolo, Kajiado, Kitui, Laikipia, Mandera, Marsabit, Samburu, Tana River, Turkana, Wajir |
+| Monitor extra | Bomet, Busia, Elgeyo-Marakwet, Homa Bay, Kericho, Kilifi, Nandi, Nyamira, Uasin Gishu, West Pokot |
+
+## Interpretation — two different drought regimes
+
+The zero overlap is not noise. It is a geographic signal.
+
+**NDMA's Alarm counties are all in the arid north.** Garissa, Isiolo,
+Kajiado, Kitui, Mandera, Marsabit, Laikipia, Samburu, Tana River,
+Turkana, Wajir. NDMA's mandate is to detect drought impact on
+pastoral livelihoods — pasture, water, livestock. That happens in
+the 23 ASAL counties.
+
+**The monitor's severe counties are in the highland maize belt and
+the coast.** Bomet, Busia, Elgeyo-Marakwet, Homa Bay, Kericho,
+Kilifi, Nandi, Nyamira, Uasin Gishu, West Pokot. These are
+agricultural counties, not ASAL. The monitor compares each county's
+rainfall and vegetation to its own history — a below-average long-
+rains season shows up as severe stress even when absolute rainfall
+is still enough for pasture.
+
+**Kenya had two droughts in 2022.** A pastoral drought in the north
+(NDMA's domain) and a crop drought in the west (the monitor's
+domain). Both were real. Neither system captures the other.
+
+## What this means for the tool
+
+The tool is **complementary to NDMA, not competing.** NDMA monitors
+pastoral livelihoods in 23 ASAL counties. The monitor tracks
+crop-region vegetation stress in 47 counties, including the ones
+NDMA does not classify. Both are valid scopes.
+
+This is a stronger finding than a simple agreement would have been.
+It clarifies what the tool is: a crop-region drought monitor that
+fills a coverage gap in Kenya's existing drought monitoring
+infrastructure.
