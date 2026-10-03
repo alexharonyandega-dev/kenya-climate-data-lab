@@ -197,3 +197,56 @@ weekly progress, and figures. The GitHub repo is the technical side.
   gitignored. The 9 split files are the committed artifact. Temperature
   converted K -> C on output; other variables native units. Used in
   Week 4 (D35) for soil moisture lead-lag analysis.
+
+## 11. County Climate Risk Profiles (CCRP)
+
+- **Files:** `data/external/reports/ccrp/CCRP_*.pdf` (8 counties)
+- **Source:** Kenya County Climate Risk Profile Series, Ministry of
+  Agriculture and Livestock Development / CGIAR
+- **Coverage:** 8 crop-severe counties from the 2022 drought
+- **Vintages:** 2016 (Busia, Homa Bay, Kilifi), 2018 (Bomet,
+  Kericho, Laikipia), 2021 (Nandi, Nyamira)
+- **Contents:** Vulnerability indices (where published), historical
+  rainfall trends (1985-2015), projected changes (2021-2065),
+  drought hazard assessments, value-chain risk analyses
+- **Downloaded:** 2026-10-03
+- **Use:** Independent county-level climate vulnerability context.
+  Only 3 of 8 reports publish a vulnerability index — see
+  `data/external/reports/ccrp/CCRP_Summary.md` for extracted values.
+
+## 12. State of the Climate in Kenya 2025 (KMD)
+
+- **File:** `data/external/reports/kmd/KMD_State_of_Climate_2025.pdf`
+- **Source:** Kenya Meteorological Department
+- **Coverage:** National, 2025 observations + historical trends
+- **Contents:** Temperature rise (~0.88°C since 1960), 2024 rainfall
+  performance, drought impact on food security, climate outlook
+- **Downloaded:** 2026-10-03
+- **Use:** Citable national context for the 2022 drought signal.
+
+## 13. NDMA Drought Bulletins 2022
+
+- **Files:** `data/external/reports/ndma/NDMA_Drought_Bulletin_*.pdf`
+- **Source:** National Drought Management Authority, via ReliefWeb
+- **Coverage:** Monthly bulletins (June 2022, October 2022)
+- **Contents:** County-level drought phase classification
+  (Normal / Alert / Alarm / Emergency)
+- **Downloaded:** 2026-10-03
+- **Use:** Independent ground-truth labels for the 2022 drought.
+  Comparison with the monitor's stress index is in
+  `data/external/reports/ndma/NDMA_2022_Labels.md`.
+- **Finding:** Zero overlap between NDMA Alarm counties and monitor
+  severe counties. NDMA covers pastoral drought in the arid north;
+  the monitor covers crop-region drought in the highland belt.
+
+## 14. TAMSAT-ALERT Validation Paper (Boult et al. 2020)
+
+- **File:** `data/external/reports/tamsat/TAMSAT_ALERT_Validation_2020.pdf`
+- **Source:** Boult et al. (2020), *Meteorological Applications*
+  27(5):e1959
+- **Contents:** Validation of TAMSAT-ALERT soil moisture and WRSI
+  forecasts against pasture availability and maize yield in Kenya
+- **Downloaded:** 2026-10-03
+- **Use:** Direct comparison point for the soil-moisture lead-lag
+  finding (r = 0.461). The paper validates the same class of signal
+  at national scale.
