@@ -1,3 +1,14 @@
+# A County-Level Drought and Vegetation Stress Monitor for All 47 Kenyan Counties
+
+**Author:** Alex Haro Nyandega  
+**Affiliation:** Independent researcher, Nairobi, Kenya  
+**Contact:** alexharonyandega@gmail.com  
+**Repository:** github.com/alexharonyandega-dev/kenya-climate-data-lab
+
+---
+
+## Abstract
+
 Kenya lacks a public drought monitor that works at county level for all 47 counties. Tools that exist either fail at county resolution or publish so late the harvest is already lost.
 
 We present a composite stress index built from CHIRPS satellite rainfall, Sentinel-2 vegetation health, and ERA5-Land soil moisture. The index compares each county-month to that county's own historical climatology, so no calibration or training data is required.
@@ -11,6 +22,10 @@ Soil moisture anomaly leads NDVI anomaly by one month (r = 0.461, 95% CI [0.436,
 We also tested whether the index predicts maize yield loss. It does not. We document the null result.
 
 The full pipeline is open source at github.com/alexharonyandega-dev/kenya-climate-data-lab.
+
+---
+
+*Note: Section 1 (Introduction) is drafted separately in Weeks 7–8. This draft currently covers the Abstract, Methods, and Validation.*
 
 ---
 
@@ -190,7 +205,7 @@ CHIRPS rainfall verification (October 2022 against 2010–2021 baseline): monito
 
 We tested whether the stress index predicts county-level maize yield loss, using KNBS county production data for the 5 counties where both signals are available.
 
-**Result:** the index does not predict yield loss. Across 20 county-year observations, correlation between stress_mean and yield change was r = −0.085 (p = 0.723). Across 5 counties in 2022 alone, r = −0.832 — but with the wrong sign, driven by a single outlier (D40).
+**Result:** the index does not predict yield loss. Across 20 county-year observations, correlation between stress_avg and yield change was r = −0.085 (p = 0.723). Across 5 counties in 2022 alone, r = −0.832 — but with the wrong sign, driven by a single outlier (D40).
 
 The outlier is Kakamega. Kakamega had the mildest 2022 stress of the 5 counties (−0.182) and the worst yield crash (−42.5%). Its area planted increased 2% while production fell 41% — a signature of pest damage, not drought. The National Agriculture Production Report 2025 (page 31) confirms a fall armyworm outbreak in the region.
 
@@ -205,3 +220,14 @@ The tool detects droughts. It does not predict crop failure. Those are different
 | Bootstrap CI | r = 0.461, [0.436, 0.485] | D38 |
 | NDMA cross-check | Zero overlap, verified by CHIRPS | `data/external/reports/ndma/NDMA_2022_Labels.md` |
 | Yield prediction | Null result | D40 |
+
+
+---
+
+## Author contributions
+
+Sole author: conceived the study, built the pipeline, ran the validation, wrote the manuscript.
+
+## Data and code availability
+
+All code, data, and decisions are in the GitHub repository at github.com/alexharonyandega-dev/kenya-climate-data-lab. The repository is MIT-licensed for code and CC-BY-4.0 for derived data. A pinned commit hash accompanies the preprint submission.
