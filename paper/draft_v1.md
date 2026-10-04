@@ -195,7 +195,7 @@ Of 31 counties with severe drought in 2022, only 8 had severe drought while maiz
 
 ![Three-way divergence](figures/fig_three_way_divergence.png)
 
-**Figure 4.** Rainfall, vegetation, and soil moisture anomalies in Kenya, 2020–2024. Rainfall bottoms out first, in 2021. Soil moisture collapses earliest in the physical chain. Vegetation collapses last, in 2022. Three signals telling three parts of the same drought.
+**Figure 3.** Rainfall, vegetation, and soil moisture anomalies in Kenya, 2020–2024. Rainfall bottoms out first, in 2021. Soil moisture collapses earliest in the physical chain. Vegetation collapses last, in 2022. Three signals telling three parts of the same drought.
 
 ### 5.2 Sensitivity analysis
 
@@ -215,7 +215,7 @@ This finding extends Boult et al. (2020), who validated TAMSAT-ALERT seasonal me
 
 ![Lead-lag curve](figures/fig_soil_moisture_lead.png)
 
-**Figure 3.** Soil moisture anomaly at month t−1 predicts NDVI anomaly at month t. The correlation peaks at lag +1 (r = 0.461, 95% CI [0.436, 0.485]). The effect is entirely temporal — within-county demeaning leaves the correlation unchanged.
+**Figure 4.** Soil moisture anomaly at month t−1 predicts NDVI anomaly at month t. The correlation peaks at lag +1 (r = 0.461, 95% CI [0.436, 0.485]). The effect is entirely temporal — within-county demeaning leaves the correlation unchanged.
 
 ### 5.4 Cross-validation against NDMA
 
