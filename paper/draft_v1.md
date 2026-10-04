@@ -68,7 +68,7 @@ For each county and each calendar month, the anomaly is defined as the standardi
 
     anomaly(county, month) = (observed - climatology_mean) / climatology_std
 
-Climatological means and standard deviations are computed per county per calendar month across all available years. This means each county is compared to its own historical distribution — not to a national average, and not to neighbouring counties. The three input anomalies (rainfall, NDVI, soil moisture) are computed with the same method.
+Climatological means and standard deviations are computed per county per calendar month across all available years. This means each county is compared to its own historical distribution — not to a national average, and not to neighbouring counties. The three input anomalies (rainfall, NDVI, soil moisture) are computed with the same method (D43).
 
 ### 3.4 Missing-value policy
 
@@ -86,5 +86,5 @@ The consequence of this policy is that downstream analyses must handle NaN. In p
 |---|---|---|
 | Spatial aggregation | Precomputed pixel masks | D06 |
 | Temporal aggregation | Weekly (rainfall) / monthly (all) | D04 |
-| Anomaly | Standardized deviation from county climatology | D03 |
+| Anomaly | Standardized deviation from county climatology | D43 |
 | Missing values | NaN — no interpolation | D07, D13, D34 |

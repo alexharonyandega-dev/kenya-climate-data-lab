@@ -562,3 +562,32 @@ can see who I am before deciding whether to reply.
 **Documented in:** `docs/outreach_notes.md`
 
 **Date:** 2026-10-05
+
+### D43 - Anomaly definition and reference period
+
+**Decision:** For each county-month, the anomaly is the standardized
+deviation of the observed value from that county's own climatological
+mean and standard deviation for the same calendar month.
+
+    anomaly(county, month) = (observed - climatology_mean) / climatology_std
+
+**Reason:** Each Kenyan county has a different baseline. Comparing
+Turkana's rainfall to Kakamega's rainfall produces meaningless
+numbers. Comparing Turkana's rainfall this October to Turkana's own
+historical October rainfall produces something a county officer can
+act on.
+
+**Reference period:** Full available record per source. CHIRPS
+2010–2024 (15 years), Sentinel-2 NDVI 2017–2024 (8 years), ERA5-Land
+1990–2024 (35 years). The reference period is not fixed across
+sources because each source has a different native coverage.
+
+**Consequence:** The anomaly is a z-score. Positive = wetter /
+greener / wetter soil than normal. Negative = drier / browner /
+drier soil than normal. Magnitudes are comparable within a source
+but not across sources with different reference periods.
+
+**Data affected:** `county_monthly_stress_2017_2024.csv`,
+`county_monthly_stress_v3.csv`, `county_weekly_rainfall_2017_2024.csv`.
+
+**Date:** 2026-10-04
