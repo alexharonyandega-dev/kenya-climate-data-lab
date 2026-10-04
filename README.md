@@ -161,4 +161,4 @@ Contributions welcome from anyone working in Kenyan agriculture, climate researc
 
 **Alex Haro Nyandega** — alexharonyandega@gmail.com — Nairobi, Kenya
 
-[GitHub](https://github.com/alexharonyandega-dev) · [X](https://x.com/KenyaClimateLab) · [Substack](https://kenyaclimatelab.substack.com)
+[GitHub](https://github.com/alexharonyandega-dev) · [X](https://x.com/KenyaClimateLab) · [Substack](https://kenyaclimatelab.substack.com) · [LinkedIn](https://linkedin.com/in/alexharonyandega)

@@ -537,3 +537,28 @@ not a data or pipeline decision.
 numbers).
 
 **Date:** 2026-10-02
+
+### D42 - LinkedIn as the alternate outreach channel after D41
+
+**Context:** D41 documented that Kenyan government .go.ke email
+servers reject Gmail. All 13 outbound emails bounced. Outreach was
+blocked.
+
+**Decision:** Activate LinkedIn as the primary outreach channel for
+county officials.
+
+**Reason:** LinkedIn DMs are read by most Kenyan public servants. The
+platform does not have the same spam-filtering problem as .go.ke
+servers. It also allows public profile visibility — a county officer
+can see who I am before deciding whether to reply.
+
+**Data affected:** None. This is an outreach infrastructure decision.
+
+**Outreach attempts:**
+- 1 LinkedIn connection request sent (Dinah Makokha)
+- 2 officials not on LinkedIn (Leonard Bor, Monicah Salano Fedha)
+- Phone call fallback remains for the 2 not on LinkedIn
+
+**Documented in:** `docs/outreach_notes.md`
+
+**Date:** 2026-10-05

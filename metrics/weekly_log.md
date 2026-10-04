@@ -146,3 +146,19 @@ and validated the full pipeline in two days.
 - 5dbb827 fix: correct TAMSAT comparison
 
 **Reflection:** Three errors caught by verification scripts: a fabricated national average, an untested "two droughts" claim, and a misread of what TAMSAT tested. Every one was a claim that sounded right. The fix is in.
+
+## Week 5 — LinkedIn setup session (2026-10-05)
+
+**Theme:** Activate LinkedIn as the alternate outreach channel after email blocked (D41)
+
+**Deliverables:**
+- LinkedIn profile fully set up: headline, headshot, banner (31-vs-8 map), About section, Featured section (3 cards), custom URL, 10 skills
+- Intro post published on the LinkedIn feed with the 31-vs-8 map attached
+- 30 accounts followed (Kenyan research, government, climate-tech, researchers)
+- 1 connection request sent (Dinah Makokha, Chief Officer Agriculture Bungoma)
+
+**Outreach outcome:**
+- 1 of 3 named officials found on LinkedIn (Dinah Makokha)
+- 2 not on LinkedIn (Leonard Bor, Monicah Salano Fedha) — phone fallback remains
+
+**Next:** Follow up with Dinah in 7 days. Phone calls for the other two officials.

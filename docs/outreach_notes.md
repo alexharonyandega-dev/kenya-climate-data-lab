@@ -121,3 +121,28 @@ messages, different medium.
 - **Kakamega County:** 056 2031850 / 056 2031852 / 056 2031853
 - **Bungoma County:** 055-2030144 / 055-203-0545
 - **KNBS:** 020 3317583 / 020 3317584 (Real Towers, Upper Hill)
+
+---
+
+## Update (2026-10-05): LinkedIn activated
+
+After the email channel was documented as blocked (D41), LinkedIn was
+activated as the alternate outreach channel.
+
+**What was done:**
+- Profile fully set up at linkedin.com/in/alexharonyandega
+- Intro post published on the feed with the 31-vs-8 map
+- 30 accounts followed (Kenyan research, government, climate-tech)
+- 1 connection request sent (Dinah Makokha, Chief Officer Agriculture, Bungoma County)
+
+**What this changes:**
+- LinkedIn is now the primary outreach channel for county officials
+- The Substack open letter remains the secondary channel (public, forwardable)
+- Phone calls remain the fallback for officials not on LinkedIn
+
+**Officials status:**
+| Official | Channel tried | Status |
+|---|---|---|
+| Dinah Makokha (Bungoma) | LinkedIn | Connection request sent |
+| Leonard Bor (Nakuru) | LinkedIn | Not found — phone fallback |
+| Monicah Salano Fedha (Bungoma) | LinkedIn | Not found — phone fallback |
