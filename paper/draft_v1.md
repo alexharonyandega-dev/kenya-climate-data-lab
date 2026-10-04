@@ -203,5 +203,5 @@ The tool detects droughts. It does not predict crop failure. Those are different
 | 2022 drought detection | 31 severe, 8 crop-severe | D24, D34 |
 | Sensitivity analysis | 28/28 combos produce 8 | D38 |
 | Bootstrap CI | r = 0.461, [0.436, 0.485] | D38 |
-| NDMA cross-check | Zero overlap, verified by CHIRPS | D41 |
+| NDMA cross-check | Zero overlap, verified by CHIRPS | `data/external/reports/ndma/NDMA_2022_Labels.md` |
 | Yield prediction | Null result | D40 |
