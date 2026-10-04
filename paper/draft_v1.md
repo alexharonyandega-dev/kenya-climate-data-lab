@@ -88,3 +88,120 @@ The consequence of this policy is that downstream analyses must handle NaN. In p
 | Temporal aggregation | Weekly (rainfall) / monthly (all) | D04 |
 | Anomaly | Standardized deviation from county climatology | D43 |
 | Missing values | NaN — no interpolation | D07, D13, D34 |
+
+---
+
+## 4. Stress Index
+
+The monitor produces two composite indices from the same underlying anomalies.
+
+### 4.1 Composite formula
+
+The composite stress index is a weighted average of the two primary anomaly signals:
+
+    stress_avg = 0.35 × rainfall_anomaly + 0.65 × ndvi_anomaly
+
+The 65/35 weighting is deliberately asymmetric. During the 2021–2022 drought, rainfall anomaly was lowest in 2021 (−0.193 annual mean), but vegetation collapse peaked a full year later in 2022 (December NDVI anomaly −1.35). Rainfall alone cannot explain that one-year lag. Vegetation integrates the accumulated soil-moisture deficit across multiple seasons. The composite therefore weights the slower-moving vegetation signal more heavily (D24).
+
+### 4.2 Stress categories
+
+Each county-month is assigned a category based on `stress_avg` (D25):
+
+| Category | Threshold |
+|---|---|
+| severe_stress | stress_avg < −1.25 |
+| moderate_stress | −1.25 ≤ stress_avg < −0.50 |
+| normal | −0.50 ≤ stress_avg ≤ +0.50 |
+| good | +0.50 < stress_avg ≤ +1.25 |
+| very_good | stress_avg > +1.25 |
+
+Thresholds are symmetric around zero at ±0.50 and ±1.25 standard deviations. Observed distribution across 2017–2024: 3.1% severe, 24.5% moderate, 41.3% normal, 20.2% good, 5.2% very good.
+
+### 4.3 stress_min as a complementary signal
+
+Alongside `stress_avg`, the monitor computes `stress_min` as the minimum of the two input anomalies:
+
+    stress_min = min(rainfall_anomaly, ndvi_anomaly)
+
+This follows the operational convention used by early-warning systems: a region is only as healthy as its worst signal. `stress_avg` is used for ranking and visualisation; `stress_min` is used for alerting (D26).
+
+### 4.4 Crop-stage weighting
+
+A second index weights the composite by maize growth stage, using the Kenya crop calendar (Section 2):
+
+    stress_weighted = stress_avg × crop_stage_weight
+
+Stage weights: planting and vegetative stages 1.0, grain fill 0.7, harvest 0.3, fallow 0.0. Nairobi, an urban county with no significant maize production, receives a NaN weight (D34).
+
+The purpose of the weighting is to distinguish drought severity from crop damage. A dry October is severe drought in Kakamega (short-rains planting) and beneficial weather in Trans Nzoia (post-harvest). The weighted index encodes that distinction.
+
+### 4.5 Two indices, two questions
+
+The final product is therefore two indices, not one (D37):
+
+- **`stress_avg`** answers: *how severe is drought in this county, regardless of land use?*
+- **`stress_weighted`** answers: *how much does this drought threaten the maize crop?*
+
+A county agriculture officer reads `stress_weighted`. A drought response coordinator reads `stress_avg`. The two indices agree in the direction of change but differ in magnitude. The distinction is preserved throughout the paper.
+
+### Summary
+
+| Component | Purpose | Reference |
+|---|---|---|
+| stress_avg | Composite drought severity | D24 |
+| Stress categories | Categorical classification | D25 |
+| stress_min | Worst-signal alerting | D26 |
+| crop_stage_weight | Growth-stage weighting | D34 |
+| stress_weighted | Crop-specific damage index | D37 |
+
+---
+
+## 5. Validation
+
+### 5.1 The 2022 Horn of Africa drought
+
+The 2021–2022 Horn of Africa drought was the worst in 40 years, with five consecutive failed rainy seasons. The monitor was applied to this period without any calibration or parameter fitting.
+
+The composite index detected severe stress across multiple counties without prior training. Of 31 counties with severe drought in 2022, only 8 had severe drought while maize was actively growing: Bomet, Busia, Homa Bay, Kericho, Kilifi, Laikipia, Nandi, and Nyamira. The other 23 counties were in harvest or fallow when the drought peaked. Kenya's largest maize producers are not on the severe list — they had already harvested.
+
+### 5.2 Sensitivity analysis
+
+The crop-stage weighting uses parameters chosen by the analyst (planting 1.0, grain_fill 0.7, harvest 0.3, fallow 0.0). To test the robustness of the 31-vs-8 result, we recomputed the 2022 severe-count across 28 alternative combinations of harvest and fallow weights, holding planting and grain_fill fixed.
+
+**Result:** every combination produces exactly 8 severe counties. The finding is not sensitive to the weight choices (D38).
+
+Additional sensitivity: varying grain_fill from 0.4 to 0.8 keeps the count at 8. Above 0.9 (grain_fill ≈ planting), the count rises to 10 then 16. The chosen 0.7 sits comfortably inside the stable range.
+
+### 5.3 Bootstrap confidence interval
+
+For the soil-moisture lead-lag relationship (soil moisture at t−1 predicts NDVI at t), we computed a 95% confidence interval using 1,000 bootstrap resamples of the 4,205 paired observations.
+
+**Result:** r = 0.461, 95% CI [0.436, 0.485]. The effect is entirely temporal: within-county demeaned correlation (0.4634) is indistinguishable from the pooled value (0.4610) (D38).
+
+### 5.4 Cross-validation against NDMA
+
+The National Drought Management Authority classifies Kenya's 23 ASAL counties into four drought phases each month. We compared the monitor's severe-stress counties against NDMA's Alarm phase in June and October 2022.
+
+**Result:** zero overlap in both months. The monitor flagged highland and coastal counties; NDMA flagged arid-north counties. The two systems are not measuring the same thing.
+
+CHIRPS rainfall verification (October 2022 against 2010–2021 baseline): monitor severe counties averaged z = −1.14; NDMA Alarm counties averaged z = −0.71. Both groups had below-normal rainfall. The two systems track different drought regimes: NDMA classifies pastoral impact in 23 ASAL counties by cumulative multi-season failure; the monitor classifies current-month crop-region vegetation stress across all 47 counties.
+
+### 5.5 Null result: the index does not predict yield
+
+We tested whether the stress index predicts county-level maize yield loss, using KNBS county production data for the 5 counties where both signals are available.
+
+**Result:** the index does not predict yield loss. Across 20 county-year observations, correlation between stress_mean and yield change was r = −0.085 (p = 0.723). Across 5 counties in 2022 alone, r = −0.832 — but with the wrong sign, driven by a single outlier (D40).
+
+The outlier is Kakamega. Kakamega had the mildest 2022 stress of the 5 counties (−0.182) and the worst yield crash (−42.5%). Its area planted increased 2% while production fell 41% — a signature of pest damage, not drought. The National Agriculture Production Report 2025 (page 31) confirms a fall armyworm outbreak in the region.
+
+The tool detects droughts. It does not predict crop failure. Those are different problems, and only the first one is currently solved.
+
+### Summary
+
+| Test | Result | Reference |
+|---|---|---|
+| 2022 drought detection | 31 severe, 8 crop-severe | D24, D34 |
+| Sensitivity analysis | 28/28 combos produce 8 | D38 |
+| Bootstrap CI | r = 0.461, [0.436, 0.485] | D38 |
+| NDMA cross-check | Zero overlap, verified by CHIRPS | D41 |
+| Yield prediction | Null result | D40 |
