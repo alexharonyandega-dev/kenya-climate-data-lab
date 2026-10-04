@@ -162,3 +162,41 @@ and validated the full pipeline in two days.
 - 2 not on LinkedIn (Leonard Bor, Monicah Salano Fedha) — phone fallback remains
 
 **Next:** Follow up with Dinah in 7 days. Phone calls for the other two officials.
+
+## Week 6 (2026-10-05 to 2026-10-11)
+
+**Theme:** Preprint draft — Abstract, Methods, Validation
+
+**Deliverables:**
+- paper/draft_v1.md — 2,431 words
+  - Abstract (178 words, four findings compressed)
+  - Title, author, contact, repository
+  - Section 2: Data Sources (5 sources documented)
+  - Section 3: Preprocessing (4 decisions)
+  - Section 4: Stress Index (5 subsections)
+  - Section 5: Validation (5 subsections)
+  - Author contributions + data availability
+- paper/figures/workflow.png (300 dpi, three-column layout)
+- D43 added to DECISIONS_LOG (anomaly method)
+- All decision references verified against DECISIONS_LOG
+- NDMA cross-check reference corrected to labels file
+- stress_mean → stress_avg consistency fix
+
+**Findings:** The abstract compresses four findings (31-vs-8,
+soil lead-lag, NDMA scope, null result) into 178 words. The methods
+section documents every pipeline decision with a numbered reference.
+
+**Commits:**
+- f97ed7a paper: abstract v1
+- a9d777c fix: sources.md — NDVI section
+- ed3850f fix: reorder and renumber sources.md
+- 29126f2 paper: data sources subsection
+- 5bf0452 paper: preprocessing subsection
+- 9b13fe7 fix: two decision references
+- e694fe6 docs: D43 for anomaly method
+- 5f6f260 paper: stress index + validation
+- 3b4ebd2 fix: NDMA reference
+- c5e4cec paper: workflow diagram
+- b40d3b3 paper: title block + author info
+
+**Next:** Week 7 — first deep external contact (KNBS + county officers).
