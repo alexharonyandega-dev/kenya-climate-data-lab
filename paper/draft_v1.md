@@ -47,3 +47,44 @@ Crop-stage information comes from a Kenya county crop calendar compiled from FEW
 | ERA5-Land | 0.1° daily | 1990–2024 | Soil moisture, temperature |
 | iSDAsoil | 30 m static | static | Soil covariates (contextual) |
 | Kenya crop calendar | county-month | static | Crop-stage weighting |
+
+---
+
+## 3. Preprocessing
+
+The pipeline converts raw gridded climate data into a county-month panel of standardized anomalies. Four preprocessing decisions shape the final product.
+
+### 3.1 Spatial aggregation via precomputed pixel masks
+
+For each of the 47 counties, a binary pixel mask is computed once from the geoBoundaries ADM1 polygon. All gridded climate sources (CHIRPS, ERA5-Land) are then masked and averaged within each county per day. This avoids per-file polygon intersection, which is the standard bottleneck for county-level satellite aggregation. Runtime for the full CHIRPS archive drops from an estimated three hours to 3.1 minutes (D06).
+
+### 3.2 Temporal aggregation
+
+CHIRPS daily rainfall is aggregated to two products: ISO-week totals (for the weekly monitor) and calendar-month sums (for the composite stress index). ERA5-Land daily means are aggregated to calendar-month means. Sentinel-2 NDVI is delivered as monthly composites directly from Google Earth Engine; no further temporal aggregation is applied.
+
+### 3.3 Anomaly computation
+
+For each county and each calendar month, the anomaly is defined as the standardized deviation of the observed value from the county's own historical climatology:
+
+    anomaly(county, month) = (observed - climatology_mean) / climatology_std
+
+Climatological means and standard deviations are computed per county per calendar month across all available years. This means each county is compared to its own historical distribution — not to a national average, and not to neighbouring counties. The three input anomalies (rainfall, NDVI, soil moisture) are computed with the same method.
+
+### 3.4 Missing-value policy
+
+Missing values are left as NaN. No interpolation is applied to any climate or vegetation signal. This decision has three components:
+
+- **December 2021 CHIRPS gap.** The Africa daily tile archive is missing all 31 daily files for December 2021. Those 1,457 county-days (31 days × 47 counties) are left as missing rather than estimated from the monthly aggregate. Interpolating across a full month would fabricate a rainfall signal that the satellites never recorded (D07).
+- **Sentinel-2 cloud gaps.** Approximately 5.6% of county-months have no clear-sky Sentinel-2 observation. Those county-months are left as NaN. The composite stress index for those months is also NaN, since NDVI is a required input (D14).
+- **Nairobi crop-stage weight.** Nairobi is an urban county with no significant maize production. Its crop-stage weight is set to NaN by design, so any crop-weighted stress value for Nairobi is NaN. The unweighted stress index is still computed for Nairobi (D34).
+
+The consequence of this policy is that downstream analyses must handle NaN. In practice: the composite stress index has NaN for approximately 5.8% of county-months, concentrated in the western highlands during the long-rains season.
+
+### Summary
+
+| Decision | Method | Reference |
+|---|---|---|
+| Spatial aggregation | Precomputed pixel masks | D06 |
+| Temporal aggregation | Weekly (rainfall) / monthly (all) | D03 |
+| Anomaly | Standardized deviation from county climatology | D03 |
+| Missing values | NaN — no interpolation | D07, D14, D34 |
