@@ -13,7 +13,11 @@ Kenya lacks a public drought monitor that works at county level for all 47 count
 
 We present a composite stress index built from CHIRPS satellite rainfall, Sentinel-2 vegetation health, and ERA5-Land soil moisture. The index compares each county-month to that county's own historical climatology, so no calibration or training data is required.
 
-Applied to the 2022 Horn of Africa drought, the index identified severe stress without calibration. Of 31 counties with severe drought in 2022, only 8 had it while maize was growing.
+Applied to the 2022 Horn of Africa drought, the index identified severe stress without calibration.
+
+![Three-way divergence](figures/fig_three_way_divergence.png)
+
+**Figure 4.** Rainfall, vegetation, and soil moisture anomalies in Kenya, 2020–2024. Rainfall bottoms out first, in 2021. Soil moisture collapses earliest in the physical chain. Vegetation collapses last, in 2022. Three signals telling three parts of the same drought. Of 31 counties with severe drought in 2022, only 8 had it while maize was growing.
 
 Cross-checked against NDMA's drought classifications, the index flagged a different set of counties. Zero overlap. Both systems were right: NDMA tracks pastoral drought in 23 ASAL counties; the index tracks crop-region vegetation stress in all 47.
 
@@ -187,6 +191,10 @@ The 2021–2022 Horn of Africa drought was the worst in 40 years, with five cons
 
 The composite index detected severe stress across multiple counties without prior training. Of 31 counties with severe drought in 2022, only 8 had severe drought while maize was actively growing: Bomet, Busia, Homa Bay, Kericho, Kilifi, Laikipia, Nandi, and Nyamira. The other 23 counties were in harvest or fallow when the drought peaked. Kenya's largest maize producers are not on the severe list — they had already harvested.
 
+![31 vs 8 counties](figures/fig_31_vs_8_map.png)
+
+**Figure 2.** The 2022 drought was a 31-county drought, but only an 8-county crop failure. Left: the 31 counties with severe drought in 2022. Right: the 8 counties where that drought hit while maize was actively growing.
+
 ### 5.2 Sensitivity analysis
 
 The crop-stage weighting uses parameters chosen by the analyst (planting 1.0, grain_fill 0.7, harvest 0.3, fallow 0.0). To test the robustness of the 31-vs-8 result, we recomputed the 2022 severe-count across 28 alternative combinations of harvest and fallow weights, holding planting and grain_fill fixed.
@@ -202,6 +210,10 @@ For the soil-moisture lead-lag relationship (soil moisture at t−1 predicts NDV
 **Result:** r = 0.461, 95% CI [0.436, 0.485]. The effect is entirely temporal: within-county demeaned correlation (0.4634) is indistinguishable from the pooled value (0.4610) (D38).
 
 This finding extends Boult et al. (2020), who validated TAMSAT-ALERT seasonal mean soil moisture against the Vegetation Condition Index (VCI) in Kenya at contemporaneous seasonal scale (r = 0.68 for March–May). Boult et al. do not test a lead-lag relationship. Our finding specifies the temporal lag — soil moisture at month t−1 predicts NDVI at month t — at county-month resolution.
+
+![Lead-lag curve](figures/fig_soil_moisture_lead.png)
+
+**Figure 3.** Soil moisture anomaly at month t−1 predicts NDVI anomaly at month t. The correlation peaks at lag +1 (r = 0.461, 95% CI [0.436, 0.485]). The effect is entirely temporal — within-county demeaning leaves the correlation unchanged.
 
 ### 5.4 Cross-validation against NDMA
 
