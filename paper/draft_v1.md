@@ -23,6 +23,8 @@ We also tested whether the index predicts maize yield loss. It does not. We docu
 
 The full pipeline is open source at github.com/alexharonyandega-dev/kenya-climate-data-lab.
 
+**Keywords:** drought monitoring, Kenya, CHIRPS, Sentinel-2 NDVI, ERA5-Land, county-level climate data, open source
+
 ---
 
 *Note: Section 1 (Introduction) is drafted separately in Weeks 7–8. This draft currently covers the Abstract, Methods, and Validation.*
@@ -30,6 +32,12 @@ The full pipeline is open source at github.com/alexharonyandega-dev/kenya-climat
 ---
 
 ## 2. Data Sources
+
+Figure 1 shows the full pipeline: five sources flow into per-source processing scripts, then into the composite stress index, then to the two output files.
+
+![Workflow diagram](figures/workflow.png)
+
+**Figure 1.** The Kenya Climate Data Lab pipeline. Five publicly accessible sources feed per-source processing scripts, which converge on the composite stress index. Two output files are produced: a monthly master table and a weekly product.
 
 The monitor uses five sources. All are publicly accessible. All are reproducible without institutional access.
 
@@ -193,6 +201,8 @@ For the soil-moisture lead-lag relationship (soil moisture at t−1 predicts NDV
 
 **Result:** r = 0.461, 95% CI [0.436, 0.485]. The effect is entirely temporal: within-county demeaned correlation (0.4634) is indistinguishable from the pooled value (0.4610) (D38).
 
+This finding extends Boult et al. (2020), who validated TAMSAT-ALERT seasonal mean soil moisture against the Vegetation Condition Index (VCI) in Kenya at contemporaneous seasonal scale (r = 0.68 for March–May). Boult et al. do not test a lead-lag relationship. Our finding specifies the temporal lag — soil moisture at month t−1 predicts NDVI at month t — at county-month resolution.
+
 ### 5.4 Cross-validation against NDMA
 
 The National Drought Management Authority classifies Kenya's 23 ASAL counties into four drought phases each month. We compared the monitor's severe-stress counties against NDMA's Alarm phase in June and October 2022.
@@ -231,3 +241,27 @@ Sole author: conceived the study, built the pipeline, ran the validation, wrote 
 ## Data and code availability
 
 All code, data, and decisions are in the GitHub repository at github.com/alexharonyandega-dev/kenya-climate-data-lab. The repository is MIT-licensed for code and CC-BY-4.0 for derived data. A pinned commit hash accompanies the preprint submission.
+
+---
+
+## Competing interests
+
+The author declares no competing interests.
+
+## References
+
+Boult, V. L., Asfaw, D. T., Young, M., Maidment, R., Mwangi, E., Ambani, M., Waruru, S., Otieno, G., Todd, M. C., & Black, E. (2020). Evaluation and validation of TAMSAT-ALERT soil moisture and WRSI for use in drought anticipatory action. *Meteorological Applications*, 27(5), e1959. https://doi.org/10.1002/met.1959
+
+Funk, C., Peterson, P., Landsfeld, M., Pedreros, D., Verdin, J., Shukla, S., Husak, G., Rowland, J., Harrison, L., Hoell, A., & Michaelsen, J. (2015). The climate hazards infrared precipitation with stations — a new environmental record for monitoring extremes. *Scientific Data*, 2, 150066. https://doi.org/10.1038/sdata.2015.66
+
+Hengl, T., Miller, M. A. E., Križan, J., Shepherd, K. D., Sila, A., Kilibarda, M., Antonijević, O., Glušica, L., Dobermann, A., Haefele, S. M., McGrath, S. P., Acquah, G. E., Collinson, J., Parente, L., Sheykhmousa, M., Saito, K., Johnson, J.-M., Chamberlin, J., Silatsa, F. B. T., … Crouch, J. (2021). African soil properties and nutrients mapped at 30 m spatial resolution using two-scale ensemble machine learning. *Scientific Reports*, 11, 6130. https://doi.org/10.1038/s41598-021-85639-y
+
+Hersbach, H., Bell, B., Berrisford, P., Hirahara, S., Horányi, A., Muñoz-Sabater, J., Nicolas, J., Peubey, C., Radu, R., Schepers, D., Simmons, A., Soci, C., Abdalla, S., Abellan, X., Balsamo, G., Bechtold, P., Biavati, G., Bidlot, J., Bonavita, M., … Thépaut, J.-N. (2020). The ERA5 global reanalysis. *Quarterly Journal of the Royal Meteorological Society*, 146(730), 1999–2049. https://doi.org/10.1002/qj.3803
+
+Kenya National Bureau of Statistics. (2025). *National Agriculture Production Report 2025*. Ministry of Agriculture and Livestock Development.
+
+Munoz-Sabater, J., Dutra, E., Agustí-Panareda, A., Albergel, C., Arduini, G., Balsamo, G., Boussetta, S., Choulga, M., Harrigan, S., Hersbach, H., Martens, B., Miralles, D. G., Piles, M., Rodríguez-Fernández, N. J., Zsoter, E., Buontempo, C., & Thépaut, J.-N. (2021). ERA5-Land: A state-of-the-art global reanalysis dataset for land applications. *Earth System Science Data*, 13(9), 4349–4383. https://doi.org/10.5194/essd-13-4349-2021
+
+National Drought Management Authority. (2022). *National Drought Early Warning Bulletin, October 2022*. Government of Kenya.
+
+FEWS NET. (2022). *Kenya Livelihood Zone Descriptions*. Famine Early Warning Systems Network. https://fews.net
