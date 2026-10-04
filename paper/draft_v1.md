@@ -11,3 +11,39 @@ Soil moisture anomaly leads NDVI anomaly by one month (r = 0.461, 95% CI [0.436,
 We also tested whether the index predicts maize yield loss. It does not. We document the null result.
 
 The full pipeline is open source at github.com/alexharonyandega-dev/kenya-climate-data-lab.
+
+---
+
+## 2. Data Sources
+
+The monitor uses five sources. All are publicly accessible. All are reproducible without institutional access.
+
+### CHIRPS 2.0 — Rainfall
+
+Rainfall data comes from the Climate Hazards Group Infrared Precipitation with Station data version 2.0 (CHIRPS 2.0), a 0.05° (~5 km) daily gridded product distributed by the University of California, Santa Barbara. CHIRPS combines satellite thermal infrared estimates with ground station records and has been widely used in East African agricultural research. We use the Africa daily tile archive for the years 2010–2024 (5,448 files, 4.3 GB). County-level daily rainfall is extracted by precomputing a pixel mask for each of the 47 county polygons, then aggregating all pixels within the mask per day. This reduces extraction runtime from an estimated three hours (polygon intersection per day per county) to 3.1 minutes for the full 15-year archive.
+
+### Sentinel-2 NDVI — Vegetation health
+
+Vegetation health comes from the Normalized Difference Vegetation Index (NDVI) derived from Sentinel-2 multispectral imagery (European Space Agency Copernicus programme, 10 m native resolution). We use monthly maximum-value composite NDVI, generated via Google Earth Engine and aggregated to county-level monthly means across the 47 counties for the years 2017–2024. The composite approach reduces cloud contamination by selecting, per pixel, the clearest observation within each month. Approximately 5.6% of county-months have no clear-sky observation and are left as missing, not interpolated.
+
+### ERA5-Land — Soil moisture and temperature
+
+Soil moisture and temperature come from ERA5-Land, a global land-surface reanalysis produced by the European Centre for Medium-Range Weather Forecasts, available at 0.1° (~9 km) hourly resolution from 1950 to present. We use daily means of four variables: volumetric soil water at 0–7 cm (swvl1) and 7–28 cm (swvl2), 2m air temperature (t2m), and potential evaporation (pev). County-level daily values are computed by masking the ERA5-Land grid to each county polygon and averaging across all covered pixels. The 1990–2024 archive provides a 35-year baseline for anomaly computation.
+
+### iSDAsoil — Soil properties
+
+Soil properties come from iSDAsoil, a 30 m resolution African soil property map derived from machine learning over 130,000 field samples. We use 14 properties — including pH, organic carbon, total nitrogen, cation exchange capacity, and texture fractions — aggregated to county-level means via zonal statistics over the 47 county polygons. Unlike the climate sources, iSDAsoil is static: it provides one value per county rather than a time series. We include it as a contextual covariate, not as a dynamic input to the composite index.
+
+### Kenya crop calendar — Crop-stage weighting
+
+Crop-stage information comes from a Kenya county crop calendar compiled from FEWS NET livelihood profiles, FAO crop calendars, and county agronomy extension reports. The calendar assigns each of the 47 counties to one of seven agro-ecological zones and specifies, for each county, the start and end months of the long-rains and short-rains seasons and the primary harvest month. We use this to weight each county-month by maize growth stage: planting and vegetative stages receive weight 1.0, grain fill 0.7, harvest 0.3, and fallow 0.0. Nairobi, an urban county, receives a missing weight.
+
+### Summary
+
+| Source | Resolution | Coverage | Role |
+|---|---|---|---|
+| CHIRPS 2.0 | 0.05° daily | 2010–2024 | Primary rainfall signal |
+| Sentinel-2 NDVI | 10 m monthly composite | 2017–2024 | Primary vegetation signal |
+| ERA5-Land | 0.1° daily | 1990–2024 | Soil moisture, temperature |
+| iSDAsoil | 30 m static | static | Soil covariates (contextual) |
+| Kenya crop calendar | county-month | static | Crop-stage weighting |
