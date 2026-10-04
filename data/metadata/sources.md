@@ -10,6 +10,7 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
 - **Fields:** Year, Item, hg/ha_yield, average_rain_fall_mm_per_year, pesticides_tonnes, avg_temp, Area
 - **Notes:** Yield in hg/ha — divide by 10,000 for t/ha.
 
+
 ## 2. FAOSTAT — Maize Yield for Kenya
 
 - **File:** `data/raw/faostat_maize_yield_kenya.csv`
@@ -19,6 +20,7 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
 - **Notes:** Unit is **kg/ha** (not hg/ha as the original plan stated) — divide by 1,000 for t/ha.
 - **Extended 2026-09-26:** Originally downloaded 2010–2024 (15 rows). Re-downloaded with full 1961–2024 range (64 rows) to pair with the extended CHIRPS/ERA5 climate history. Value range: 1071–2071 kg/ha across 64 years. Pre-2010 rows are flagged as "Estimated value" in the `Flag` column; post-2010 rows are "Official value".
 
+
 ## 3. CHIRPS 2.0 — Precipitation
 
 - **Files:** `data/raw/chirps_daily/YYYY/chirps-v2.0.YYYY.MM.DD.tif.gz`
@@ -26,7 +28,8 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
 - **Coverage:** Africa daily, 2010–2024 (5,448 files, 4.3 GB)
 - **Notes:** December 2021 daily files missing from archive; monthly aggregate (`2021_monthly/chirps-v2.0.2021.12.monthly.tif.gz`) downloaded as fallback. Excluded from git via `.gitignore`.
 
-## 3b. Sentinel-2 NDVI — Vegetation Health
+
+## 4. Sentinel-2 NDVI — Vegetation Health
 
 - **File:** `data/processed/ndvi_counties_monthly_2017_2024.csv`
 - **Source:** Sentinel-2 Level-2A multispectral imagery (European Space
@@ -47,7 +50,8 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
 
 ---
 
-## 4. HDX / World Bank — Kenya Agriculture Indicators
+
+## 5. HDX / World Bank — Kenya Agriculture Indicators
 
 - **File:** `data/raw/hdx_kenya_agriculture.csv`
 - **Source:** https://data.humdata.org/dataset/world-bank-agriculture-and-rural-development-indicators-for-kenya
@@ -55,7 +59,8 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
 - **Fields:** Country Name, Country ISO3, Year, Indicator Name, Indicator Code, Value
 - **Notes:** Includes `Cereal yield (kg per hectare)`, `Average precipitation in depth (mm per year)`, `Fertilizer consumption`, and 34 other agriculture indicators.
 
-## 5. Mendeley — Kenya Maize & Soil Dataset
+
+## 6. Mendeley — Kenya Maize & Soil Dataset
 
 - **Files:**
   - `data/raw/mendeley_maize_experiment.csv` (384 rows, 12 cols — agronomic use efficiency)
@@ -65,7 +70,8 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
 - **Coverage:** Sub-humid (Kibugu) and semi-arid (Machang'a) sites in Kenya; 4 seasons of conservation agriculture trial.
 - **Notes:** Original file was Excel with 3 sheets; converted to 3 CSVs.
 
-## 6. Zenodo — Push-Pull Farming System
+
+## 7. Zenodo — Push-Pull Farming System
 
 - **Files:**
   - `data/raw/zenodo_push_pull.csv` (4,932 rows, 99 cols)
@@ -75,7 +81,8 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
 - **Fields:** farmer, region, year, season, trt (treatment), stem, striga, yield + 90 climate covariate columns
 - **Notes:** Original files were RData; converted to CSV using R.
 
-## 7. KNBS — County Maize Production
+
+## 8. KNBS — County Maize Production
 
 - **File:** `data/raw/knbs_county_agriculture.csv`
 - **Source:** Kenya National Bureau of Statistics, National Agriculture Production Report 2025, Annex 1, pp. 162.
@@ -85,7 +92,8 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
 - **Fields:** County, Year, Area_Ha, Production_Tons
 - **Notes:** Extracted from PDF Annex 1 using pypdfium2. Only rows for Nakuru, Kakamega, Bungoma, Trans Nzoia, Uasin Gishu retained.
 
-## 8. ERA5-Land — Climate variables (extended)
+
+## 9. ERA5-Land — Climate variables (extended)
 
 - **Files:** `data/raw/era5_variables/era5_{var}_2010_2024.nc` (9 files)
 - **Source:** Earth Data Hub — ERA5-Land Daily UTC v1
@@ -104,7 +112,8 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
   - `pev` — metres of water, **NEGATIVE by ERA5 convention** (negative = evaporation). Multiply by −1 to get positive evaporation rate.
 - **Notes:** Served as Zarr store via Earth Data Hub, sliced to Kenya bbox, saved per-variable with zlib compression level 9. Enables calculation of the three highest-value agronomic features: **GDD** (t2m + ssrd), **VPD** (t2m + d2m), **drought stress** (swvl1 + swvl2 + tp).
 
-## 9. KMD — Rainfall (Not obtained)
+
+## 10. KMD — Rainfall (Not obtained)
 
 - **File:** `data/raw/kmd_rainfall_1981_2024.csv` (not obtained)
 - **Source:** Kenya Meteorological Department, ENACTS daily rainfall
@@ -119,7 +128,8 @@ All datasets used in the Kenya Climate Data Lab project. Downloaded between Sept
 
 *Last updated: 2026-09-22*
 
-## 10. iSDAsoil — Soil Properties
+
+## 11. iSDAsoil — Soil Properties
 
 - **File:** `data/raw/isda_soil_properties_by_county.csv`
 - **Source:** iSDA (Innovative Solutions for Decision Agriculture)
@@ -182,16 +192,8 @@ County ranking is geographically correct:
 - Wettest: Vihiga, Kakamega, Kisii, Nyamira, Nandi (western highlands)
 - Driest: Isiolo, Marsabit, Turkana, Wajir, Mandera (northern ASALs)
 
-## Project links
 
-- **Substack (weekly journal):** https://kenyaclimatelab.substack.com
-- **X / Twitter:** https://x.com/KenyaClimateLab
-- **GitHub:** https://github.com/alexharonyandega-dev/kenya-climate-data-lab
-
-The Substack is where the project narrative lives - methodology decisions,
-weekly progress, and figures. The GitHub repo is the technical side.
-
-## 15. Kenya Crop Calendar (compiled)
+## 12. Kenya Crop Calendar (compiled)
 
 - **File:** `data/metadata/kenya_crop_calendar.csv`
 - **Source:** Compiled by Alex Haro Nyandega from zone descriptions in
@@ -205,7 +207,8 @@ weekly progress, and figures. The GitHub repo is the technical side.
   stage. Weight mapping: planting/vegetative 1.0, grain_fill 0.7,
   harvest 0.3, fallow 0.0, Nairobi NaN.
 
-## 16. ERA5-Land — County Aggregation
+
+## 13. ERA5-Land — County Aggregation
 
 - **Files:** `data/processed/era5_counties/era5_<var>_counties_daily.csv`
   (9 files, ~600,848 rows each, ~24 MB per file)
@@ -219,7 +222,8 @@ weekly progress, and figures. The GitHub repo is the technical side.
   converted K -> C on output; other variables native units. Used in
   Week 4 (D35) for soil moisture lead-lag analysis.
 
-## 11. County Climate Risk Profiles (CCRP)
+
+## 14. County Climate Risk Profiles (CCRP)
 
 - **Files:** `data/external/reports/ccrp/CCRP_*.pdf` (8 counties)
 - **Source:** Kenya County Climate Risk Profile Series, Ministry of
@@ -235,7 +239,8 @@ weekly progress, and figures. The GitHub repo is the technical side.
   Only 3 of 8 reports publish a vulnerability index — see
   `data/external/reports/ccrp/CCRP_Summary.md` for extracted values.
 
-## 12. State of the Climate in Kenya 2025 (KMD)
+
+## 15. State of the Climate in Kenya 2025 (KMD)
 
 - **File:** `data/external/reports/kmd/KMD_State_of_Climate_2025.pdf`
 - **Source:** Kenya Meteorological Department
@@ -245,7 +250,8 @@ weekly progress, and figures. The GitHub repo is the technical side.
 - **Downloaded:** 2026-10-03
 - **Use:** Citable national context for the 2022 drought signal.
 
-## 13. NDMA Drought Bulletins 2022
+
+## 16. NDMA Drought Bulletins 2022
 
 - **Files:** `data/external/reports/ndma/NDMA_Drought_Bulletin_*.pdf`
 - **Source:** National Drought Management Authority, via ReliefWeb
@@ -260,7 +266,8 @@ weekly progress, and figures. The GitHub repo is the technical side.
   severe counties. NDMA covers pastoral drought in the arid north;
   the monitor covers crop-region drought in the highland belt.
 
-## 14. TAMSAT-ALERT Validation Paper (Boult et al. 2020)
+
+## 17. TAMSAT-ALERT Validation Paper (Boult et al. 2020)
 
 - **File:** `data/external/reports/tamsat/TAMSAT_ALERT_Validation_2020.pdf`
 - **Source:** Boult et al. (2020), *Meteorological Applications*
@@ -271,3 +278,12 @@ weekly progress, and figures. The GitHub repo is the technical side.
 - **Use:** Direct comparison point for the soil-moisture lead-lag
   finding (r = 0.461). The paper validates the same class of signal
   at national scale.
+
+## Project links
+
+- **Substack (weekly journal):** https://kenyaclimatelab.substack.com
+- **X / Twitter:** https://x.com/KenyaClimateLab
+- **GitHub:** https://github.com/alexharonyandega-dev/kenya-climate-data-lab
+
+The Substack is where the project narrative lives - methodology decisions,
+weekly progress, and figures. The GitHub repo is the technical side.
