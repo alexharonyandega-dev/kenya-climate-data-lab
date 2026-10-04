@@ -60,7 +60,7 @@ For each of the 47 counties, a binary pixel mask is computed once from the geoBo
 
 ### 3.2 Temporal aggregation
 
-CHIRPS daily rainfall is aggregated to two products: ISO-week totals (for the weekly monitor) and calendar-month sums (for the composite stress index). ERA5-Land daily means are aggregated to calendar-month means. Sentinel-2 NDVI is delivered as monthly composites directly from Google Earth Engine; no further temporal aggregation is applied.
+CHIRPS daily rainfall is aggregated to two products: ISO-week totals (for the weekly monitor) and calendar-month sums (for the composite stress index). ERA5-Land daily means are aggregated to calendar-month means. Sentinel-2 NDVI is delivered as monthly composites directly from Google Earth Engine; no further temporal aggregation is applied (D04).
 
 ### 3.3 Anomaly computation
 
@@ -75,7 +75,7 @@ Climatological means and standard deviations are computed per county per calenda
 Missing values are left as NaN. No interpolation is applied to any climate or vegetation signal. This decision has three components:
 
 - **December 2021 CHIRPS gap.** The Africa daily tile archive is missing all 31 daily files for December 2021. Those 1,457 county-days (31 days × 47 counties) are left as missing rather than estimated from the monthly aggregate. Interpolating across a full month would fabricate a rainfall signal that the satellites never recorded (D07).
-- **Sentinel-2 cloud gaps.** Approximately 5.6% of county-months have no clear-sky Sentinel-2 observation. Those county-months are left as NaN. The composite stress index for those months is also NaN, since NDVI is a required input (D14).
+- **Sentinel-2 cloud gaps.** Approximately 5.6% of county-months have no clear-sky Sentinel-2 observation. Those county-months are left as NaN. The composite stress index for those months is also NaN, since NDVI is a required input (D13).
 - **Nairobi crop-stage weight.** Nairobi is an urban county with no significant maize production. Its crop-stage weight is set to NaN by design, so any crop-weighted stress value for Nairobi is NaN. The unweighted stress index is still computed for Nairobi (D34).
 
 The consequence of this policy is that downstream analyses must handle NaN. In practice: the composite stress index has NaN for approximately 5.8% of county-months, concentrated in the western highlands during the long-rains season.
@@ -85,6 +85,6 @@ The consequence of this policy is that downstream analyses must handle NaN. In p
 | Decision | Method | Reference |
 |---|---|---|
 | Spatial aggregation | Precomputed pixel masks | D06 |
-| Temporal aggregation | Weekly (rainfall) / monthly (all) | D03 |
+| Temporal aggregation | Weekly (rainfall) / monthly (all) | D04 |
 | Anomaly | Standardized deviation from county climatology | D03 |
-| Missing values | NaN — no interpolation | D07, D14, D34 |
+| Missing values | NaN — no interpolation | D07, D13, D34 |
