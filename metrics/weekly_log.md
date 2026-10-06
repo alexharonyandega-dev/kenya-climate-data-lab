@@ -200,3 +200,18 @@ section documents every pipeline decision with a numbered reference.
 - b40d3b3 paper: title block + author info
 
 **Next:** Week 7 — first deep external contact (KNBS + county officers).
+
+## Week 6 — Extended (2026-10-05, Monday)
+
+**Theme:** Preprint methods section published as a Substack milestone post
+
+**Deliverables:**
+- Substack post: "The methods section is done" (~1,200 words)
+- LinkedIn post: short version of the same milestone
+- Both cross-posted the day after ASM feature submission
+
+**Context:** The methods section draft (3,018 words) was completed over the weekend. This post marks the milestone publicly, before Week 7's mentor outreach begins.
+
+**Commits:** (this session)
+- 42ade07 docs: log ASM feature post submission
+- a62554a fix: dedupe ASM row in outreach log
