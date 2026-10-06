@@ -67,7 +67,7 @@ Full pipeline documentation: [docs/architecture.md](docs/architecture.md).
 | CHIRPS rainfall | data.chc.ucsb.edu | 2010-2024, 47 counties | Primary rainfall signal |
 | Sentinel-2 NDVI | Google Earth Engine | 2017-2024, 47 counties | Primary vegetation signal |
 | ERA5-Land climate | Earth Data Hub | 1990-2024, 9 variables | Temperature, soil moisture |
-| iSDAsoil | iSDA Africa | 8 properties, 20M px/county | Soil covariates |
+| iSDAsoil | iSDA Africa | 14 properties, 30m raster | Soil covariates |
 | FAOSTAT yield | fao.org/faostat | 1961-2024, national | Validation |
 | KNBS county maize | knbs.or.ke | 2020-2024, county | Validation |
 | Kenya boundaries | geoBoundaries | 47 counties, GeoJSON | Spatial reference |
@@ -98,7 +98,7 @@ See `data/metadata/sources.md` for full details.
 
 ## Current status
 
-- **Phase:** Foundation (Week 5 of 72)
+- **Phase:** Foundation (Week 6 of 72)
 - **Master table:** `county_monthly_stress_v3.csv` — 4,512 rows x 27 cols
 - **Weekly product:** `county_weekly_stress_2017_2024.csv` — 19,599 rows
 - **Stress monitor:** Working, monthly composite + weekly rainfall
@@ -106,7 +106,7 @@ See `data/metadata/sources.md` for full details.
 - **Soil moisture lead-lag:** 1 month, r=0.461, 95% CI [0.436, 0.485]
 - **Coverage:** All 47 Kenyan counties, 2017-2024
 - **Independent cross-checks:** NDMA (zero overlap, CHIRPS-verified), CCRP (3 of 8 indices), TAMSAT (contemporaneous comparison)
-- **Next milestone:** Preprint draft (Week 6)
+- **Next milestone:** Introduction (Section 1) — Weeks 7–8
 
 ## Week 4 highlights
 
