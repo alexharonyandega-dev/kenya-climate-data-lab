@@ -33,3 +33,4 @@ data/external/*.cpg
 
 # Keep the GEE upload zip
 !data/external/kenya_counties_shp.zip
+data/processed/ndvi_counties_monthly_2024_test.csv
