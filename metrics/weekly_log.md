@@ -215,3 +215,28 @@ section documents every pipeline decision with a numbered reference.
 **Commits:** (this session)
 - 42ade07 docs: log ASM feature post submission
 - a62554a fix: dedupe ASM row in outreach log
+
+## Week 7 — Pre-work (2026-10-06, Tuesday)
+
+**Theme:** GitHub Student Pack + LinkedIn infrastructure
+
+**Wins:**
+- GitHub Student Developer Pack APPROVED (3rd application; first two
+  rejected for name mismatch + missing school name + missing date).
+- `alex.haro@mpesafoundationacademy.ac.ke` verified as secondary email
+  on GitHub.
+- GitHub billing info updated with full legal name: Alex Haro Nyandega.
+- 72-hour activation window until Oct 8. Benefits unlock Thursday.
+
+**Blocked:**
+- LinkedIn company page creation blocked by "Feature not available —
+  Please verify your workplace." LinkedIn requires a non-free-provider
+  work email. Solution: claim free `.me` domain via Student Pack on
+  Oct 8, set up Zoho Mail, use `alex@kenyaclimatelab.me` to verify.
+
+**Ready to resume:**
+- KNBS + county officer emails can be sent immediately from
+  `alex.haro@mpesafoundationacademy.ac.ke`. Not blocking on domain.
+
+**Commits:** (this entry)
+- (see commit hash on push)

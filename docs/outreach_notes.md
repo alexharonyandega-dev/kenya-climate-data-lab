@@ -146,3 +146,31 @@ activated as the alternate outreach channel.
 | Dinah Makokha (Bungoma) | LinkedIn | Connection request sent |
 | Leonard Bor (Nakuru) | LinkedIn | Not found — phone fallback |
 | Monicah Salano Fedha (Bungoma) | LinkedIn | Not found — phone fallback |
+
+---
+
+## LinkedIn company page blocked (2026-10-06)
+
+**Attempted:** Create a company page for "Kenya Climate Data Lab" at
+linkedin.com/company/setup/new/
+
+**Result:** LinkedIn returned "Feature not available — Please verify
+your workplace before creating a LinkedIn Page."
+
+**Cause:** LinkedIn requires new or low-activity accounts to verify
+workplace association before creating company pages. The original
+alexharonyandega@gmail.com address is on LinkedIn's free-provider
+blacklist. The verified `.ac.ke` school email is already associated
+with a dormant LinkedIn account that requires ID verification to
+recover — not available to the user.
+
+**Resolution path:** On 2026-10-08 (after Student Pack activates),
+claim free `.me` domain via Namecheap. Set up Zoho Mail free tier on
+the new domain. Get `alex@kenyaclimatelab.me`. Use that address for
+LinkedIn workplace verification.
+
+**Impact on outreach:** None. The KNBS + county officer outreach
+emails can be sent today from `alex.haro@mpesafoundationacademy.ac.ke`
+without waiting for the domain.
+
+**Date:** 2026-10-06
