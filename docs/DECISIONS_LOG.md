@@ -631,3 +631,38 @@ working tree on 2026-10-08 and deleted before any `git add` — no
 round-2 data exists in the repository or its history.
 
 **Date:** 2026-10-08
+
+---
+
+### D45 - Defer Week 7 user-feedback ask to Week 14
+
+**Decision:** Do not send the Week 7 plan's user-feedback ask
+("Ask the 5 people you emailed this week to try the tool") during
+Week 7. Defer the ask to Week 14, when the public Streamlit URL
+exists.
+
+**Reason:** The Week 7 plan assumes a testable user interface is
+available. At Week 7 the monitor exists only as Python scripts and
+Jupyter notebooks in the repository. The public app is built in
+Week 13 (`content.gs`, "Build the Drought Monitor App — Local
+Streamlit") and deployed in Week 14 ("Deploy the Drought Monitor
+to the Cloud"). Asking a mentor researcher to clone a repository,
+set up a conda environment, and run notebooks for feedback
+produces a low response rate and a poor first impression of the
+project. The same ask made in Week 14 is a single clickable URL.
+
+**Trigger to revisit:** When the app is live at a public
+share.streamlit.io URL (Week 14). At that point, send the ask to
+the 6 round-1 mentors whose delivery status is `sent_unconfirmed`
+in `metrics/mentor_targets.csv`, plus any new contacts from
+Weeks 8–13.
+
+**Consequence:** Week 7 closes without the user-feedback ask. The
+ask is not skipped, it is scheduled to the week the tool becomes
+testable. A reader six months from now can see that Week 7's
+feedback ask became Week 14's, and why.
+
+**Data affected:** None yet. `metrics/mentor_targets.csv` will
+gain a `feedback_requested` column when the Week 14 ask goes out.
+
+**Date:** 2026-10-08
