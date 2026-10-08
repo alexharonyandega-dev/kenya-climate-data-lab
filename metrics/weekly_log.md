@@ -240,3 +240,48 @@ section documents every pipeline decision with a numbered reference.
 
 **Commits:** (this entry)
 - (see commit hash on push)
+
+## Week 7 — Completed (2026-10-08, Thursday)
+
+**Theme:** First deep external contact — 9 mentor emails sent, 3 deviations logged, X thread live
+
+**Wins:**
+- 9 personalised mentor emails sent from Gmail at 4:56–5:05 PM EAT.
+- Round-1 shortlist logged in `metrics/mentor_targets.csv`: Ogembo,
+  Kipkulei, Macharia, Omondi, Mwaura, Kenduiywo, Musa, Ndungu, Sande.
+- X thread on the null result posted from @KenyaClimateLab.
+- Honest status logging: each row traces to an SMTP code or a
+  `sent_unconfirmed` marker. No fabricated deliveries.
+
+**Deviations (all logged as D-numbers):**
+- **Shortlist 9/10.** Tenth candidate not pursued by decision; no new
+  institution type would have been added.
+- **D44** — second batch of 10 emails deferred. Round 1 landed 9 sends
+  (plan target was 5). Trigger to revisit: response rate below 20% by
+  2026-10-22.
+- **D45** — user-feedback ask deferred to Week 14, when the public
+  Streamlit URL exists (build W13, deploy W14).
+- **D41 supersession** — KNBS + county officer follow-up is moot: email
+  channel documented as blocked on 2026-10-02 (13 emails, 0 delivered).
+
+**Open / unresolved:**
+- 6 of 9 mentors: `sent_unconfirmed` — no bounce, no reply yet.
+- 2 of 9: `bounced_5.1.1` (Macharia, Ndungu) — mailbox does not exist.
+- 1 of 9: `bounced_5.4.1_blocked` (Omondi) — recipient server refused Gmail.
+- No custom domain yet; all sends from Gmail. Student Pack domain
+  activates 2026-10-08.
+
+**Commits (this session):**
+- 5f29057 docs: mentor emails sent from Gmail — 3 bounces logged
+  (message corrected later)
+- b276698 docs: log mentor send statuses honestly — corrects 5f29057
+- 3decc49 docs: D44 — defer Week 7 second-batch mentor outreach
+- 58fb11c + 21f6ccf docs: D45 — defer Week 7 user-feedback ask to Week 14
+  (accidental duplicate)
+- 8411d73 Revert "docs: D45 — defer Week 7 user-feedback ask to Week 14"
+- 8a34a67 docs: Week 7 reflection
+
+**Carry forward to Week 8:**
+- Paper Introduction (was W7–W8 work; Week 7 consumed by outreach).
+- Second batch of 10 mentor emails — contingent on D44 trigger.
+- User feedback ask — Week 14 per D45.
