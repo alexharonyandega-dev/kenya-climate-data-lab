@@ -591,3 +591,43 @@ but not across sources with different reference periods.
 `county_monthly_stress_v3.csv`, `county_weekly_rainfall_2017_2024.csv`.
 
 **Date:** 2026-10-04
+
+---
+
+### D44 - Week 7 scope reduction: defer second batch of mentor emails
+
+**Decision:** Do not draft the second batch of 10 mentor emails that
+the Week 7 plan (`content.gs`) specifies. Close Week 7 with a
+shortlist of 9 and 9 sends instead of a shortlist of 10 and 5 sends.
+
+**Reason:** The plan's "second batch of 10 drafted" deliverable
+assumed round 1 would land ~5 sends. Round 1 actually landed 9
+sends on 2026-10-08 (`metrics/mentor_targets.csv`) — 4 more than
+the plan's target. With 9 emails in flight and no replies received
+yet, drafting a further 10 personalised emails is redundant work
+until the round-1 response rate is known. Sending more before
+reading the first responses would be outreach without feedback.
+
+**Trigger to revisit:** If the round-1 response rate (replies ÷
+sends) is below 20% by 2026-10-22 (14 days from send date),
+draft the second batch at that point. Apply the same
+source-verification standard used for round 1: every email address
+must trace to a corresponding-author line in the cited paper or a
+verified institutional profile. No inferred or pattern-matched
+addresses.
+
+**Consequence:** Week 7 closes with these metrics:
+- Shortlist: 9 of 10 (one short by plan target)
+- Sends: 9 of 5 (four over plan target)
+- Second batch: deferred by this decision, not skipped
+
+Week 8 proceeds on schedule. The deferred batch is contingent work
+whose trigger condition is documented here, so a reader six months
+from now can reconstruct exactly why it does not exist yet.
+
+**Data affected:** `metrics/mentor_targets.csv` (round 1 only, 9
+rows). A round-2 CSV and a shortlist scratchpad were created in the
+working tree on 2026-10-08 and deleted before any `git add` — no
+round-2 data exists in the repository or its history.
+
+**Date:** 2026-10-08
