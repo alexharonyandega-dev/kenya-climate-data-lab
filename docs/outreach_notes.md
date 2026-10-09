@@ -174,3 +174,21 @@ emails can be sent today from `alex.haro@mpesafoundationacademy.ac.ke`
 without waiting for the domain.
 
 **Date:** 2026-10-06
+
+---
+
+## Update (2026-10-09): Domain + Zoho + LinkedIn unblocked
+
+**Student Developer Pack status:** Confirmed active. Benefits valid
+through 2026-10-08 → 2028-10-06. Copilot sign-ups paused per GitHub
+email, but the Namecheap + Zoho path is unaffected.
+
+**What is now possible (per D41 / D42 resolution path):**
+1. Claim free `.me` domain from Namecheap via Student Pack.
+2. Set up Zoho Mail Free Forever on that domain.
+3. Create `alex@kenyaclimatelab.me`.
+4. Use that address to verify LinkedIn workplace.
+5. Create the LinkedIn company page for Kenya Climate Data Lab.
+
+**Action taken:** Work started 2026-10-09 (same-day). Steps recorded
+below as they complete.
