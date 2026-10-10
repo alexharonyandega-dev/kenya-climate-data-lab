@@ -190,5 +190,16 @@ email, but the Namecheap + Zoho path is unaffected.
 4. Use that address to verify LinkedIn workplace.
 5. Create the LinkedIn company page for Kenya Climate Data Lab.
 
-**Action taken:** Work started 2026-10-09 (same-day). Steps recorded
-below as they complete.
+**Action taken:** Work executed 2026-10-09. Outcomes recorded below.
+
+- Domain: kenyaclimatelab.me registered via Namecheap Student Pack
+  (free, expires 2027-10-09).
+- Mail: Zoho Mail Free Forever. Mailbox alex@kenyaclimatelab.me
+  created and operational.
+- DNS: 3 MX records (mx / mx2 / mx3.zoho.com, priorities 10 / 20 / 50),
+  1 SPF TXT (v=spf1 include:zohomail.com ~all), 1 DKIM TXT
+  (zmail._domainkey). All records verified by Zoho on 2026-10-09.
+- Send/receive test: bidirectional test with Gmail passed.
+- LinkedIn primary email: switched to alex@kenyaclimatelab.me.
+- LinkedIn company page: BLOCKED by account-age gate. See D46 in
+  docs/DECISIONS_LOG.md.

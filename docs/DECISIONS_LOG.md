@@ -666,3 +666,51 @@ feedback ask became Week 14's, and why.
 gain a `feedback_requested` column when the Week 14 ask goes out.
 
 **Date:** 2026-10-08
+
+---
+
+### D46 - LinkedIn company page blocked by account-age gate
+
+**Decision:** Do not pursue LinkedIn company page creation further in
+October 2026. Log the block, schedule a retry for 2026-11-06 (one
+month after account creation), and move on.
+
+**Reason:** Two attempts to create the Kenya Climate Data Lab company
+page at linkedin.com/company/setup/new/ returned "Feature not
+available — Please verify your workplace before creating a LinkedIn
+Page." The modal's "Verify" button routes to identity verification
+(government ID upload via CLEAR/Persona), which is a separate feature
+and does not unblock company page creation.
+
+After D41's resolution on 2026-10-09 (custom domain
+kenyaclimatelab.me, Zoho mailbox alex@kenyaclimatelab.me, LinkedIn
+primary email switched to that address), the same block recurred.
+LinkedIn's verifications page confirms the account has no
+verifications associated. This is an account-age and activity gate,
+not an email-address gate.
+
+The account was created approximately 2026-10-06 with 7 connections
+and minimal activity history. LinkedIn does not disclose the exact
+threshold, but community reports converge on 30 days of activity
+before company page creation is unlocked for new accounts.
+
+**What was NOT done:** Government ID verification via LinkedIn's
+partner. Reasons: (1) not required for the intended outcome; (2)
+involves uploading government ID to a third-party verification
+provider, disproportionate for the goal; (3) not part of the project
+plan; (4) not reversible.
+
+**Trigger to revisit:** 2026-11-06 (one month after account creation).
+Retry linkedin.com/company/setup/new/. If still blocked, extend by 30
+days and log again.
+
+**Consequence:** Company page deferred by one month. Impact on the
+project: none on the critical path. The company page is not a
+prerequisite for Week 8 user testing, Week 9 dashboard, or Weeks
+13-14 app deployment. It supports outward signaling (portfolio,
+LinkedIn presence) that becomes relevant at Week 11 portfolio build
+and Week 61 portfolio rebuild.
+
+**Data affected:** None. docs/outreach_notes.md references this entry.
+
+**Date:** 2026-10-10
