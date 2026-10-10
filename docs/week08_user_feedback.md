@@ -152,19 +152,7 @@ as the canonical master. Details in the fix commit.
 
 ## 8. Quotes
 
-Pseudonymised, lightly edited for grammar only. Verbatim structure
-preserved.
-
-> "The code is well organised. I didn't expect this level of structure
-> from a high-school project." — User A
-
-> "I like that you cite the source data properly. That matters." —
-> User B
-
-> "The pivot was the smartest part. Most people would have kept the
-> model and pretended it worked." — User C
-
-> "I would want to use this once it's ready." — User D
-
-> "This could be used by bigger organisations, not just one person
-> looking at one county." — User E
+Verbatim quotes withheld pending user confirmation. Will be added in
+a follow-up commit once each user has confirmed the exact wording.
+The paraphrased summaries in §3 and §4 stand on their own as the
+substantive record of this week's feedback.
