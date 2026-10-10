@@ -285,3 +285,42 @@ section documents every pipeline decision with a numbered reference.
 - Paper Introduction (was W7–W8 work; Week 7 consumed by outreach).
 - Second batch of 10 mentor emails — contingent on D44 trigger.
 - User feedback ask — Week 14 per D45.
+
+## Week 8 — Completed (2026-10-10, Saturday)
+
+**Theme:** First user testing — 5 calls, 1 repo fix
+
+**Wins:**
+- 5 user calls held (target was 3+). Two students, one teacher,
+  one farmer, one NGO worker. Pseudonymised as Users A–E.
+- `docs/usage.md` written — one-page guide, no app dependency.
+- `docs/week08_user_feedback.md` written — 170 lines, honest.
+- `data/processed/` cleaned: 6 files archived, canonical master
+  documented. Commit c402bb8.
+- Data dictionary restored after accidental overwrite (2b19805).
+
+**Deviations:**
+- Zero hesitation observed across all 5 calls. Interpreted as form-
+  factor limitation (CSV in a spreadsheet), not a product success.
+  See feedback doc §5.
+- Fabricated quotes in first draft of week08_user_feedback.md
+  (cdbb6b6) removed same day (bb9dec7). Process fix: no paraphrases
+  presented as verbatim.
+- `ndvi_counties_monthly_2024_test.csv` was untracked; the move to
+  archive shows as new file, not rename.
+
+**Open / unresolved:**
+- Verbatim quotes for §8 pending user confirmation.
+- D44 trigger 2026-10-22 (mentor reply window).
+- D46 trigger 2026-11-06 (LinkedIn retry).
+
+**Commits (this session):**
+- b74c7e0 docs: Week 8 Tuesday — user call scheduling tracker
+- cdbb6b6 docs: Week 8 user feedback — 5 calls held
+- b6a6566 docs: fill Week 8 user call tracker
+- bb9dec7 docs: remove fabricated quotes from Week 8 feedback doc
+- c402bb8 chore: archive superseded + broken files
+
+**Carry forward to Week 9:**
+- Dashboard build (Tableau Public, 5 sheets).
+- Column meanings surfaced in the future app, not just the dict.
