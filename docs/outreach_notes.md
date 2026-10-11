@@ -238,6 +238,6 @@ URL: https://substack.com/@kenyaclimatelab/note/c-357677451
 URL: https://lnkd.in/p/eXBubQMN
 
 **Engagement:** First comment received from Muhammad Khalid Fayyaz:
-"Is it a designed research?" Reply sent: [MUHAMMAD REPLY]
+"Is it a designed research?" Reply sent: Reply not yet sent.
 
 **Log entries added to metrics/outreach_log.csv for both posts.**
