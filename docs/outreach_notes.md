@@ -232,12 +232,12 @@ not committed to the repo.
 ## Update (2026-10-11): Week 8 publishing trail
 
 **Substack:** Week 8 post published.
-URL: [PASTE SUBSTACK URL]
+URL: https://substack.com/@kenyaclimatelab/note/c-357677451
 
 **LinkedIn:** Feed post published, linking to the Substack post.
-URL: [PASTE LINKEDIN POST URL]
+URL: https://lnkd.in/p/eXBubQMN
 
 **Engagement:** First comment received from Muhammad Khalid Fayyaz:
-"Is it a designed research?" Reply sent: [PASTE YOUR REPLY]
+"Is it a designed research?" Reply sent: [MUHAMMAD REPLY]
 
 **Log entries added to metrics/outreach_log.csv for both posts.**
