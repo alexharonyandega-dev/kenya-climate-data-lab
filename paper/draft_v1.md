@@ -2,7 +2,7 @@
 
 **Author:** Alex Haro Nyandega  
 **Affiliation:** Independent researcher, Nairobi, Kenya  
-**Contact:** alexharonyandega@gmail.com  
+**Contact:** alex.haro@mpesafoundationacademy.ac.ke (primary) / alex@kenyaclimatelab.me  
 **Repository:** github.com/alexharonyandega-dev/kenya-climate-data-lab
 
 ---
