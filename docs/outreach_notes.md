@@ -221,3 +221,23 @@ in ≤3 min, rest of time on his critique).
 
 Source email: docs/week07_reflection.md §1 (Ogembo listed as the
 mentor of most interest).
+
+**2026-10-11 follow-up:** Confirmation email sent to Ogembo with the
+Zoom link for Thursday 2026-10-15 12:30pm EAT / 11:30am Brussels.
+Draft methods and workflow figure to be sent Tuesday 2026-10-13.
+
+Zoom link is stored in Gmail only (contains Personal Meeting ID) —
+not committed to the repo.
+
+## Update (2026-10-11): Week 8 publishing trail
+
+**Substack:** Week 8 post published.
+URL: [PASTE SUBSTACK URL]
+
+**LinkedIn:** Feed post published, linking to the Substack post.
+URL: [PASTE LINKEDIN POST URL]
+
+**Engagement:** First comment received from Muhammad Khalid Fayyaz:
+"Is it a designed research?" Reply sent: [PASTE YOUR REPLY]
+
+**Log entries added to metrics/outreach_log.csv for both posts.**
