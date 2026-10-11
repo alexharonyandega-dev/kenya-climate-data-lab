@@ -203,3 +203,21 @@ email, but the Namecheap + Zoho path is unaffected.
 - LinkedIn primary email: switched to alex@kenyaclimatelab.me.
 - LinkedIn company page: BLOCKED by account-age gate. See D46 in
   docs/DECISIONS_LOG.md.
+
+---
+
+## Update (2026-10-11): First mentor reply — Ogembo call booked
+
+Vincent Ogembo (Vrije Universiteit Brussel / ICPAC) replied to the
+Week 7 mentor email on 2026-10-11. Response verbatim, in part:
+"This is a great effort! We can have a 20mins online meeting on
+Thursday 15th October at 12:30pm EAT."
+
+Call booked: Thursday 2026-10-15, 12:30pm EAT, 20 minutes.
+
+Prep plan: send draft methods + abstract 24h in advance; send Zoom
+link 48h in advance; run the call as listening-first (project summary
+in ≤3 min, rest of time on his critique).
+
+Source email: docs/week07_reflection.md §1 (Ogembo listed as the
+mentor of most interest).
