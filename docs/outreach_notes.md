@@ -241,3 +241,33 @@ URL: https://lnkd.in/p/eXBubQMN
 "Is it a designed research?" Reply sent: Reply not yet sent.
 
 **Log entries added to metrics/outreach_log.csv for both posts.**
+
+---
+
+## Update (2026-10-11): New LinkedIn contact — Adeola Boluwatife
+
+**Contact:** Adeola Boluwatife
+**Location:** Nigeria
+**Role:** Agricultural Data Analyst, Research Analyst, Founder,
+Agriculture Literacy Initiative
+**Profile:** linkedin.com/in/[her-handle, if you have it]
+**Connections:** 500+
+
+**Origin:** Sent a connection request 2026-10-11 with a one-line
+introduction to the project. Accepted same day.
+
+**Follow-up sent (2026-10-11):** Short message with no ask. Named
+her Agriculture Literacy Initiative and offered the Week 8 Substack
+post as reciprocal reading. Framed the literacy problem and the
+climate data problem as "cousins."
+
+**Why she is on the list:** Her work is at the intersection of
+agricultural data and non-specialist legibility — the exact problem
+Kenya Climate Data Lab has to solve at Week 13 (the app) and beyond.
+If she engages, she is a candidate for early feedback on the
+public-facing pieces of the project.
+
+**No asks made.** If she replies, next step is a specific question
+about how her initiative communicates agricultural data to
+non-specialists. If she does not reply, this stays a warm contact
+with no follow-up scheduled.
