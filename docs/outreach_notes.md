@@ -367,3 +367,11 @@ formally confirmed by Pete.
 
 **Significance:** first institutional research partnership offer.
 Two high-stakes calls on consecutive days (Ogembo Thu, CGIAR Fri).
+
+**2026-10-12 11:23 EAT:** Reply sent to Pete Steward in the CGIAR
+thread, cc to the full distribution (Michelle, Benson, Todd, Nancy,
+Ram, Anastasia, Majambo, Rose). Confirmed Friday 16 Oct 2026,
+11:00-12:30 EAT. Committed to 1-page pre-read by Wednesday evening.
+Stated MIT licence boundary and no co-authorship before scope
+discussion. Flagged that Dr. Kenduiywo has a Week 7 mentor email in
+his inbox.
