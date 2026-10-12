@@ -271,3 +271,99 @@ public-facing pieces of the project.
 about how her initiative communicates agricultural data to
 non-specialists. If she does not reply, this stays a warm contact
 with no follow-up scheduled.
+
+---
+
+## Update (2026-10-12): CGIAR responds — introductory call proposed
+
+**Routing chain (from the CGIAR internal emails visible in the reply):**
+
+1. 2026-10-07 — Alex submits via the CGIAR public contact form
+   (Chief-Scientist office)
+2. 2026-10-09 — Sandra Milach (CGIAR Chief-Scientist office) forwards
+   to Nancy Koyo (ILRI)
+3. 2026-10-12 09:36 — Nancy Koyo forwards to Todd Rosenstock and
+   Ram Dhulipala (CGIAR System Organization)
+4. 2026-10-12 09:46 — Todd Rosenstock replies, ccs Pete Steward and
+   Michelle Tigchelaar (WorldFish)
+5. 2026-10-12 10:48 — Pete Steward (Alliance Bioversity-CIAT) replies
+   to Alex directly
+
+**The reply (Pete Steward, verbatim in part):**
+"Congratulations on the impressive initiative and dedication you are
+demonstrating with the Kenya Climate Data Lab... we see strong
+potential for a mutually beneficial partnership."
+
+Pete leads analytics and modeling for the Africa Agriculture
+Adaptation Atlas at Alliance Bioversity International and CIAT.
+Works alongside Todd Rosenstock (Climate Action Science Program)
+and RCMRD (Rose Waswa) and SERVIR East Africa (Anastasia Wahome).
+
+**Four collaboration modes offered by CGIAR:**
+
+1. **Providers of Data** — historical sub-county + county maize yield
+   registries; ERA (Evidence for Resilient Agriculture) and CAROB
+   experimental agronomic trial datasets
+2. **Consumers of Data** — ingest the project's automated weekly
+   county telemetry feed into their county climate risk work
+3. **Hosts & Amplifiers** — host, spotlight, and amplify the
+   open-source tools into regional decision-maker networks
+4. **Mutual Testers** — mutual user-testing of outputs and
+   decision-support products
+
+**People cc'd on the reply:**
+
+| Name | Org | Note |
+|---|---|---|
+| Benson Kenduiywo | SERVIR East Africa / JKUAT | **Also on the Week 7 mentor list** (mentor_targets.csv, sent 2026-10-08, status sent_unconfirmed). This reply is now a warm introduction. |
+| Anastasia Wahome | SERVIR Eastern & Southern Africa | — |
+| Majambo Gamoyo | SERVIR Eastern & Southern Africa | — |
+| Rose Waswa | RCMRD | — |
+| Michelle Tigchelaar | WorldFish | — |
+| Todd Rosenstock | CGIAR System Organization | — |
+
+**Proposed call windows (all EAT):**
+
+- Wed 2026-10-14, 14:30–16:00
+- Thu 2026-10-15, 10:00–11:30 or 15:00–16:30
+- Fri 2026-10-16, 11:00–12:30
+
+**Decision:** Friday 2026-10-16, 11:00–12:30 EAT. Thursday afternoon
+is the Ogembo preprint critique call (12:30pm EAT). Friday morning
+gives time to prepare properly for the CGIAR conversation.
+
+**Safaricom context (referenced in the original enquiry):**
+
+The Oct 7 CGIAR enquiry stated that Safaricom's Head of Innovation
+"has reviewed the repository and reached out to schedule a technical
+meeting." The email thread (2026-10-05 entry above) shows:
+- Stephen Chege forwarded to Andrew Masila on 2026-10-05
+- Masila replied 2026-10-05: "Will look for some time to meet and
+  appreciate further your initiative."
+- Alex replied 2026-10-05 confirming readiness for technical review
+
+Per Alex, Masila reviewed the repository via an additional channel.
+No meeting has been formally scheduled as of 2026-10-12. The CGIAR
+enquiry's phrasing was stronger than the email thread alone shows.
+
+**Boundaries for the CGIAR call:**
+
+- MIT licence stays. No CLA, no copyright assignment, no exclusive
+  hosting arrangement.
+- No co-authorship commitments on the preprint before scope is
+  discussed.
+- No data-ingestion cadence commitments before understanding what
+  a weekly telemetry feed means operationally.
+- No delivery timelines on results.
+- Pre-read (1-page) to be sent by Wednesday evening (2026-10-14):
+  pipeline scope + limits, null result, specific data gap (yield
+  registries for validation), telemetry offer.
+
+**Reply to Pete Steward:** to be sent Monday 2026-10-12, confirming
+Friday 11:00–12:30 EAT.
+
+**Log entries:** metrics/outreach_log.csv updated once the call is
+formally confirmed by Pete.
+
+**Significance:** first institutional research partnership offer.
+Two high-stakes calls on consecutive days (Ogembo Thu, CGIAR Fri).
