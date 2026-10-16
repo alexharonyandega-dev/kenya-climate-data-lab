@@ -99,7 +99,7 @@ See `data/metadata/sources.md` for full details.
 ## Current status
 
 - **Phase:** Foundation (Week 8 of 72)
-- **Master table:** `county_monthly_stress_v3.csv` — 4,512 rows x 27 cols
+- **Master table:** `county_monthly_stress_v3.csv` — 4,512 rows x 26 cols
 - **Weekly product:** `county_weekly_stress_2017_2024.csv` — 19,599 rows
 - **Stress monitor:** Working, monthly composite + weekly rainfall
 - **2022 drought validation:** Detected without calibration. 31 counties severe unweighted, 8 crop-severe weighted

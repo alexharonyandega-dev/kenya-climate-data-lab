@@ -57,7 +57,7 @@ each county's own 2017-2024 climatology for that calendar month.
 The pipeline diagram above shows the intermediate output of
 `compute_stress_index.py` as `county_monthly_stress_2017_2024.csv`.
 The canonical working table is **`county_monthly_stress_v3.csv`**
-(4,512 rows x 27 cols), which adds:
+(4,512 rows x 26 cols), which adds:
 
 - Crop-stage weighting (D34) — `crop_stage`, `crop_stage_weight`,
   `stress_weighted`
