@@ -52,6 +52,23 @@ each county's own 2017-2024 climatology for that calendar month.
                                v
                   county_monthly_stress_2017_2024.csv
 
+### Canonical output file
+
+The pipeline diagram above shows the intermediate output of
+`compute_stress_index.py` as `county_monthly_stress_2017_2024.csv`.
+The canonical working table is **`county_monthly_stress_v3.csv`**
+(4,512 rows x 27 cols), which adds:
+
+- Crop-stage weighting (D34) — `crop_stage`, `crop_stage_weight`,
+  `stress_weighted`
+- ERA5 diagnostic columns (D35) — `swvl1_mean_anomaly`,
+  `swvl2_mean_anomaly`, `t2m_mean_anomaly`, `pev_mean_anomaly`
+- Outlier flags (D31) — four boolean columns
+
+`county_monthly_stress_2017_2024.csv` and `county_monthly_stress_v2.csv`
+are pre-v3 versions, archived in `data/_archive/`. The v3 file is the
+one referenced in the README, the paper, and the data dictionary.
+
 ## Two-tier design
 
 CHIRPS is daily. Sentinel-2 is monthly. So the monitor runs in two tiers:
@@ -232,3 +249,62 @@ results in `docs/week04_hardening.md`. Artifacts:
 - `leadlag_pooled_vs_within.csv` — spatial vs temporal test
 - `leadlag_bootstrap_ci.csv` — 1,000-resample CI
 - `severe_2022_by_county.csv` — per-county severity table
+
+---
+
+## Week 5 additions
+
+### Null result — scope boundary (D40)
+
+An attempt to extend the monitor to maize yield prediction returned a
+null result. No tested formulation of the stress index predicted
+county-level yield loss at a level distinguishable from noise.
+
+**Three independent cross-checks confirm the finding is not a data
+problem:**
+
+1. **NDMA cross-check** — Kenya's National Drought Management
+   Authority flagged 11 counties as Alarm in October 2022, all in the
+   arid north. The monitor flagged a different set of 10 counties —
+   the highland maize belt and the coast. Zero overlap. CHIRPS
+   verification: monitor counties averaged z = -1.14; NDMA counties
+   averaged z = -0.71. Both groups were in drought. The two systems
+   track different things.
+2. **CCRP cross-check** — County Climate Risk Profiles directionally
+   confirm 3 of 8 crop-severe counties.
+3. **TAMSAT-ALERT cross-check** — Same conceptual finding: soil
+   moisture leads crop outcomes.
+
+**Diagnosed cause of the null:** the composite index measures
+environmental drought, not crop damage. The 2022 Kakamega outlier
+(mildest stress, worst yield crash) was traced to a fall armyworm
+outbreak, confirmed against the National Agriculture Production
+Report 2025. A climate index cannot capture a pest shock.
+
+**Scope statement:** the tool detects droughts, not yield loss.
+The null result is documented at `docs/week05_null_result.md` and
+published at
+https://kenyaclimatelab.substack.com/p/i-tried-to-validate-my-tool-it-failed.
+
+### Cross-check data
+
+| Source | What it confirms | Direction |
+|---|---|---|
+| NDMA | Complementary drought regime | Zero overlap in 2022 |
+| CCRP | Crop-region vulnerability | 3 of 8 crop-severe counties |
+| TAMSAT-ALERT | Soil moisture lead-lag | Same conceptual finding |
+
+---
+
+## Weeks 6-8 additions
+
+- **Week 6** — preprint draft abstract + methods (`paper/draft_v1.md`)
+- **Week 7** — mentor outreach to 9 Kenyan researchers (see
+  `docs/outreach_notes.md`); custom domain `kenyaclimatelab.me` and
+  Zoho Mail to bypass the Gmail-sender barrier (D41)
+- **Week 8** — first user testing round, 5 calls
+  (`docs/week08_user_feedback.md`); usage guide at `docs/usage.md`;
+  data dictionary at `data/metadata/data_dictionary.md`
+
+Full weekly history: `metrics/weekly_log.md` and
+`docs/DECISIONS_LOG.md` (D1-D46).
