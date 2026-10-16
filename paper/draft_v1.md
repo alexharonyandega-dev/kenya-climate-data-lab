@@ -27,7 +27,23 @@ The full pipeline is open source at github.com/alexharonyandega-dev/kenya-climat
 
 ---
 
-*Note: Section 1 (Introduction) is drafted separately in Weeks 7–8. This draft currently covers the Abstract, Methods, and Validation.*
+## 1. Introduction
+
+Kenya's food system depends on rain-fed maize production. Maize is the primary caloric staple for most Kenyan households, and the majority of it is grown by smallholder farmers who rely entirely on seasonal rainfall. When the rains fail, the consequences appear first in county-level agricultural output and only later in national statistics.
+
+Drought is the single largest climate hazard to Kenyan agriculture. The 2021–2022 Horn of Africa drought — five consecutive failed rainy seasons, the worst in forty years — demonstrated how quickly a rainfall anomaly becomes a food security emergency. County governments, which hold primary responsibility for agricultural extension and disaster response under Kenya's devolved system, need to know which counties are under stress while the growing season is still in progress. National statistics published after harvest do not help them.
+
+Existing monitoring tools each cover part of this need, but none provides the combination that county-level decision-making requires. The FAO Agricultural Stress Index provides global sub-county coverage every ten days, but its administrative units do not align cleanly with Kenya's 47 counties. FEWS NET and the GEOGLAM Crop Monitor publish monthly assessments at livelihood-zone and crop-zone resolutions respectively. The Kenya National Bureau of Statistics produces authoritative county-level maize production figures, but only annually and only after harvest. Kenya's National Drought Management Authority maintains an operational drought early warning system, but its mandate covers the 23 arid and semi-arid (ASAL) counties and focuses on pastoral livelihoods. No public tool provides fast, county-level drought and vegetation monitoring across all 47 Kenyan counties simultaneously.
+
+This paper presents a county-level drought and vegetation stress monitor for Kenya, built entirely from open satellite data. The monitor combines CHIRPS rainfall estimates, Sentinel-2 vegetation indices, and ERA5-Land soil moisture into a composite stress index calculated against each county's own historical climatology. The index requires no local calibration and no training data: the anomaly for each county-month is defined relative to the same county's same-month distribution across the reference period. Weekly rainfall updates provide a fast tier; the full composite is computed monthly.
+
+Applied to the 2021–2022 Horn of Africa drought, the monitor identified severe agricultural stress across all affected counties without any calibration. Two findings emerge. First, drought severity and crop damage are distinct quantities: of 31 counties with severe drought in 2022, only 8 experienced that severity while maize was actively growing. Second, soil moisture anomalies lead vegetation anomalies by approximately one month (r = 0.461, 95% CI [0.436, 0.485], p = 6e-223), providing an early warning signal that precedes visible vegetation decline.
+
+Cross-checked against NDMA's pastoral drought classifications, the monitor flagged a different set of counties in 2022 — the highland maize belt and the coastal region, rather than the northern ASALs. Both systems were correct. NDMA tracks cumulative multi-season impact on pastoral livelihoods; this monitor tracks current-month rainfall and vegetation anomaly across all 47 counties. The two systems are complementary, not competing.
+
+An attempt to extend the monitor to maize yield prediction returned a null result. No tested formulation of the stress index predicted county-level yield loss at a level distinguishable from noise. This finding is documented rather than omitted, and is presented here as a scope boundary: the monitor detects droughts, not yield outcomes. The distinction matters for users — outputs should inform where to look, not what to expect.
+
+The remainder of this paper describes the data sources (Section 2), the preprocessing pipeline (Section 3), the composite stress index and its crop-stage weighting (Section 4), and the validation against the 2021–2022 drought alongside the null yield-prediction result (Section 5). All code, data, and methodological decisions are available in the project repository, with every material choice recorded as a numbered entry in a public decisions log.
 
 ---
 
