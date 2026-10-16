@@ -16,7 +16,7 @@
 
 | # | Sheet | Status |
 |---|---|---|
-| 1 | Drought Stress Map | not started |
+| 1 | Drought Stress Map | in progress — geocoded CSV built, Tableau map pending |
 | 2 | Stress Time Series | not started |
 | 3 | Three-way Divergence | not started |
 | 4 | Lead-lag Curve | not started |
