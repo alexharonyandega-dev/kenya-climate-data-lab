@@ -8,7 +8,7 @@
 
 [![Substack](https://img.shields.io/badge/Substack-Kenya%20Climate%20Lab-FF6719?style=for-the-badge&logo=substack&logoColor=white)](https://kenyaclimatelab.substack.com)
 [![X](https://img.shields.io/badge/X-@KenyaClimateLab-000000?style=for-the-badge&logo=x)](https://x.com/KenyaClimateLab)
-[![Email](https://img.shields.io/badge/Email-alexharonyandega@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:alexharonyandega@gmail.com)
+[![Email](https://img.shields.io/badge/Email-alex@kenyaclimatelab.me-D14836?style=for-the-badge&logo=minutemailer&logoColor=white)](mailto:alex@kenyaclimatelab.me)
 
 **Latest:** [I Tried to Validate My Tool. It Failed.](https://kenyaclimatelab.substack.com/p/i-tried-to-validate-my-tool-it-failed)
 
@@ -98,7 +98,7 @@ See `data/metadata/sources.md` for full details.
 
 ## Current status
 
-- **Phase:** Foundation (Week 6 of 72)
+- **Phase:** Foundation (Week 8 of 72)
 - **Master table:** `county_monthly_stress_v3.csv` — 4,512 rows x 27 cols
 - **Weekly product:** `county_weekly_stress_2017_2024.csv` — 19,599 rows
 - **Stress monitor:** Working, monthly composite + weekly rainfall
@@ -106,14 +106,19 @@ See `data/metadata/sources.md` for full details.
 - **Soil moisture lead-lag:** 1 month, r=0.461, 95% CI [0.436, 0.485]
 - **Coverage:** All 47 Kenyan counties, 2017-2024
 - **Independent cross-checks:** NDMA (zero overlap, CHIRPS-verified), CCRP (3 of 8 indices), TAMSAT (contemporaneous comparison)
-- **Next milestone:** Introduction (Section 1) — Weeks 7–8
+- **Next milestone:** Tableau public dashboard (Week 9)
 
-## Week 4 highlights
+## Recent milestones
 
-- **Crop calendar integration:** Stress is weighted by maize growth stage (planting 1.0, grain_fill 0.7, harvest 0.3, fallow 0.0). A dry October in Trans Nzoia (harvest) now scores differently than a dry October in Kakamega (planting).
-- **ERA5 integration:** Soil moisture, temperature, and evaporation anomalies joined as diagnostic columns.
-- **Weekly product:** Rainfall updates weekly; monthly companions carry forward the last-confirmed stress reading.
-- **Hardening pass:** Crop-weight sensitivity (28 combos), within-county lead-lag verification, bootstrap CI, and a per-county 2022 severity table. See `docs/week04_hardening.md`.
+**Week 4** — Crop-stage weighting, ERA5 diagnostic integration, weekly product, hardening pass (28 weight combinations, bootstrap CI). See `docs/week04_hardening.md`.
+
+**Week 5** — Null result documented: the stress index does not predict maize yield loss. The Kakamega outlier traced to a 2022 fall armyworm outbreak, confirmed against the National Agriculture Production Report 2025. Published as [I Tried to Validate My Tool. It Failed.](https://kenyaclimatelab.substack.com/p/i-tried-to-validate-my-tool-it-failed). Full write-up: `docs/week05_null_result.md`.
+
+**Week 6** — Preprint abstract and methods drafted. Workflow figure added. Draft at `paper/draft_v1.md`.
+
+**Week 7** — First mentor outreach round: 9 personalised emails sent to Kenyan researchers working on drought, remote sensing, and food security. Custom domain `kenyaclimatelab.me` and Zoho Mail set up to remove the Gmail-sender barrier documented in D41. See `docs/outreach_notes.md`.
+
+**Week 8** — First user testing round: 5 calls held (2 students, 1 teacher, 1 farmer, 1 NGO worker). Zero friction observed; interpreted as a form-factor limit of the current CSV design. Usage guide at `docs/usage.md`. Data dictionary restored to full 537 lines. Feedback doc: `docs/week08_user_feedback.md`. Published as [Week 8 user testing note](https://substack.com/@kenyaclimatelab/note/c-357677451).
 
 ## The findings
 
@@ -159,6 +164,6 @@ Contributions welcome from anyone working in Kenyan agriculture, climate researc
 
 ## Contact
 
-**Alex Haro Nyandega** — alexharonyandega@gmail.com — Nairobi, Kenya
+**Alex Haro Nyandega** — alex@kenyaclimatelab.me — Nairobi, Kenya
 
 [GitHub](https://github.com/alexharonyandega-dev) · [X](https://x.com/KenyaClimateLab) · [Substack](https://kenyaclimatelab.substack.com) · [LinkedIn](https://linkedin.com/in/alexharonyandega)

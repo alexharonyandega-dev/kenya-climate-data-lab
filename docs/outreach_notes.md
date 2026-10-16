@@ -375,3 +375,26 @@ Ram, Anastasia, Majambo, Rose). Confirmed Friday 16 Oct 2026,
 Stated MIT licence boundary and no co-authorship before scope
 discussion. Flagged that Dr. Kenduiywo has a Week 7 mentor email in
 his inbox.
+
+---
+
+## Update (2026-10-16): Ogembo no-show; CGIAR moved to Monday
+
+**Ogembo call (Thu 2026-10-15, 12:30pm EAT):** Dr. Ogembo did not
+join the Google Meet. The call window passed with no attendee on the
+other side. No follow-up email sent yet. Possible reasons (unknown):
+timezone confusion, calendar issue on his side, or the meeting was
+forgotten. Next step: polite one-line email asking if he would like
+to reschedule. No assumption about cause.
+
+**CGIAR call (Fri 2026-10-16, 11:00am EAT):** Pete Steward emailed
+to postpone, citing reasons on his side. New proposed slot: Monday
+afternoon, 2026-10-19. Pete asked to keep the format informal, so
+no pre-read or working note is required. Meet link remains
+https://meet.google.com/odv-yycx-dwo.
+
+**Adjustments:**
+- The Ogembo follow-up email will be drafted after this entry, sent
+  within 24 hours of the no-show.
+- The CGIAR team is now in conversation informally. No formal
+  partnership claims are recorded until the Monday call happens.
