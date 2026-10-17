@@ -6,7 +6,7 @@
 
 ## Workbook
 
-- **Cloud URL:** https://public.tableau.com/authoring/KenyaDroughtMonitorWeek9
+- **Live Dashboard URL:** https://public.tableau.com/views/KenyaDroughtMonitorWeek9/DroughtMonitorDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 - **Published name:** Kenya Drought Monitor — Week 9
 - **Profile:** public.tableau.com/app/profile/alex.haro.nyandega
 - **Data source:** `data/processed/county_monthly_stress_v3.csv` (4,512 rows × 26 cols)

@@ -324,3 +324,22 @@ section documents every pipeline decision with a numbered reference.
 **Carry forward to Week 9:**
 - Dashboard build (Tableau Public, 5 sheets).
 - Column meanings surfaced in the future app, not just the dict.
+
+## Week 9 — Completed (2026-10-17, Saturday)
+
+**Theme:** Public Dashboard Build (Tableau)
+
+**Wins:**
+- 5-sheet Tableau dashboard built and published.
+- Solved a major geocoding failure by writing a Python centroid script.
+- README updated with the live dashboard link.
+- Dashboard published to Substack and LinkedIn.
+
+**Deviations:**
+- Used Tableau Web Authoring instead of Desktop (macOS admin restrictions).
+- Mobile preview was checked, but layout required manual resizing.
+
+**Carry forward to Week 10:**
+- Publish dashboard officially.
+- Write the 2-page insight paper.
+- Get feedback from 2 Week 8 users on the dashboard UX.

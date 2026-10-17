@@ -10,7 +10,9 @@
 [![X](https://img.shields.io/badge/X-@KenyaClimateLab-000000?style=for-the-badge&logo=x)](https://x.com/KenyaClimateLab)
 [![Email](https://img.shields.io/badge/Email-alex@kenyaclimatelab.me-D14836?style=for-the-badge&logo=minutemailer&logoColor=white)](mailto:alex@kenyaclimatelab.me)
 
-**Latest:** [I Tried to Validate My Tool. It Failed.](https://kenyaclimatelab.substack.com/p/i-tried-to-validate-my-tool-it-failed)
+**Latest:** [I Built a Drought Dashboard for Kenya. Tableau Didn't Know Where Kenya Was.](https://substack.com/@kenyaclimatelab/note/c-363109867)
+
+**🔴 Live Dashboard:** [Explore the interactive Kenya Drought Monitor on Tableau Public](https://public.tableau.com/views/KenyaDroughtMonitorWeek9/DroughtMonitorDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ---
 
@@ -98,7 +100,7 @@ See `data/metadata/sources.md` for full details.
 
 ## Current status
 
-- **Phase:** Foundation (Week 8 of 72)
+- **Phase:** Foundation (Week 9 of 72)
 - **Master table:** `county_monthly_stress_v3.csv` — 4,512 rows x 26 cols
 - **Weekly product:** `county_weekly_stress_2017_2024.csv` — 19,599 rows
 - **Stress monitor:** Working, monthly composite + weekly rainfall
@@ -106,7 +108,7 @@ See `data/metadata/sources.md` for full details.
 - **Soil moisture lead-lag:** 1 month, r=0.461, 95% CI [0.436, 0.485]
 - **Coverage:** All 47 Kenyan counties, 2017-2024
 - **Independent cross-checks:** NDMA (zero overlap, CHIRPS-verified), CCRP (3 of 8 indices), TAMSAT (contemporaneous comparison)
-- **Next milestone:** Tableau public dashboard (Week 9)
+- **Next milestone:** Publish dashboard + write 2-page insight paper (Week 10)
 
 ## Recent milestones
 
