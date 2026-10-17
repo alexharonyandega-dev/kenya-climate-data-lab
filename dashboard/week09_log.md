@@ -26,9 +26,9 @@
 
 | Filter | Wired? |
 |---|---|
-| Year | no |
-| County | no |
-| Season | no |
+| Year | yes |
+| County | yes |
+| Season | yes |
 
 ## Screenshots
 
