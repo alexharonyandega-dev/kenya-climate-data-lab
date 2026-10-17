@@ -17,7 +17,7 @@
 | # | Sheet | Status |
 |---|---|---|
 | 1 | Drought Stress Map | built — 47 counties, Oct 2022, red-blue diverging |
-| 2 | Stress Time Series | not started |
+| 2 | Stress Time Series | built — 5 counties, 2017-2024 |
 | 3 | Three-way Divergence | not started |
 | 4 | Lead-lag Curve | not started |
 | 5 | KPI Cards | not started |
