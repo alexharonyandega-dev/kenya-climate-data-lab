@@ -20,7 +20,7 @@
 | 2 | Stress Time Series | built — 5 counties, 2017-2024 |
 | 3 | Three-way Divergence | built — 2020-2024, rainfall/NDVI/soil |
 | 4 | Lead-lag Curve | built — scatter plot, trend line r=0.461 |
-| 5 | KPI Cards | not started |
+| 5 | KPI Cards | built — 10 severe counties (Oct 2022) |
 
 ## Filters
 
