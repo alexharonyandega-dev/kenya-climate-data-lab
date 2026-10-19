@@ -418,3 +418,16 @@ https://meet.google.com/odv-yycx-dwo.
 - Await sample yield data from CGIAR to test integration.
 
 **Follow-up email sent:** Sent 2026-10-19 summarizing the above and committing to the next steps.
+
+---
+
+## Update (2026-10-19): Dashboard distribution
+
+**Week 8 Users (UX Feedback):**
+The live Tableau dashboard URL was sent via WhatsApp to the 5 users from Week 8 (Elvis, Shalon, Mr. Maxwel, Mama Nyanchama, Penninah) on 2026-10-18. Asked them for their first-click impressions to validate the mobile layout and UI.
+
+**CGIAR Team (Mentors):**
+The dashboard URL was included in the 24-hour follow-up email sent to Pete Steward and the rest of the team on 2026-10-19, fulfilling the Week 10 plan requirement to "send the dashboard URL to every mentor who replied."
+
+**Insight Paper:**
+Drafted, formatted to exactly 2 pages, exported as PDF and DOCX, and emailed to Mr. Horace Maxwel for non-technical review and feedback.
