@@ -1,0 +1,1646 @@
+county,year,yield_tonnes_ha
+Baringo,1990,1.35
+Baringo,1991,1.78
+Baringo,1992,1.77
+Baringo,1993,1.99
+Baringo,1994,1.51
+Baringo,1995,1.53
+Baringo,1996,1.52
+Baringo,1997,1.41
+Baringo,1998,0.9
+Baringo,1999,1.97
+Baringo,2000,1.33
+Baringo,2001,1.23
+Baringo,2002,1.41
+Baringo,2003,1.26
+Baringo,2004,2.13
+Baringo,2005,1.62
+Baringo,2006,1.71
+Baringo,2007,1.26
+Baringo,2008,1.52
+Baringo,2009,0.79
+Baringo,2010,1.51
+Baringo,2011,1.97
+Baringo,2012,1.77
+Baringo,2013,1.5
+Baringo,2014,1.38
+Baringo,2015,1.64
+Baringo,2016,1.53
+Baringo,2017,0.55
+Baringo,2018,1.93
+Baringo,2019,1.32
+Baringo,2020,1.75
+Baringo,2021,1.1
+Baringo,2022,0.11
+Baringo,2023,1.75
+Baringo,2024,1.75
+Bomet,1990,2.66
+Bomet,1991,2.36
+Bomet,1992,2.31
+Bomet,1993,1.95
+Bomet,1994,2.18
+Bomet,1995,2.26
+Bomet,1996,2.72
+Bomet,1997,2.5
+Bomet,1998,1.87
+Bomet,1999,2.5
+Bomet,2000,1.73
+Bomet,2001,2.57
+Bomet,2002,2.66
+Bomet,2003,2.67
+Bomet,2004,2.62
+Bomet,2005,2.34
+Bomet,2006,2.21
+Bomet,2007,1.95
+Bomet,2008,2.73
+Bomet,2009,1.62
+Bomet,2010,2.28
+Bomet,2011,2.64
+Bomet,2012,2.81
+Bomet,2013,2.38
+Bomet,2014,2.7
+Bomet,2015,2.51
+Bomet,2016,2.2
+Bomet,2017,1.47
+Bomet,2018,2.86
+Bomet,2019,3.41
+Bomet,2020,2.12
+Bomet,2021,2.28
+Bomet,2022,1.8
+Bomet,2023,2.42
+Bomet,2024,2.31
+Bungoma,1990,1.88
+Bungoma,1991,1.61
+Bungoma,1992,1.45
+Bungoma,1993,1.16
+Bungoma,1994,1.37
+Bungoma,1995,1.83
+Bungoma,1996,1.55
+Bungoma,1997,1.48
+Bungoma,1998,1.76
+Bungoma,1999,1.96
+Bungoma,2000,1.06
+Bungoma,2001,1.7
+Bungoma,2002,1.64
+Bungoma,2003,1.9
+Bungoma,2004,1.4
+Bungoma,2005,1.51
+Bungoma,2006,1.49
+Bungoma,2007,1.17
+Bungoma,2008,1.7
+Bungoma,2009,1.18
+Bungoma,2010,0.81
+Bungoma,2011,1.71
+Bungoma,2012,1.49
+Bungoma,2013,1.52
+Bungoma,2014,1.74
+Bungoma,2015,1.56
+Bungoma,2016,1.67
+Bungoma,2017,0.1
+Bungoma,2018,1.69
+Bungoma,2019,1.59
+Bungoma,2020,1.03
+Bungoma,2021,1.6
+Bungoma,2022,1.09
+Bungoma,2023,2.35
+Bungoma,2024,1.75
+Busia,1990,1.43
+Busia,1991,1.5
+Busia,1992,1.16
+Busia,1993,1.85
+Busia,1994,1.74
+Busia,1995,1.75
+Busia,1996,1.24
+Busia,1997,1.93
+Busia,1998,1.09
+Busia,1999,1.69
+Busia,2000,1.61
+Busia,2001,1.36
+Busia,2002,1.79
+Busia,2003,2.02
+Busia,2004,1.77
+Busia,2005,1.51
+Busia,2006,1.4
+Busia,2007,1.71
+Busia,2008,1.14
+Busia,2009,0.9
+Busia,2010,1.24
+Busia,2011,1.28
+Busia,2012,1.41
+Busia,2013,1.76
+Busia,2014,1.14
+Busia,2015,1.58
+Busia,2016,1.9
+Busia,2017,0.46
+Busia,2018,1.57
+Busia,2019,1.08
+Busia,2020,1.87
+Busia,2021,1.9
+Busia,2022,0.12
+Busia,2023,1.59
+Busia,2024,1.62
+Elgeyo-Marakwet,1990,2.1
+Elgeyo-Marakwet,1991,2.29
+Elgeyo-Marakwet,1992,2.09
+Elgeyo-Marakwet,1993,1.67
+Elgeyo-Marakwet,1994,2.35
+Elgeyo-Marakwet,1995,2.43
+Elgeyo-Marakwet,1996,2.25
+Elgeyo-Marakwet,1997,1.75
+Elgeyo-Marakwet,1998,1.81
+Elgeyo-Marakwet,1999,1.7
+Elgeyo-Marakwet,2000,1.17
+Elgeyo-Marakwet,2001,2.42
+Elgeyo-Marakwet,2002,2.28
+Elgeyo-Marakwet,2003,2.6
+Elgeyo-Marakwet,2004,1.96
+Elgeyo-Marakwet,2005,1.81
+Elgeyo-Marakwet,2006,1.77
+Elgeyo-Marakwet,2007,1.79
+Elgeyo-Marakwet,2008,2.01
+Elgeyo-Marakwet,2009,1.01
+Elgeyo-Marakwet,2010,2.4
+Elgeyo-Marakwet,2011,2.2
+Elgeyo-Marakwet,2012,2.85
+Elgeyo-Marakwet,2013,2.06
+Elgeyo-Marakwet,2014,1.61
+Elgeyo-Marakwet,2015,2.02
+Elgeyo-Marakwet,2016,1.75
+Elgeyo-Marakwet,2017,1.81
+Elgeyo-Marakwet,2018,1.71
+Elgeyo-Marakwet,2019,2.18
+Elgeyo-Marakwet,2020,1.97
+Elgeyo-Marakwet,2021,2.25
+Elgeyo-Marakwet,2022,1.0
+Elgeyo-Marakwet,2023,2.01
+Elgeyo-Marakwet,2024,1.9
+Embu,1990,1.93
+Embu,1991,1.57
+Embu,1992,1.96
+Embu,1993,1.76
+Embu,1994,1.33
+Embu,1995,1.75
+Embu,1996,1.82
+Embu,1997,1.44
+Embu,1998,1.75
+Embu,1999,1.72
+Embu,2000,0.24
+Embu,2001,1.96
+Embu,2002,2.02
+Embu,2003,1.41
+Embu,2004,2.12
+Embu,2005,1.97
+Embu,2006,1.52
+Embu,2007,1.79
+Embu,2008,1.78
+Embu,2009,0.86
+Embu,2010,1.96
+Embu,2011,1.87
+Embu,2012,2.04
+Embu,2013,1.99
+Embu,2014,1.9
+Embu,2015,1.61
+Embu,2016,1.93
+Embu,2017,0.56
+Embu,2018,1.63
+Embu,2019,1.69
+Embu,2020,1.54
+Embu,2021,1.16
+Embu,2022,0.89
+Embu,2023,1.56
+Embu,2024,2.03
+Garissa,1990,1.83
+Garissa,1991,1.4
+Garissa,1992,1.53
+Garissa,1993,0.98
+Garissa,1994,2.08
+Garissa,1995,1.92
+Garissa,1996,1.77
+Garissa,1997,1.61
+Garissa,1998,1.37
+Garissa,1999,1.5
+Garissa,2000,0.99
+Garissa,2001,1.18
+Garissa,2002,1.13
+Garissa,2003,1.33
+Garissa,2004,1.52
+Garissa,2005,1.62
+Garissa,2006,1.01
+Garissa,2007,1.26
+Garissa,2008,1.22
+Garissa,2009,0.28
+Garissa,2010,1.65
+Garissa,2011,1.75
+Garissa,2012,1.48
+Garissa,2013,1.86
+Garissa,2014,0.97
+Garissa,2015,1.92
+Garissa,2016,1.15
+Garissa,2017,0.1
+Garissa,2018,1.5
+Garissa,2019,1.6
+Garissa,2020,1.09
+Garissa,2021,1.35
+Garissa,2022,0.1
+Garissa,2023,1.06
+Garissa,2024,0.77
+Homa Bay,1990,1.61
+Homa Bay,1991,1.87
+Homa Bay,1992,2.04
+Homa Bay,1993,2.43
+Homa Bay,1994,1.57
+Homa Bay,1995,2.35
+Homa Bay,1996,2.0
+Homa Bay,1997,1.71
+Homa Bay,1998,2.14
+Homa Bay,1999,2.06
+Homa Bay,2000,1.3
+Homa Bay,2001,2.19
+Homa Bay,2002,2.04
+Homa Bay,2003,1.43
+Homa Bay,2004,2.38
+Homa Bay,2005,1.82
+Homa Bay,2006,2.63
+Homa Bay,2007,2.21
+Homa Bay,2008,2.02
+Homa Bay,2009,1.0
+Homa Bay,2010,1.97
+Homa Bay,2011,2.08
+Homa Bay,2012,1.81
+Homa Bay,2013,1.94
+Homa Bay,2014,1.85
+Homa Bay,2015,1.82
+Homa Bay,2016,2.26
+Homa Bay,2017,1.17
+Homa Bay,2018,1.79
+Homa Bay,2019,2.11
+Homa Bay,2020,2.17
+Homa Bay,2021,1.81
+Homa Bay,2022,1.64
+Homa Bay,2023,2.22
+Homa Bay,2024,2.18
+Isiolo,1990,1.95
+Isiolo,1991,2.12
+Isiolo,1992,2.29
+Isiolo,1993,2.84
+Isiolo,1994,2.95
+Isiolo,1995,2.36
+Isiolo,1996,2.37
+Isiolo,1997,2.57
+Isiolo,1998,2.49
+Isiolo,1999,2.77
+Isiolo,2000,1.2
+Isiolo,2001,2.77
+Isiolo,2002,2.58
+Isiolo,2003,2.45
+Isiolo,2004,2.52
+Isiolo,2005,2.67
+Isiolo,2006,2.24
+Isiolo,2007,3.12
+Isiolo,2008,2.19
+Isiolo,2009,1.15
+Isiolo,2010,2.72
+Isiolo,2011,2.69
+Isiolo,2012,2.28
+Isiolo,2013,2.49
+Isiolo,2014,1.86
+Isiolo,2015,3.02
+Isiolo,2016,2.39
+Isiolo,2017,2.15
+Isiolo,2018,2.61
+Isiolo,2019,2.32
+Isiolo,2020,2.24
+Isiolo,2021,2.56
+Isiolo,2022,2.01
+Isiolo,2023,2.34
+Isiolo,2024,2.66
+Kajiado,1990,1.57
+Kajiado,1991,0.87
+Kajiado,1992,0.88
+Kajiado,1993,1.09
+Kajiado,1994,1.24
+Kajiado,1995,1.4
+Kajiado,1996,1.75
+Kajiado,1997,1.56
+Kajiado,1998,1.26
+Kajiado,1999,1.3
+Kajiado,2000,0.5
+Kajiado,2001,1.1
+Kajiado,2002,1.29
+Kajiado,2003,1.69
+Kajiado,2004,1.54
+Kajiado,2005,1.45
+Kajiado,2006,1.33
+Kajiado,2007,0.87
+Kajiado,2008,1.05
+Kajiado,2009,0.1
+Kajiado,2010,1.44
+Kajiado,2011,1.37
+Kajiado,2012,1.31
+Kajiado,2013,1.34
+Kajiado,2014,1.07
+Kajiado,2015,1.31
+Kajiado,2016,1.46
+Kajiado,2017,0.92
+Kajiado,2018,1.59
+Kajiado,2019,1.67
+Kajiado,2020,1.85
+Kajiado,2021,1.27
+Kajiado,2022,0.66
+Kajiado,2023,1.05
+Kajiado,2024,1.13
+Kakamega,1990,2.11
+Kakamega,1991,1.26
+Kakamega,1992,1.23
+Kakamega,1993,1.91
+Kakamega,1994,1.97
+Kakamega,1995,2.09
+Kakamega,1996,2.03
+Kakamega,1997,2.25
+Kakamega,1998,2.01
+Kakamega,1999,1.76
+Kakamega,2000,0.71
+Kakamega,2001,1.72
+Kakamega,2002,1.29
+Kakamega,2003,2.21
+Kakamega,2004,1.77
+Kakamega,2005,2.17
+Kakamega,2006,1.32
+Kakamega,2007,1.62
+Kakamega,2008,1.8
+Kakamega,2009,0.78
+Kakamega,2010,1.71
+Kakamega,2011,1.32
+Kakamega,2012,1.39
+Kakamega,2013,1.96
+Kakamega,2014,2.12
+Kakamega,2015,2.27
+Kakamega,2016,1.55
+Kakamega,2017,0.74
+Kakamega,2018,2.27
+Kakamega,2019,1.84
+Kakamega,2020,2.16
+Kakamega,2021,1.82
+Kakamega,2022,1.31
+Kakamega,2023,2.33
+Kakamega,2024,1.5
+Kericho,1990,1.16
+Kericho,1991,1.43
+Kericho,1992,1.65
+Kericho,1993,0.95
+Kericho,1994,1.44
+Kericho,1995,1.55
+Kericho,1996,0.71
+Kericho,1997,0.88
+Kericho,1998,0.63
+Kericho,1999,1.16
+Kericho,2000,0.59
+Kericho,2001,1.09
+Kericho,2002,1.64
+Kericho,2003,1.53
+Kericho,2004,1.34
+Kericho,2005,1.23
+Kericho,2006,1.48
+Kericho,2007,1.15
+Kericho,2008,0.74
+Kericho,2009,0.51
+Kericho,2010,1.36
+Kericho,2011,0.85
+Kericho,2012,1.44
+Kericho,2013,1.35
+Kericho,2014,0.96
+Kericho,2015,1.08
+Kericho,2016,0.92
+Kericho,2017,0.25
+Kericho,2018,1.52
+Kericho,2019,1.1
+Kericho,2020,1.09
+Kericho,2021,0.99
+Kericho,2022,0.51
+Kericho,2023,1.21
+Kericho,2024,0.93
+Kiambu,1990,1.49
+Kiambu,1991,0.78
+Kiambu,1992,1.44
+Kiambu,1993,1.48
+Kiambu,1994,1.62
+Kiambu,1995,1.83
+Kiambu,1996,1.72
+Kiambu,1997,1.28
+Kiambu,1998,1.25
+Kiambu,1999,1.64
+Kiambu,2000,0.46
+Kiambu,2001,1.1
+Kiambu,2002,1.01
+Kiambu,2003,1.88
+Kiambu,2004,1.96
+Kiambu,2005,1.39
+Kiambu,2006,1.64
+Kiambu,2007,1.56
+Kiambu,2008,2.39
+Kiambu,2009,1.23
+Kiambu,2010,1.93
+Kiambu,2011,0.73
+Kiambu,2012,1.23
+Kiambu,2013,1.2
+Kiambu,2014,1.41
+Kiambu,2015,1.45
+Kiambu,2016,1.15
+Kiambu,2017,0.54
+Kiambu,2018,1.97
+Kiambu,2019,1.73
+Kiambu,2020,1.47
+Kiambu,2021,1.91
+Kiambu,2022,0.58
+Kiambu,2023,1.21
+Kiambu,2024,1.34
+Kilifi,1990,1.84
+Kilifi,1991,1.1
+Kilifi,1992,0.95
+Kilifi,1993,1.64
+Kilifi,1994,1.94
+Kilifi,1995,0.95
+Kilifi,1996,1.53
+Kilifi,1997,1.17
+Kilifi,1998,1.22
+Kilifi,1999,1.19
+Kilifi,2000,0.49
+Kilifi,2001,0.62
+Kilifi,2002,1.57
+Kilifi,2003,1.48
+Kilifi,2004,1.34
+Kilifi,2005,1.44
+Kilifi,2006,1.45
+Kilifi,2007,1.15
+Kilifi,2008,1.21
+Kilifi,2009,0.63
+Kilifi,2010,1.43
+Kilifi,2011,0.87
+Kilifi,2012,1.53
+Kilifi,2013,1.17
+Kilifi,2014,1.54
+Kilifi,2015,1.14
+Kilifi,2016,0.82
+Kilifi,2017,0.3
+Kilifi,2018,1.38
+Kilifi,2019,0.91
+Kilifi,2020,1.61
+Kilifi,2021,1.02
+Kilifi,2022,0.61
+Kilifi,2023,1.17
+Kilifi,2024,1.38
+Kirinyaga,1990,1.46
+Kirinyaga,1991,1.87
+Kirinyaga,1992,1.97
+Kirinyaga,1993,1.87
+Kirinyaga,1994,1.42
+Kirinyaga,1995,2.37
+Kirinyaga,1996,1.11
+Kirinyaga,1997,1.33
+Kirinyaga,1998,1.69
+Kirinyaga,1999,1.66
+Kirinyaga,2000,0.69
+Kirinyaga,2001,2.11
+Kirinyaga,2002,1.74
+Kirinyaga,2003,1.51
+Kirinyaga,2004,1.49
+Kirinyaga,2005,1.51
+Kirinyaga,2006,1.76
+Kirinyaga,2007,1.51
+Kirinyaga,2008,1.72
+Kirinyaga,2009,1.51
+Kirinyaga,2010,1.56
+Kirinyaga,2011,1.92
+Kirinyaga,2012,1.56
+Kirinyaga,2013,2.03
+Kirinyaga,2014,1.43
+Kirinyaga,2015,0.97
+Kirinyaga,2016,1.95
+Kirinyaga,2017,0.53
+Kirinyaga,2018,1.74
+Kirinyaga,2019,1.57
+Kirinyaga,2020,1.89
+Kirinyaga,2021,0.97
+Kirinyaga,2022,1.13
+Kirinyaga,2023,1.87
+Kirinyaga,2024,1.69
+Kisii,1990,1.81
+Kisii,1991,1.74
+Kisii,1992,1.51
+Kisii,1993,1.83
+Kisii,1994,2.32
+Kisii,1995,1.69
+Kisii,1996,1.71
+Kisii,1997,1.5
+Kisii,1998,1.38
+Kisii,1999,1.88
+Kisii,2000,0.86
+Kisii,2001,2.09
+Kisii,2002,1.76
+Kisii,2003,1.53
+Kisii,2004,1.88
+Kisii,2005,2.02
+Kisii,2006,1.5
+Kisii,2007,1.51
+Kisii,2008,1.47
+Kisii,2009,0.98
+Kisii,2010,1.93
+Kisii,2011,1.76
+Kisii,2012,2.2
+Kisii,2013,1.4
+Kisii,2014,1.26
+Kisii,2015,1.1
+Kisii,2016,2.08
+Kisii,2017,1.22
+Kisii,2018,1.62
+Kisii,2019,1.69
+Kisii,2020,2.43
+Kisii,2021,1.57
+Kisii,2022,0.54
+Kisii,2023,1.67
+Kisii,2024,1.85
+Kisumu,1990,2.17
+Kisumu,1991,2.24
+Kisumu,1992,2.18
+Kisumu,1993,1.76
+Kisumu,1994,1.7
+Kisumu,1995,2.67
+Kisumu,1996,2.16
+Kisumu,1997,2.14
+Kisumu,1998,2.08
+Kisumu,1999,2.34
+Kisumu,2000,2.09
+Kisumu,2001,2.26
+Kisumu,2002,2.06
+Kisumu,2003,1.98
+Kisumu,2004,1.8
+Kisumu,2005,1.61
+Kisumu,2006,2.35
+Kisumu,2007,2.13
+Kisumu,2008,1.72
+Kisumu,2009,0.7
+Kisumu,2010,1.65
+Kisumu,2011,2.03
+Kisumu,2012,1.77
+Kisumu,2013,2.06
+Kisumu,2014,2.1
+Kisumu,2015,1.71
+Kisumu,2016,2.35
+Kisumu,2017,1.3
+Kisumu,2018,2.66
+Kisumu,2019,2.44
+Kisumu,2020,2.02
+Kisumu,2021,1.77
+Kisumu,2022,2.33
+Kisumu,2023,2.12
+Kisumu,2024,1.87
+Kitui,1990,2.57
+Kitui,1991,2.2
+Kitui,1992,2.2
+Kitui,1993,2.36
+Kitui,1994,2.2
+Kitui,1995,2.15
+Kitui,1996,2.4
+Kitui,1997,2.29
+Kitui,1998,2.82
+Kitui,1999,1.57
+Kitui,2000,1.91
+Kitui,2001,2.01
+Kitui,2002,2.43
+Kitui,2003,2.45
+Kitui,2004,2.29
+Kitui,2005,2.32
+Kitui,2006,2.53
+Kitui,2007,2.62
+Kitui,2008,1.97
+Kitui,2009,1.65
+Kitui,2010,2.35
+Kitui,2011,2.65
+Kitui,2012,2.75
+Kitui,2013,2.58
+Kitui,2014,2.03
+Kitui,2015,2.21
+Kitui,2016,2.51
+Kitui,2017,1.43
+Kitui,2018,2.58
+Kitui,2019,2.61
+Kitui,2020,2.09
+Kitui,2021,2.44
+Kitui,2022,1.67
+Kitui,2023,2.04
+Kitui,2024,2.55
+Kwale,1990,1.08
+Kwale,1991,2.11
+Kwale,1992,1.21
+Kwale,1993,1.34
+Kwale,1994,1.98
+Kwale,1995,1.06
+Kwale,1996,1.81
+Kwale,1997,1.16
+Kwale,1998,1.96
+Kwale,1999,0.93
+Kwale,2000,0.1
+Kwale,2001,1.42
+Kwale,2002,1.42
+Kwale,2003,1.7
+Kwale,2004,1.57
+Kwale,2005,1.91
+Kwale,2006,1.62
+Kwale,2007,1.63
+Kwale,2008,1.47
+Kwale,2009,0.88
+Kwale,2010,2.23
+Kwale,2011,1.78
+Kwale,2012,1.39
+Kwale,2013,1.46
+Kwale,2014,1.19
+Kwale,2015,1.61
+Kwale,2016,1.09
+Kwale,2017,0.86
+Kwale,2018,1.89
+Kwale,2019,1.72
+Kwale,2020,1.66
+Kwale,2021,1.88
+Kwale,2022,1.46
+Kwale,2023,1.89
+Kwale,2024,1.53
+Laikipia,1990,1.94
+Laikipia,1991,1.51
+Laikipia,1992,1.71
+Laikipia,1993,1.85
+Laikipia,1994,1.48
+Laikipia,1995,1.75
+Laikipia,1996,1.47
+Laikipia,1997,1.51
+Laikipia,1998,1.28
+Laikipia,1999,1.42
+Laikipia,2000,0.29
+Laikipia,2001,1.87
+Laikipia,2002,1.17
+Laikipia,2003,2.32
+Laikipia,2004,1.61
+Laikipia,2005,1.73
+Laikipia,2006,1.75
+Laikipia,2007,1.88
+Laikipia,2008,1.24
+Laikipia,2009,0.78
+Laikipia,2010,1.5
+Laikipia,2011,2.04
+Laikipia,2012,1.49
+Laikipia,2013,1.69
+Laikipia,2014,2.23
+Laikipia,2015,1.51
+Laikipia,2016,2.24
+Laikipia,2017,0.85
+Laikipia,2018,1.53
+Laikipia,2019,1.37
+Laikipia,2020,1.98
+Laikipia,2021,1.17
+Laikipia,2022,1.48
+Laikipia,2023,1.68
+Laikipia,2024,1.88
+Lamu,1990,1.76
+Lamu,1991,1.48
+Lamu,1992,1.69
+Lamu,1993,1.63
+Lamu,1994,1.83
+Lamu,1995,1.76
+Lamu,1996,1.3
+Lamu,1997,1.63
+Lamu,1998,0.98
+Lamu,1999,1.42
+Lamu,2000,1.16
+Lamu,2001,1.48
+Lamu,2002,1.12
+Lamu,2003,1.76
+Lamu,2004,1.43
+Lamu,2005,1.65
+Lamu,2006,1.45
+Lamu,2007,1.45
+Lamu,2008,1.72
+Lamu,2009,0.76
+Lamu,2010,1.02
+Lamu,2011,1.59
+Lamu,2012,1.13
+Lamu,2013,1.82
+Lamu,2014,1.36
+Lamu,2015,1.48
+Lamu,2016,1.56
+Lamu,2017,0.1
+Lamu,2018,1.75
+Lamu,2019,1.0
+Lamu,2020,1.52
+Lamu,2021,1.71
+Lamu,2022,0.31
+Lamu,2023,1.76
+Lamu,2024,1.81
+Machakos,1990,1.52
+Machakos,1991,2.41
+Machakos,1992,1.61
+Machakos,1993,1.59
+Machakos,1994,2.16
+Machakos,1995,2.2
+Machakos,1996,1.57
+Machakos,1997,1.6
+Machakos,1998,1.64
+Machakos,1999,1.32
+Machakos,2000,0.74
+Machakos,2001,1.14
+Machakos,2002,1.36
+Machakos,2003,1.4
+Machakos,2004,1.93
+Machakos,2005,1.67
+Machakos,2006,1.47
+Machakos,2007,2.42
+Machakos,2008,1.52
+Machakos,2009,1.21
+Machakos,2010,2.21
+Machakos,2011,1.53
+Machakos,2012,1.56
+Machakos,2013,1.54
+Machakos,2014,1.56
+Machakos,2015,1.53
+Machakos,2016,2.08
+Machakos,2017,1.16
+Machakos,2018,1.55
+Machakos,2019,1.83
+Machakos,2020,1.61
+Machakos,2021,1.51
+Machakos,2022,0.64
+Machakos,2023,2.19
+Machakos,2024,2.26
+Makueni,1990,1.21
+Makueni,1991,1.49
+Makueni,1992,1.48
+Makueni,1993,1.64
+Makueni,1994,1.06
+Makueni,1995,1.35
+Makueni,1996,0.79
+Makueni,1997,0.94
+Makueni,1998,1.58
+Makueni,1999,1.03
+Makueni,2000,0.41
+Makueni,2001,1.32
+Makueni,2002,1.16
+Makueni,2003,1.39
+Makueni,2004,1.31
+Makueni,2005,1.68
+Makueni,2006,2.08
+Makueni,2007,1.16
+Makueni,2008,1.17
+Makueni,2009,0.66
+Makueni,2010,0.83
+Makueni,2011,1.46
+Makueni,2012,1.39
+Makueni,2013,1.41
+Makueni,2014,1.6
+Makueni,2015,1.45
+Makueni,2016,1.44
+Makueni,2017,0.45
+Makueni,2018,1.64
+Makueni,2019,1.67
+Makueni,2020,1.73
+Makueni,2021,1.51
+Makueni,2022,0.53
+Makueni,2023,1.36
+Makueni,2024,1.11
+Mandera,1990,2.41
+Mandera,1991,2.27
+Mandera,1992,2.65
+Mandera,1993,2.32
+Mandera,1994,2.28
+Mandera,1995,1.86
+Mandera,1996,2.49
+Mandera,1997,2.46
+Mandera,1998,2.91
+Mandera,1999,2.17
+Mandera,2000,1.3
+Mandera,2001,2.42
+Mandera,2002,2.28
+Mandera,2003,2.63
+Mandera,2004,1.83
+Mandera,2005,2.32
+Mandera,2006,2.39
+Mandera,2007,2.21
+Mandera,2008,2.14
+Mandera,2009,1.25
+Mandera,2010,2.32
+Mandera,2011,2.62
+Mandera,2012,1.81
+Mandera,2013,2.1
+Mandera,2014,2.38
+Mandera,2015,2.73
+Mandera,2016,2.24
+Mandera,2017,1.41
+Mandera,2018,2.83
+Mandera,2019,1.89
+Mandera,2020,2.21
+Mandera,2021,2.46
+Mandera,2022,1.91
+Mandera,2023,2.34
+Mandera,2024,2.09
+Marsabit,1990,1.98
+Marsabit,1991,1.71
+Marsabit,1992,2.02
+Marsabit,1993,2.24
+Marsabit,1994,1.68
+Marsabit,1995,2.55
+Marsabit,1996,2.32
+Marsabit,1997,1.99
+Marsabit,1998,1.84
+Marsabit,1999,1.85
+Marsabit,2000,1.32
+Marsabit,2001,1.98
+Marsabit,2002,2.03
+Marsabit,2003,2.39
+Marsabit,2004,2.15
+Marsabit,2005,2.19
+Marsabit,2006,2.22
+Marsabit,2007,2.19
+Marsabit,2008,2.24
+Marsabit,2009,1.86
+Marsabit,2010,2.43
+Marsabit,2011,2.2
+Marsabit,2012,1.74
+Marsabit,2013,2.04
+Marsabit,2014,2.16
+Marsabit,2015,1.82
+Marsabit,2016,1.64
+Marsabit,2017,1.11
+Marsabit,2018,2.09
+Marsabit,2019,1.85
+Marsabit,2020,2.3
+Marsabit,2021,1.86
+Marsabit,2022,1.41
+Marsabit,2023,1.48
+Marsabit,2024,2.0
+Meru,1990,1.62
+Meru,1991,1.35
+Meru,1992,2.05
+Meru,1993,2.06
+Meru,1994,1.95
+Meru,1995,1.53
+Meru,1996,1.81
+Meru,1997,1.82
+Meru,1998,1.48
+Meru,1999,2.27
+Meru,2000,1.2
+Meru,2001,1.56
+Meru,2002,1.84
+Meru,2003,1.74
+Meru,2004,1.8
+Meru,2005,1.77
+Meru,2006,1.6
+Meru,2007,1.88
+Meru,2008,1.51
+Meru,2009,1.48
+Meru,2010,2.01
+Meru,2011,2.24
+Meru,2012,2.1
+Meru,2013,1.84
+Meru,2014,1.63
+Meru,2015,2.03
+Meru,2016,1.94
+Meru,2017,1.35
+Meru,2018,2.01
+Meru,2019,1.86
+Meru,2020,2.11
+Meru,2021,1.76
+Meru,2022,1.27
+Meru,2023,2.34
+Meru,2024,1.88
+Migori,1990,1.0
+Migori,1991,1.15
+Migori,1992,1.49
+Migori,1993,1.64
+Migori,1994,2.2
+Migori,1995,1.28
+Migori,1996,1.03
+Migori,1997,1.53
+Migori,1998,0.97
+Migori,1999,1.48
+Migori,2000,0.63
+Migori,2001,1.37
+Migori,2002,1.23
+Migori,2003,0.81
+Migori,2004,1.43
+Migori,2005,1.5
+Migori,2006,1.16
+Migori,2007,1.78
+Migori,2008,0.94
+Migori,2009,0.1
+Migori,2010,0.84
+Migori,2011,1.91
+Migori,2012,1.27
+Migori,2013,1.84
+Migori,2014,0.82
+Migori,2015,1.13
+Migori,2016,1.55
+Migori,2017,0.71
+Migori,2018,1.75
+Migori,2019,1.72
+Migori,2020,1.12
+Migori,2021,1.42
+Migori,2022,0.83
+Migori,2023,1.38
+Migori,2024,1.4
+Mombasa,1990,1.75
+Mombasa,1991,2.0
+Mombasa,1992,1.73
+Mombasa,1993,2.07
+Mombasa,1994,0.99
+Mombasa,1995,2.18
+Mombasa,1996,1.32
+Mombasa,1997,1.73
+Mombasa,1998,1.5
+Mombasa,1999,1.45
+Mombasa,2000,1.15
+Mombasa,2001,1.37
+Mombasa,2002,1.76
+Mombasa,2003,1.21
+Mombasa,2004,1.92
+Mombasa,2005,1.76
+Mombasa,2006,2.21
+Mombasa,2007,2.03
+Mombasa,2008,1.42
+Mombasa,2009,0.97
+Mombasa,2010,2.0
+Mombasa,2011,1.74
+Mombasa,2012,2.46
+Mombasa,2013,1.95
+Mombasa,2014,1.97
+Mombasa,2015,2.15
+Mombasa,2016,1.91
+Mombasa,2017,1.07
+Mombasa,2018,1.78
+Mombasa,2019,1.85
+Mombasa,2020,1.63
+Mombasa,2021,1.8
+Mombasa,2022,0.38
+Mombasa,2023,1.86
+Mombasa,2024,1.24
+Murang'a,1990,1.3
+Murang'a,1991,1.39
+Murang'a,1992,1.21
+Murang'a,1993,1.58
+Murang'a,1994,0.62
+Murang'a,1995,2.14
+Murang'a,1996,0.99
+Murang'a,1997,1.38
+Murang'a,1998,0.97
+Murang'a,1999,1.45
+Murang'a,2000,0.53
+Murang'a,2001,1.06
+Murang'a,2002,1.2
+Murang'a,2003,1.32
+Murang'a,2004,1.52
+Murang'a,2005,1.4
+Murang'a,2006,1.3
+Murang'a,2007,1.36
+Murang'a,2008,1.98
+Murang'a,2009,0.13
+Murang'a,2010,1.12
+Murang'a,2011,1.27
+Murang'a,2012,1.31
+Murang'a,2013,1.39
+Murang'a,2014,0.93
+Murang'a,2015,1.45
+Murang'a,2016,0.93
+Murang'a,2017,0.79
+Murang'a,2018,1.34
+Murang'a,2019,1.03
+Murang'a,2020,1.23
+Murang'a,2021,1.35
+Murang'a,2022,0.45
+Murang'a,2023,1.38
+Murang'a,2024,1.42
+Nairobi,1990,1.83
+Nairobi,1991,2.08
+Nairobi,1992,1.36
+Nairobi,1993,1.9
+Nairobi,1994,1.94
+Nairobi,1995,1.64
+Nairobi,1996,2.14
+Nairobi,1997,1.68
+Nairobi,1998,1.76
+Nairobi,1999,1.67
+Nairobi,2000,1.0
+Nairobi,2001,1.34
+Nairobi,2002,1.23
+Nairobi,2003,1.46
+Nairobi,2004,2.19
+Nairobi,2005,1.26
+Nairobi,2006,1.63
+Nairobi,2007,1.34
+Nairobi,2008,1.55
+Nairobi,2009,0.81
+Nairobi,2010,1.52
+Nairobi,2011,1.52
+Nairobi,2012,2.4
+Nairobi,2013,2.02
+Nairobi,2014,1.63
+Nairobi,2015,0.98
+Nairobi,2016,2.41
+Nairobi,2017,0.4
+Nairobi,2018,1.23
+Nairobi,2019,2.42
+Nairobi,2020,1.94
+Nairobi,2021,1.93
+Nairobi,2022,0.9
+Nairobi,2023,1.95
+Nairobi,2024,1.81
+Nakuru,1990,1.46
+Nakuru,1991,1.68
+Nakuru,1992,1.51
+Nakuru,1993,1.23
+Nakuru,1994,1.26
+Nakuru,1995,1.22
+Nakuru,1996,1.81
+Nakuru,1997,1.33
+Nakuru,1998,0.94
+Nakuru,1999,1.64
+Nakuru,2000,1.28
+Nakuru,2001,1.75
+Nakuru,2002,1.22
+Nakuru,2003,1.45
+Nakuru,2004,1.68
+Nakuru,2005,1.23
+Nakuru,2006,1.55
+Nakuru,2007,1.12
+Nakuru,2008,1.34
+Nakuru,2009,0.72
+Nakuru,2010,1.94
+Nakuru,2011,1.49
+Nakuru,2012,1.34
+Nakuru,2013,1.54
+Nakuru,2014,1.66
+Nakuru,2015,1.56
+Nakuru,2016,1.88
+Nakuru,2017,0.51
+Nakuru,2018,1.31
+Nakuru,2019,1.32
+Nakuru,2020,1.1
+Nakuru,2021,2.04
+Nakuru,2022,0.1
+Nakuru,2023,1.31
+Nakuru,2024,1.76
+Nandi,1990,1.58
+Nandi,1991,1.55
+Nandi,1992,1.83
+Nandi,1993,1.5
+Nandi,1994,2.39
+Nandi,1995,1.39
+Nandi,1996,1.84
+Nandi,1997,1.94
+Nandi,1998,1.87
+Nandi,1999,1.7
+Nandi,2000,1.2
+Nandi,2001,2.12
+Nandi,2002,2.24
+Nandi,2003,1.29
+Nandi,2004,1.83
+Nandi,2005,2.19
+Nandi,2006,1.25
+Nandi,2007,1.85
+Nandi,2008,1.75
+Nandi,2009,1.09
+Nandi,2010,1.52
+Nandi,2011,2.25
+Nandi,2012,1.58
+Nandi,2013,1.92
+Nandi,2014,2.24
+Nandi,2015,1.64
+Nandi,2016,1.69
+Nandi,2017,0.92
+Nandi,2018,1.45
+Nandi,2019,1.57
+Nandi,2020,1.69
+Nandi,2021,1.52
+Nandi,2022,0.7
+Nandi,2023,1.82
+Nandi,2024,1.28
+Narok,1990,2.48
+Narok,1991,2.98
+Narok,1992,1.99
+Narok,1993,1.97
+Narok,1994,2.55
+Narok,1995,2.93
+Narok,1996,2.27
+Narok,1997,2.86
+Narok,1998,2.37
+Narok,1999,2.14
+Narok,2000,1.17
+Narok,2001,2.53
+Narok,2002,2.31
+Narok,2003,2.07
+Narok,2004,2.12
+Narok,2005,2.71
+Narok,2006,2.67
+Narok,2007,2.53
+Narok,2008,2.02
+Narok,2009,1.05
+Narok,2010,2.37
+Narok,2011,2.58
+Narok,2012,2.37
+Narok,2013,2.71
+Narok,2014,2.12
+Narok,2015,2.41
+Narok,2016,2.19
+Narok,2017,1.37
+Narok,2018,2.56
+Narok,2019,2.63
+Narok,2020,2.11
+Narok,2021,1.94
+Narok,2022,1.02
+Narok,2023,2.5
+Narok,2024,2.99
+Nyamira,1990,1.53
+Nyamira,1991,1.87
+Nyamira,1992,2.12
+Nyamira,1993,1.89
+Nyamira,1994,1.84
+Nyamira,1995,2.15
+Nyamira,1996,1.78
+Nyamira,1997,1.95
+Nyamira,1998,1.97
+Nyamira,1999,1.67
+Nyamira,2000,1.61
+Nyamira,2001,1.51
+Nyamira,2002,1.76
+Nyamira,2003,1.56
+Nyamira,2004,2.26
+Nyamira,2005,1.89
+Nyamira,2006,1.92
+Nyamira,2007,1.8
+Nyamira,2008,1.93
+Nyamira,2009,1.57
+Nyamira,2010,1.78
+Nyamira,2011,1.87
+Nyamira,2012,1.48
+Nyamira,2013,1.55
+Nyamira,2014,1.78
+Nyamira,2015,1.69
+Nyamira,2016,1.81
+Nyamira,2017,0.71
+Nyamira,2018,2.03
+Nyamira,2019,1.33
+Nyamira,2020,1.68
+Nyamira,2021,1.0
+Nyamira,2022,1.38
+Nyamira,2023,1.51
+Nyamira,2024,2.05
+Nyandarua,1990,1.72
+Nyandarua,1991,2.13
+Nyandarua,1992,1.8
+Nyandarua,1993,1.99
+Nyandarua,1994,1.84
+Nyandarua,1995,1.88
+Nyandarua,1996,1.9
+Nyandarua,1997,1.79
+Nyandarua,1998,2.1
+Nyandarua,1999,1.82
+Nyandarua,2000,0.81
+Nyandarua,2001,1.79
+Nyandarua,2002,2.14
+Nyandarua,2003,2.36
+Nyandarua,2004,2.29
+Nyandarua,2005,1.56
+Nyandarua,2006,1.24
+Nyandarua,2007,2.29
+Nyandarua,2008,1.6
+Nyandarua,2009,1.18
+Nyandarua,2010,2.37
+Nyandarua,2011,1.91
+Nyandarua,2012,2.27
+Nyandarua,2013,2.23
+Nyandarua,2014,2.0
+Nyandarua,2015,1.95
+Nyandarua,2016,1.89
+Nyandarua,2017,1.32
+Nyandarua,2018,1.84
+Nyandarua,2019,2.12
+Nyandarua,2020,1.56
+Nyandarua,2021,2.06
+Nyandarua,2022,1.42
+Nyandarua,2023,2.18
+Nyandarua,2024,1.42
+Nyeri,1990,2.92
+Nyeri,1991,2.29
+Nyeri,1992,2.02
+Nyeri,1993,2.16
+Nyeri,1994,2.03
+Nyeri,1995,2.25
+Nyeri,1996,2.81
+Nyeri,1997,1.89
+Nyeri,1998,1.81
+Nyeri,1999,2.74
+Nyeri,2000,1.11
+Nyeri,2001,2.64
+Nyeri,2002,1.96
+Nyeri,2003,1.82
+Nyeri,2004,2.18
+Nyeri,2005,2.27
+Nyeri,2006,2.57
+Nyeri,2007,2.72
+Nyeri,2008,2.66
+Nyeri,2009,1.45
+Nyeri,2010,2.54
+Nyeri,2011,2.31
+Nyeri,2012,2.07
+Nyeri,2013,2.44
+Nyeri,2014,2.09
+Nyeri,2015,2.9
+Nyeri,2016,2.34
+Nyeri,2017,1.64
+Nyeri,2018,2.35
+Nyeri,2019,2.06
+Nyeri,2020,2.69
+Nyeri,2021,2.0
+Nyeri,2022,0.86
+Nyeri,2023,1.98
+Nyeri,2024,2.46
+Samburu,1990,1.51
+Samburu,1991,1.21
+Samburu,1992,1.19
+Samburu,1993,1.69
+Samburu,1994,1.61
+Samburu,1995,1.82
+Samburu,1996,1.05
+Samburu,1997,1.28
+Samburu,1998,1.51
+Samburu,1999,1.15
+Samburu,2000,0.75
+Samburu,2001,1.79
+Samburu,2002,1.23
+Samburu,2003,1.7
+Samburu,2004,1.44
+Samburu,2005,1.51
+Samburu,2006,1.88
+Samburu,2007,1.58
+Samburu,2008,1.59
+Samburu,2009,1.16
+Samburu,2010,1.59
+Samburu,2011,1.36
+Samburu,2012,1.25
+Samburu,2013,1.04
+Samburu,2014,0.91
+Samburu,2015,0.84
+Samburu,2016,1.6
+Samburu,2017,0.8
+Samburu,2018,1.36
+Samburu,2019,1.34
+Samburu,2020,1.52
+Samburu,2021,1.67
+Samburu,2022,0.58
+Samburu,2023,1.25
+Samburu,2024,1.68
+Siaya,1990,1.55
+Siaya,1991,1.95
+Siaya,1992,2.02
+Siaya,1993,2.0
+Siaya,1994,2.15
+Siaya,1995,1.85
+Siaya,1996,1.41
+Siaya,1997,1.92
+Siaya,1998,1.6
+Siaya,1999,1.64
+Siaya,2000,1.12
+Siaya,2001,1.95
+Siaya,2002,2.02
+Siaya,2003,2.49
+Siaya,2004,2.12
+Siaya,2005,1.23
+Siaya,2006,1.82
+Siaya,2007,2.34
+Siaya,2008,1.99
+Siaya,2009,0.86
+Siaya,2010,2.07
+Siaya,2011,1.76
+Siaya,2012,1.43
+Siaya,2013,1.74
+Siaya,2014,1.54
+Siaya,2015,1.62
+Siaya,2016,1.98
+Siaya,2017,1.37
+Siaya,2018,1.92
+Siaya,2019,1.64
+Siaya,2020,1.47
+Siaya,2021,1.88
+Siaya,2022,1.73
+Siaya,2023,1.56
+Siaya,2024,1.99
+Taita Taveta,1990,2.01
+Taita Taveta,1991,2.11
+Taita Taveta,1992,2.31
+Taita Taveta,1993,2.2
+Taita Taveta,1994,2.2
+Taita Taveta,1995,1.82
+Taita Taveta,1996,2.62
+Taita Taveta,1997,2.55
+Taita Taveta,1998,1.94
+Taita Taveta,1999,2.88
+Taita Taveta,2000,2.45
+Taita Taveta,2001,2.22
+Taita Taveta,2002,1.99
+Taita Taveta,2003,2.82
+Taita Taveta,2004,2.28
+Taita Taveta,2005,3.21
+Taita Taveta,2006,2.28
+Taita Taveta,2007,2.5
+Taita Taveta,2008,2.91
+Taita Taveta,2009,2.15
+Taita Taveta,2010,2.93
+Taita Taveta,2011,2.73
+Taita Taveta,2012,2.26
+Taita Taveta,2013,2.69
+Taita Taveta,2014,2.44
+Taita Taveta,2015,2.84
+Taita Taveta,2016,2.78
+Taita Taveta,2017,1.26
+Taita Taveta,2018,2.47
+Taita Taveta,2019,2.89
+Taita Taveta,2020,2.1
+Taita Taveta,2021,2.39
+Taita Taveta,2022,1.67
+Taita Taveta,2023,1.89
+Taita Taveta,2024,2.59
+Tana River,1990,1.75
+Tana River,1991,1.85
+Tana River,1992,2.71
+Tana River,1993,2.52
+Tana River,1994,2.33
+Tana River,1995,2.09
+Tana River,1996,1.87
+Tana River,1997,2.04
+Tana River,1998,2.48
+Tana River,1999,2.72
+Tana River,2000,1.99
+Tana River,2001,1.73
+Tana River,2002,1.8
+Tana River,2003,2.0
+Tana River,2004,2.39
+Tana River,2005,1.59
+Tana River,2006,2.21
+Tana River,2007,2.47
+Tana River,2008,2.1
+Tana River,2009,0.98
+Tana River,2010,2.28
+Tana River,2011,1.81
+Tana River,2012,1.29
+Tana River,2013,2.15
+Tana River,2014,2.69
+Tana River,2015,2.65
+Tana River,2016,2.02
+Tana River,2017,1.05
+Tana River,2018,2.3
+Tana River,2019,2.27
+Tana River,2020,1.98
+Tana River,2021,2.26
+Tana River,2022,1.64
+Tana River,2023,2.13
+Tana River,2024,2.1
+Tharaka,1990,1.65
+Tharaka,1991,1.47
+Tharaka,1992,1.29
+Tharaka,1993,1.26
+Tharaka,1994,1.45
+Tharaka,1995,2.01
+Tharaka,1996,1.38
+Tharaka,1997,1.54
+Tharaka,1998,1.57
+Tharaka,1999,1.2
+Tharaka,2000,0.1
+Tharaka,2001,1.23
+Tharaka,2002,1.56
+Tharaka,2003,1.69
+Tharaka,2004,1.07
+Tharaka,2005,1.38
+Tharaka,2006,1.78
+Tharaka,2007,1.16
+Tharaka,2008,1.63
+Tharaka,2009,0.31
+Tharaka,2010,1.56
+Tharaka,2011,1.64
+Tharaka,2012,1.3
+Tharaka,2013,1.45
+Tharaka,2014,1.41
+Tharaka,2015,1.38
+Tharaka,2016,1.73
+Tharaka,2017,0.51
+Tharaka,2018,1.24
+Tharaka,2019,1.56
+Tharaka,2020,1.67
+Tharaka,2021,1.75
+Tharaka,2022,0.71
+Tharaka,2023,1.43
+Tharaka,2024,1.52
+Trans Nzoia,1990,1.58
+Trans Nzoia,1991,1.96
+Trans Nzoia,1992,2.1
+Trans Nzoia,1993,1.12
+Trans Nzoia,1994,1.53
+Trans Nzoia,1995,2.02
+Trans Nzoia,1996,2.45
+Trans Nzoia,1997,1.84
+Trans Nzoia,1998,1.61
+Trans Nzoia,1999,1.78
+Trans Nzoia,2000,1.71
+Trans Nzoia,2001,1.64
+Trans Nzoia,2002,2.01
+Trans Nzoia,2003,1.62
+Trans Nzoia,2004,1.68
+Trans Nzoia,2005,2.18
+Trans Nzoia,2006,1.6
+Trans Nzoia,2007,1.4
+Trans Nzoia,2008,1.86
+Trans Nzoia,2009,0.91
+Trans Nzoia,2010,1.98
+Trans Nzoia,2011,2.1
+Trans Nzoia,2012,1.81
+Trans Nzoia,2013,1.78
+Trans Nzoia,2014,2.79
+Trans Nzoia,2015,1.92
+Trans Nzoia,2016,1.6
+Trans Nzoia,2017,0.66
+Trans Nzoia,2018,2.17
+Trans Nzoia,2019,1.28
+Trans Nzoia,2020,1.89
+Trans Nzoia,2021,1.94
+Trans Nzoia,2022,1.3
+Trans Nzoia,2023,1.7
+Trans Nzoia,2024,2.21
+Turkana,1990,2.02
+Turkana,1991,2.42
+Turkana,1992,2.68
+Turkana,1993,2.59
+Turkana,1994,2.64
+Turkana,1995,2.26
+Turkana,1996,2.31
+Turkana,1997,2.53
+Turkana,1998,2.23
+Turkana,1999,2.23
+Turkana,2000,1.87
+Turkana,2001,2.62
+Turkana,2002,3.01
+Turkana,2003,2.07
+Turkana,2004,2.4
+Turkana,2005,2.81
+Turkana,2006,2.37
+Turkana,2007,2.53
+Turkana,2008,2.07
+Turkana,2009,1.4
+Turkana,2010,2.03
+Turkana,2011,2.31
+Turkana,2012,2.4
+Turkana,2013,2.31
+Turkana,2014,2.93
+Turkana,2015,2.46
+Turkana,2016,2.15
+Turkana,2017,1.47
+Turkana,2018,2.44
+Turkana,2019,2.78
+Turkana,2020,2.09
+Turkana,2021,2.73
+Turkana,2022,1.96
+Turkana,2023,2.35
+Turkana,2024,2.36
+Uasin Gishu,1990,1.6
+Uasin Gishu,1991,1.98
+Uasin Gishu,1992,2.13
+Uasin Gishu,1993,2.53
+Uasin Gishu,1994,2.44
+Uasin Gishu,1995,2.21
+Uasin Gishu,1996,2.17
+Uasin Gishu,1997,2.16
+Uasin Gishu,1998,2.0
+Uasin Gishu,1999,2.76
+Uasin Gishu,2000,1.22
+Uasin Gishu,2001,1.82
+Uasin Gishu,2002,2.65
+Uasin Gishu,2003,2.25
+Uasin Gishu,2004,2.64
+Uasin Gishu,2005,2.29
+Uasin Gishu,2006,2.32
+Uasin Gishu,2007,2.39
+Uasin Gishu,2008,2.04
+Uasin Gishu,2009,2.09
+Uasin Gishu,2010,1.94
+Uasin Gishu,2011,2.36
+Uasin Gishu,2012,2.2
+Uasin Gishu,2013,2.45
+Uasin Gishu,2014,2.13
+Uasin Gishu,2015,2.54
+Uasin Gishu,2016,1.87
+Uasin Gishu,2017,1.6
+Uasin Gishu,2018,2.86
+Uasin Gishu,2019,2.59
+Uasin Gishu,2020,1.88
+Uasin Gishu,2021,2.49
+Uasin Gishu,2022,1.51
+Uasin Gishu,2023,2.4
+Uasin Gishu,2024,2.2
+Vihiga,1990,1.78
+Vihiga,1991,2.12
+Vihiga,1992,1.56
+Vihiga,1993,1.39
+Vihiga,1994,2.11
+Vihiga,1995,2.4
+Vihiga,1996,2.15
+Vihiga,1997,2.05
+Vihiga,1998,2.02
+Vihiga,1999,1.79
+Vihiga,2000,0.9
+Vihiga,2001,2.2
+Vihiga,2002,2.23
+Vihiga,2003,1.99
+Vihiga,2004,2.29
+Vihiga,2005,2.26
+Vihiga,2006,1.79
+Vihiga,2007,2.4
+Vihiga,2008,1.91
+Vihiga,2009,1.2
+Vihiga,2010,2.17
+Vihiga,2011,1.88
+Vihiga,2012,1.8
+Vihiga,2013,2.1
+Vihiga,2014,1.51
+Vihiga,2015,1.98
+Vihiga,2016,1.59
+Vihiga,2017,1.6
+Vihiga,2018,2.36
+Vihiga,2019,2.59
+Vihiga,2020,2.04
+Vihiga,2021,2.02
+Vihiga,2022,1.55
+Vihiga,2023,2.42
+Vihiga,2024,2.18
+Wajir,1990,1.7
+Wajir,1991,1.64
+Wajir,1992,1.5
+Wajir,1993,1.41
+Wajir,1994,1.65
+Wajir,1995,0.54
+Wajir,1996,1.55
+Wajir,1997,1.15
+Wajir,1998,0.8
+Wajir,1999,1.5
+Wajir,2000,0.64
+Wajir,2001,1.98
+Wajir,2002,1.02
+Wajir,2003,1.72
+Wajir,2004,1.87
+Wajir,2005,1.05
+Wajir,2006,1.58
+Wajir,2007,1.06
+Wajir,2008,1.36
+Wajir,2009,0.32
+Wajir,2010,0.63
+Wajir,2011,1.39
+Wajir,2012,1.51
+Wajir,2013,1.36
+Wajir,2014,1.86
+Wajir,2015,1.16
+Wajir,2016,1.41
+Wajir,2017,0.3
+Wajir,2018,0.95
+Wajir,2019,1.28
+Wajir,2020,0.73
+Wajir,2021,1.49
+Wajir,2022,0.28
+Wajir,2023,1.37
+Wajir,2024,0.91
+West Pokot,1990,1.53
+West Pokot,1991,1.03
+West Pokot,1992,1.35
+West Pokot,1993,2.03
+West Pokot,1994,1.32
+West Pokot,1995,1.15
+West Pokot,1996,0.97
+West Pokot,1997,1.15
+West Pokot,1998,0.94
+West Pokot,1999,1.29
+West Pokot,2000,0.13
+West Pokot,2001,0.56
+West Pokot,2002,1.78
+West Pokot,2003,1.19
+West Pokot,2004,0.99
+West Pokot,2005,0.75
+West Pokot,2006,0.67
+West Pokot,2007,0.73
+West Pokot,2008,1.29
+West Pokot,2009,0.43
+West Pokot,2010,1.48
+West Pokot,2011,1.04
+West Pokot,2012,1.25
+West Pokot,2013,1.02
+West Pokot,2014,0.99
+West Pokot,2015,1.31
+West Pokot,2016,0.96
+West Pokot,2017,0.1
+West Pokot,2018,1.14
+West Pokot,2019,0.91
+West Pokot,2020,1.17
+West Pokot,2021,1.23
+West Pokot,2022,0.1
+West Pokot,2023,1.01
+West Pokot,2024,1.58
