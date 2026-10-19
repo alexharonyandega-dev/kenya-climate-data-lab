@@ -5,6 +5,10 @@ on:
     - cron: '0 3 6 * *' # 06:00 EAT on the 6th of every month
   workflow_dispatch:     # Manual trigger for testing
 
+# THIS IS THE FIX: Grant write permissions to the bot
+permissions:
+  contents: write
+
 concurrency: 
   group: monthly-refresh
   cancel-in-progress: false
@@ -28,8 +32,6 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run Data Refresh Script
-        # Note: This uses the mock update script for now.
-        # When real GEE/CHIRPS keys are added, this will pull live data.
         run: python scripts/update_latest_chirps.py
 
       - name: Check Thresholds & Send Alerts
@@ -43,11 +45,15 @@ jobs:
           git config user.name "refresh-bot"
           git config user.email "bot@users.noreply.github.com"
           git add data/processed/ data/alert_state.json
-          git diff --staged --quiet && echo "No changes to commit" || \
+          
+          # Only commit if there are actual changes
+          if ! git diff --staged --quiet; then
             git commit -m "data: monthly refresh $(date -u +%Y-%m)"
-          git push
+            git push
+          else
+            echo "No changes to commit"
+          fi
 
       - name: Notify on Failure
         if: failure()
         run: echo "🚨 The monthly refresh failed. Please check the logs."
-        # In production, this would call scripts/notify_failure.py with SMTP creds.
