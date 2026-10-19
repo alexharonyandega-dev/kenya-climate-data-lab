@@ -2,12 +2,12 @@
 
 An open-source, county-level drought and vegetation stress monitor for all 47 Kenyan counties.
 
-This repository contains the full data pipeline, REST API, interactive web application, and Docker configurations.
+This repository contains the full data pipeline, REST API, interactive web application, machine learning models, and Docker configurations.
 
 ## 🚀 Live Services
 
 **1. Interactive Dashboard (Streamlit)**
-Frontend for non-technical users to explore the data.
+Frontend for non-technical users to explore the data and view next-month drought predictions.
 👉 [https://kenya-climate-data-lab.streamlit.app](https://kenya-climate-data-lab.streamlit.app)
 
 **2. Developer API (FastAPI)**
@@ -21,12 +21,27 @@ The pipeline ingests open satellite data:
 - **ERA5-Land:** Soil moisture and temperature anomalies
 
 ## 🏗️ Architecture
-1. scripts/: Python pipeline for data ingestion, anomaly calculation, and master table generation.
-2. data/processed/county_monthly_stress_v3.csv: The canonical dataset (4,512 rows × 26 columns).
-3. api/: FastAPI backend serving JSON endpoints for county-level querying.
-4. app/: Streamlit frontend providing an interactive UI for non-technical users.
-5. tests/: Comprehensive pytest suite covering API endpoints and data logic.
-6. Docker: Complete Dockerfile.api, Dockerfile.app, and docker-compose.yml for containerized deployments.
+1. : Python pipeline for data ingestion, anomaly calculation, and master table generation.
+2. : XGBoost training pipeline using lagged soil moisture, rainfall, and NDVI to predict next-month severe drought probability (ROC-AUC: 0.82).
+3. : The canonical dataset (4,512 rows × 26 columns).
+4. : FastAPI backend serving JSON endpoints for county-level querying.
+5. : Streamlit frontend providing an interactive UI and inference on the exported model.
+6. : Comprehensive ============================= test session starts ==============================
+platform darwin -- Python 3.11.16, pytest-8.3.4, pluggy-1.7.0
+rootdir: /Users/AlexHaro/Desktop/kenya-climate-data-lab
+plugins: anyio-4.15.1
+collected 4 items
+
+tests/test_api.py ....                                                   [100%]
+
+=============================== warnings summary ===============================
+../../Applications/homebrew/Caskroom/miniconda/base/envs/kenya-climate/lib/python3.11/site-packages/fastapi/testclient.py:1
+  /Users/AlexHaro/Applications/homebrew/Caskroom/miniconda/base/envs/kenya-climate/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 4 passed, 1 warning in 1.84s ========================= suite covering API endpoints and data logic.
+7. **Docker**: Complete , , and  for containerized deployments.
 
 ## 🛠️ Local Setup
 
