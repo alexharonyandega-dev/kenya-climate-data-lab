@@ -4,7 +4,7 @@ import numpy as np
 
 app = FastAPI(
     title="Kenya Climate Data Lab API",
-    description="REST API for querying county-level drought and vegetation stress data.",
+    description="REST API for querying county-level drought and vegetation stress data. Live at https://api.kenyaclimatelab.me",
     version="1.0.0"
 )
 

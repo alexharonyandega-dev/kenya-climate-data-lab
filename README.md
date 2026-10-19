@@ -1,7 +1,7 @@
 # 🌾 Kenya Climate Data Lab
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://kenya-climate-data-lab.streamlit.app)
-[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://kenya-climate-api.onrender.com/docs)
+[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://api.kenyaclimatelab.me/docs)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -14,7 +14,7 @@ This repository contains the full data pipeline, REST API, interactive web appli
 | Service | Description | Link |
 | :--- | :--- | :--- |
 | **Interactive Dashboard** | Frontend for non-technical users to explore data and view next-month drought predictions. | [Launch App](https://kenya-climate-data-lab.streamlit.app) |
-| **Developer API** | REST API for programmatic access to the dataset. | [Swagger Docs](https://kenya-climate-api.onrender.com/docs) |
+| **Developer API** | REST API for programmatic access to the dataset. | [Swagger Docs](https://api.kenyaclimatelab.me/docs) |
 
 ## 📊 Data Sources
 The pipeline ingests the following open satellite datasets:
