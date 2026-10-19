@@ -398,3 +398,23 @@ https://meet.google.com/odv-yycx-dwo.
   within 24 hours of the no-show.
 - The CGIAR team is now in conversation informally. No formal
   partnership claims are recorded until the Monday call happens.
+
+---
+
+## Update (2026-10-19): CGIAR introductory call completed
+
+**Call held:** Monday 2026-10-19, 11:00-12:00 EAT.
+**Attendees:** Pete Steward, Benson Kenduiywo, Anastasia Wahome, Majambo Gamoyo, Rose Waswa.
+
+**Summary:**
+- Introduced the pipeline, the 5-sheet Tableau dashboard, and the null result on yield prediction.
+- Pete Steward shared links in the Zoom chat for follow-up: PRISM, AgWise, NDMA (ndma.go.ke), and AgroClimate Africa.
+- Discussion centered on how the weekly telemetry feed could integrate with existing CGIAR platforms (AgWise) and complement NDMA's pastoral drought tracking.
+- CGIAR confirmed availability of historical sub-county yield registries for validation (pending technical alignment).
+
+**Next steps:**
+- Review AgWise and PRISM frameworks.
+- Draft a technical note proposing a data schema for the weekly feed.
+- Await sample yield data from CGIAR to test integration.
+
+**Follow-up email sent:** Sent 2026-10-19 summarizing the above and committing to the next steps.
