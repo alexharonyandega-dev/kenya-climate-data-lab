@@ -1,4 +1,3 @@
-cat > README.md << 'EOF'
 # 🌾 Kenya Climate Data Lab
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://kenya-climate-data-lab.streamlit.app)
