@@ -6,3 +6,5 @@ fastapi==0.147.0
 uvicorn==0.53.0
 pytest==8.3.4
 httpx==0.28.1
+xgboost==2.0.3
+scikit-learn==1.4.0
