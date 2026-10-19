@@ -1,0 +1,53 @@
+name: Monthly Drought Refresh
+
+on:
+  schedule:
+    - cron: '0 3 6 * *' # 06:00 EAT on the 6th of every month
+  workflow_dispatch:     # Manual trigger for testing
+
+concurrency: 
+  group: monthly-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Data Refresh Script
+        # Note: This uses the mock update script for now.
+        # When real GEE/CHIRPS keys are added, this will pull live data.
+        run: python scripts/update_latest_chirps.py
+
+      - name: Check Thresholds & Send Alerts
+        run: python scripts/check_alerts.py
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "refresh-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/processed/ data/alert_state.json
+          git diff --staged --quiet && echo "No changes to commit" || \
+            git commit -m "data: monthly refresh $(date -u +%Y-%m)"
+          git push
+
+      - name: Notify on Failure
+        if: failure()
+        run: echo "🚨 The monthly refresh failed. Please check the logs."
+        # In production, this would call scripts/notify_failure.py with SMTP creds.
