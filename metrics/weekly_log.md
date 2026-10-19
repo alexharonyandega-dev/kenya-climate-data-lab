@@ -343,3 +343,21 @@ section documents every pipeline decision with a numbered reference.
 - Publish dashboard officially.
 - Write the 2-page insight paper.
 - Get feedback from 2 Week 8 users on the dashboard UX.
+
+## Week 10 — Completed (2026-10-19, Monday)
+
+**Theme:** Publish Dashboard + Insight Paper
+
+**Wins:**
+- Dashboard live at public URL.
+- Insight paper drafted and exported as PDF.
+- Email sent to Mr. Maxwel for non-technical feedback.
+- README updated with the red "Live Dashboard" link.
+
+**Deviations:**
+- The .docx file failed to export from Google Docs, but the .pdf and .md formats were successfully committed.
+- Executed a week early (plan date was Nov 23).
+
+**Carry forward to Week 11:**
+- Build the portfolio website (GitHub Pages).
+- Write blog post #1 ("The day I threw out my plan").
