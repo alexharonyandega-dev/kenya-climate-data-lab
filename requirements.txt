@@ -1,4 +1,4 @@
 streamlit==1.64.0
 pandas==3.0.6
 plotly==7.1.0
-pyarrow==26.0.0
+pyarrow==24.0.0
