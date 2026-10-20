@@ -14,13 +14,14 @@ st.set_page_config(page_title="Kenya Drought Monitor", page_icon="🌾", layout=
 def load_data():
     import requests
     import time
+    import os
     API_URL = 'https://api.kenyaclimatelab.me'
-    
-    # Try fetching from API with retries
+
+    # 1. Try fetching from API with retries
     api_success = False
     for attempt in range(3):
         try:
-            with st.spinner(f'Waking up the cloud database (Attempt {attempt+1}/3)... This takes ~15 seconds.'):
+            with st.spinner(f'Waking up the cloud database (Attempt {attempt+1}/3)...'):
                 res = requests.get(f'{API_URL}/all_data', timeout=90)
                 if res.status_code == 200:
                     data = res.json()
@@ -29,43 +30,43 @@ def load_data():
                         df['month_start'] = pd.to_datetime(df['month_start'])
                         api_success = True
                         break
-                else:
-                    st.warning(f'API returned status {res.status_code}. Retrying...')
-        except Exception as e:
-            st.warning(f'Connection failed: {e}. Retrying...')
+        except Exception:
+            pass
         time.sleep(3)
-        
+
+    # 2. Fallback to local CSV if API fails
     if not api_success:
         st.warning('⚠️ Live API is unreachable. Falling back to local CSV data.')
         df = pd.read_csv('data/processed/county_monthly_stress_v3.csv', parse_dates=['month_start'])
 
-    # Load local mock yield data
-    import os
-    if os.path.exists('data/processed/mock_yield_data.csv'):
+    # 3. Bulletproof Merge with Mock Yield Data
+    yield_path = 'data/processed/mock_yield_data.csv'
+    if os.path.exists(yield_path):
         try:
-            yield_df = pd.read_csv('data/processed/mock_yield_data.csv')
+            yield_df = pd.read_csv(yield_path)
             
-            # Standardize date column no matter what it's named
-            if 'month_start' in yield_df.columns:
-                yield_df['month_start'] = pd.to_datetime(yield_df['month_start'])
-            elif 'date' in yield_df.columns:
-                yield_df['month_start'] = pd.to_datetime(yield_df['date'])
-            elif 'year' in yield_df.columns and 'month' in yield_df.columns:
-                yield_df['month_start'] = pd.to_datetime(yield_df['year'].astype(str) + '-' + yield_df['month'].astype(str) + '-01')
-            else:
-                raise ValueError("No date column found in mock_yield_data.csv")
+            # Standardize date column in mock data
+            if 'month_start' not in yield_df.columns:
+                if 'date' in yield_df.columns:
+                    yield_df['month_start'] = pd.to_datetime(yield_df['date'])
+                elif 'year' in yield_df.columns and 'month' in yield_df.columns:
+                    yield_df['month_start'] = pd.to_datetime(yield_df['year'].astype(str) + '-' + yield_df['month'].astype(str) + '-01')
             
-            # Standardize county names to match perfectly (strip spaces, capitalize)
+            # Remove timezones and force to year-month-day for exact matching
+            yield_df['month_start'] = pd.to_datetime(yield_df['month_start']).dt.tz_localize(None).dt.floor('D')
+            df['month_start'] = pd.to_datetime(df['month_start']).dt.tz_localize(None).dt.floor('D')
+            
+            # Force county names to match exactly (Title Case, stripped of spaces)
             yield_df['county'] = yield_df['county'].astype(str).str.strip().str.title()
             df['county'] = df['county'].astype(str).str.strip().str.title()
             
-            # Perform the merge
+            # Merge
             df = df.merge(yield_df, on=['county', 'month_start'], how='left')
             
         except Exception as e:
-            # If it fails, just silently skip the merge so the app doesn't crash
-            pass
-
+            st.error(f"Merge Error Details: {e}")
+            
+    # 4. Add year and month columns for filtering
     df['year'] = df['month_start'].dt.year
     df['month'] = df['month_start'].dt.month
     return df
