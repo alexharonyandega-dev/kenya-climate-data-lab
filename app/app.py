@@ -150,8 +150,10 @@ import json
 
 @st.cache_data(ttl=86400)
 def load_base_geojson():
-    with open('data/external/kenya_counties.geojson', 'r') as f:
-        return json.load(f)
+    import requests
+    res = requests.get('https://api.kenyaclimatelab.me/base_map', timeout=60)
+    res.raise_for_status()
+    return res.json()
 
 geojson_data = load_base_geojson()
 

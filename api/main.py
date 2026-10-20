@@ -79,6 +79,30 @@ def subscribe(sub: Subscription):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
+@app.get("/base_map")
+def get_base_map():
+    """Returns a FeatureCollection of the distinct 47 county geometries for the base map."""
+    try:
+        with engine.connect() as conn:
+            query = text("""
+                SELECT jsonb_build_object(
+                    'type', 'FeatureCollection',
+                    'features', jsonb_agg(jsonb_build_object(
+                        'type', 'Feature',
+                        'geometry', ST_AsGeoJSON(geometry)::jsonb,
+                        'properties', jsonb_build_object('shapeName', county)
+                    ))
+                ) AS geojson
+                FROM (SELECT DISTINCT ON (county) county, geometry FROM county_stress) AS distinct_counties
+            """)
+            result = conn.execute(query).scalar()
+            if not result:
+                raise HTTPException(status_code=404, detail="No map data found")
+            return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.get("/map_data/{year}/{month}")
 def get_map_data(year: int, month: int):
     """Returns a complete GeoJSON FeatureCollection for the Folium map."""
