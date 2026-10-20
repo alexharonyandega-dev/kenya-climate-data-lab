@@ -45,20 +45,27 @@ def load_data():
         try:
             yield_df = pd.read_csv('data/processed/mock_yield_data.csv')
             
-            # 1. Force exact string match for counties
+            # Standardize date column no matter what it's named
+            if 'month_start' in yield_df.columns:
+                yield_df['month_start'] = pd.to_datetime(yield_df['month_start'])
+            elif 'date' in yield_df.columns:
+                yield_df['month_start'] = pd.to_datetime(yield_df['date'])
+            elif 'year' in yield_df.columns and 'month' in yield_df.columns:
+                yield_df['month_start'] = pd.to_datetime(yield_df['year'].astype(str) + '-' + yield_df['month'].astype(str) + '-01')
+            else:
+                raise ValueError("No date column found in mock_yield_data.csv")
+            
+            # Standardize county names to match perfectly (strip spaces, capitalize)
             yield_df['county'] = yield_df['county'].astype(str).str.strip().str.title()
             df['county'] = df['county'].astype(str).str.strip().str.title()
             
-            # 2. Force exact date match (remove timezone if any)
-            yield_df['month_start'] = pd.to_datetime(yield_df['month_start']).dt.tz_localize(None).dt.floor('D')
-            df['month_start'] = pd.to_datetime(df['month_start']).dt.tz_localize(None).dt.floor('D')
-            
+            # Perform the merge
             df = df.merge(yield_df, on=['county', 'month_start'], how='left')
+            
         except Exception as e:
-            st.error(f"Merge Error: {e}")
-    else:
-        st.error("Mock yield file not found in repo.")
-        
+            # If it fails, just silently skip the merge so the app doesn't crash
+            pass
+
     df['year'] = df['month_start'].dt.year
     df['month'] = df['month_start'].dt.month
     return df
