@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import xgboost as xgb
+import joblib
 import json
 
 st.set_page_config(page_title="Kenya Drought Monitor", page_icon="🌾", layout="wide", initial_sidebar_state="expanded")
@@ -16,8 +16,7 @@ def load_data():
 
 @st.cache_resource
 def load_model():
-    model = xgb.XGBClassifier()
-    model.load_model('app/drought_model.json')
+    model = joblib.load('app/ensemble_model.pkl')
     return model
 
 @st.cache_data

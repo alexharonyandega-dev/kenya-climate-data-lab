@@ -9,3 +9,5 @@ httpx==0.28.1
 xgboost==3.2.0
 scikit-learn==1.9.1
 scipy==1.17.1
+shap==0.51.0
+lightgbm==4.7.0
