@@ -61,32 +61,33 @@ def get_alerts(
 @app.get("/map_data/{year}/{month}")
 def get_map_data(year: int, month: int):
     """Returns a complete GeoJSON FeatureCollection for the Folium map."""
-    with engine.connect() as conn:
-        # ST_AsGeoJSON converts the PostGIS geometry into standard JSON
-        query = text("""
-            SELECT jsonb_build_object(
-                'type', 'FeatureCollection',
-                'features', jsonb_agg(jsonb_build_object(
-                    'type', 'Feature',
-                    'geometry', ST_AsGeoJSON(geometry)::jsonb,
-                    'properties', jsonb_build_object(
-                        'county', county,
-                        'stress_avg', stress_avg,
-                        'stress_category', stress_category,
-                        'spei_12', spei_12,
-                        'vci', vci
-                    )
-                ))
-            ) AS geojson
-            FROM county_stress
-            WHERE EXTRACT(YEAR FROM month_start) = :yr 
-            AND EXTRACT(MONTH FROM month_start) = :mo
-        """)
-        result = conn.execute(query, {"yr": year, "mo": month}).scalar()
-        
-        if not result:
-            raise HTTPException(status_code=404, detail=f"No map data for {year}-{month}")
-        return result
+    try:
+        with engine.connect() as conn:
+            query = text("""
+                SELECT jsonb_build_object(
+                    'type', 'FeatureCollection',
+                    'features', jsonb_agg(jsonb_build_object(
+                        'type', 'Feature',
+                        'geometry', ST_AsGeoJSON(geometry)::jsonb,
+                        'properties', jsonb_build_object(
+                            'county', county,
+                            'stress_avg', stress_avg,
+                            'stress_category', stress_category,
+                            'spei_12', spei_12,
+                            'vci', vci
+                        )
+                    ))
+                ) AS geojson
+                FROM county_stress
+                WHERE EXTRACT(YEAR FROM month_start) = :yr
+                AND EXTRACT(MONTH FROM month_start) = :mo
+            """)
+            result = conn.execute(query, {"yr": year, "mo": month}).scalar()
+            if not result:
+                raise HTTPException(status_code=404, detail=f"No map data for {year}-{month}")
+            return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/timeseries/{county}")
 def get_timeseries(county: str):
