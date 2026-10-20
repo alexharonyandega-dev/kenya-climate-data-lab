@@ -265,7 +265,10 @@ with col_chart2:
 
 st.divider()
 st.subheader(f"Full Historical Data for {selected_county}")
-st.dataframe(county_df[['month_start', 'stress_avg', 'stress_category', 'crop_stage', 'yield_tonnes_ha', 'vci', 'spei_12']], width='stretch')
+display_cols = ['month_start', 'stress_avg', 'stress_category', 'crop_stage', 'vci', 'spei_12']
+if 'yield_tonnes_ha' in county_df.columns:
+    display_cols.insert(4, 'yield_tonnes_ha')
+st.dataframe(county_df[display_cols], width='stretch')
 
 
 
