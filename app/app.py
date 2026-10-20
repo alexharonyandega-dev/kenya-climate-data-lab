@@ -13,18 +13,43 @@ st.set_page_config(page_title="Kenya Drought Monitor", page_icon="🌾", layout=
 @st.cache_data(ttl=3600)
 def load_data():
     import requests
-    # Fetch from live API
+    import time
     API_URL = 'https://api.kenyaclimatelab.me'
+    
+    # Try fetching from API with retries
+    api_success = False
+    for attempt in range(3):
+        try:
+            with st.spinner(f'Waking up the cloud database (Attempt {attempt+1}/3)... This takes ~15 seconds.'):
+                res = requests.get(f'{API_URL}/all_data', timeout=90)
+                if res.status_code == 200:
+                    data = res.json()
+                    df = pd.DataFrame(data)
+                    if not df.empty and 'month_start' in df.columns:
+                        df['month_start'] = pd.to_datetime(df['month_start'])
+                        api_success = True
+                        break
+                else:
+                    st.warning(f'API returned status {res.status_code}. Retrying...')
+        except Exception as e:
+            st.warning(f'Connection failed: {e}. Retrying...')
+        time.sleep(3)
+        
+    if not api_success:
+        st.warning('⚠️ Live API is unreachable. Falling back to local CSV data.')
+        df = pd.read_csv('data/processed/county_monthly_stress_v3.csv', parse_dates=['month_start'])
+
+    # Load local mock yield data
     try:
-        res = requests.get(f'{API_URL}/all_data', timeout=60)
-        df = pd.DataFrame(res.json())
-        df['month_start'] = pd.to_datetime(df['month_start'])
-    except Exception as e:
-        st.error(f'API Error: {e}')
-        df = pd.DataFrame()
-    yield_df = pd.read_csv('data/processed/mock_yield_data.csv')
+        yield_df = pd.read_csv('data/processed/mock_yield_data.csv')
+        if 'county' in yield_df.columns and 'month_start' in yield_df.columns:
+            yield_df['month_start'] = pd.to_datetime(yield_df['month_start'])
+            df = df.merge(yield_df, on=['county', 'month_start'], how='left')
+    except Exception:
+        pass
+        
     df['year'] = df['month_start'].dt.year
-    df = df.merge(yield_df, on=['county', 'year'], how='left')
+    df['month'] = df['month_start'].dt.month
     return df
 
 @st.cache_resource
