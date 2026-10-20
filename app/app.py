@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import joblib
+import shap
 import json
 
 st.set_page_config(page_title="Kenya Drought Monitor", page_icon="🌾", layout="wide", initial_sidebar_state="expanded")
@@ -100,10 +101,22 @@ if c and c['r'] >= 0.3 and pd.notna(month_row['swvl1_mean_anomaly']):
     st.info(f"**Experimental Projection:** Next month's vegetation stress is projected to be **{proj:+.2f}σ** based on current soil moisture (r={c['r']}, n={c['n']}). *Signal only, not a validated forecast.*")
 
 # SHAP Explanations
-if shaps:
+try:
+    xgb_model = model.estimators_[0]
+    explainer = shap.TreeExplainer(xgb_model)
+except Exception:
+    explainer = None
+
+if explainer is not None and not month_row[features].isna().any():
     with st.expander("🧠 Why this prediction? (AI Explainability)"):
-        st.write("Feature contributions to the risk score:")
-        shap_df = pd.DataFrame(list(shaps.items()), columns=['Feature', 'Impact']).set_index('Feature')
+        st.write("Feature contributions (positive = pushes toward drought):")
+        row_df = pd.DataFrame([month_row[features].values], columns=features)
+        sv = explainer.shap_values(row_df)
+        if isinstance(sv, list):
+            sv = sv[1][0]
+        elif sv.ndim > 1:
+            sv = sv[0]
+        shap_df = pd.DataFrame({'Feature': features, 'Impact': sv.flatten()}).set_index('Feature')
         st.bar_chart(shap_df)
 
 st.divider()
