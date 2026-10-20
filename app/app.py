@@ -142,63 +142,91 @@ def load_geojson():
     res.raise_for_status()
     return res.json()
 
-# --- Interactive Map ---
+# --- Interactive Map with Time Slider ---
 st.subheader("🗺️ Interactive Drought Map")
-st.write("Hover over any county for instant data. Click to update the dashboard.")
+st.write("Drag the slider to watch drought stress evolve over time. Click a county to update the dashboard.")
 
-@st.cache_data(ttl=3600)
-def load_map_data(year, month):
-    import requests
-    res = requests.get(f'https://api.kenyaclimatelab.me/map_data/{year}/{month}', timeout=60)
-    res.raise_for_status()
-    return res.json()
+import json
 
-try:
-    m_year = int(str(selected_month)[:4])
-    m_month = int(str(selected_month)[5:7])
-    with st.spinner('Fetching map geometry from cloud...'):
-        map_geojson = load_map_data(m_year, m_month)
-except Exception as e:
-    st.error(f"Failed to load map geometry from API: {e}")
-    st.stop()
+@st.cache_data(ttl=86400)
+def load_base_geojson():
+    with open('data/external/kenya_counties.geojson', 'r') as f:
+        return json.load(f)
 
-m = folium.Map(location=[-1.286389, 36.817223], zoom_start=6, tiles='Esri.WorldGrayCanvas')
+geojson_data = load_base_geojson()
 
-def style_fn(feature):
-    stress = feature['properties'].get('stress_avg')
-    if stress is None:
-        fill = '#cccccc'
-    elif stress <= -1.25:
-        fill = '#dc2626' # Severe
-    elif stress <= -0.5:
-        fill = '#f59e0b' # Moderate
-    elif stress <= 0.5:
-        fill = '#eab308' # Normal
-    else:
-        fill = '#22c55e' # Good
-
-    if feature['properties'].get('county') == selected_county:
-        return {'fillColor': fill, 'color': '#3b82f6', 'weight': 4, 'fillOpacity': 0.7}
-    return {'fillColor': fill, 'color': '#000000', 'weight': 0.5, 'fillOpacity': 0.7}
-
-folium.GeoJson(
-    map_geojson,
-    style_function=style_fn,
-    tooltip=folium.GeoJsonTooltip(
-        fields=['county', 'stress_avg', 'vci', 'spei_12'],
-        aliases=['County:', 'Stress:', 'VCI:', 'SPEI-12:'],
-        localize=True
+# Create the time slider
+all_months = sorted(df['month_start'].dt.strftime('%Y-%m').unique())
+if len(all_months) > 0:
+    selected_month_str = st.slider(
+        "Select Month for Map",
+        min_value=all_months[0],
+        max_value=all_months[-1],
+        value=all_months[-1],
+        step=1
     )
-).add_to(m)
+    
+    # Filter the cached dataframe for the selected month
+    map_month_dt = pd.to_datetime(selected_month_str)
+    map_data = df[df['month_start'] == map_month_dt].copy()
+    
+    # Create Folium Map
+    m = folium.Map(location=[-1.286389, 36.817223], zoom_start=6, tiles='Esri.WorldGrayCanvas')
+    
+    # Inject the data into the geojson properties for this specific month
+    for feature in geojson_data['features']:
+        c_name = feature['properties'].get('shapeName')
+        row = map_data[map_data['county'].str.title() == c_name.title()] if c_name else pd.DataFrame()
+        
+        if not row.empty:
+            r = row.iloc[0]
+            feature['properties']['stress_val'] = r['stress_avg']
+            feature['properties']['cat'] = r['stress_category']
+            feature['properties']['vci'] = r.get('vci', 'N/A')
+            feature['properties']['spei'] = r.get('spei_12', 'N/A')
+        else:
+            feature['properties']['stress_val'] = None
+            feature['properties']['cat'] = 'no_data'
+            feature['properties']['vci'] = 'N/A'
+            feature['properties']['spei'] = 'N/A'
 
-map_output = st_folium(m, width=1000, height=500, returned_objects=["last_active_drawing"])
+    def style_fn(feature):
+        stress = feature['properties'].get('stress_val')
+        if stress is None:
+            fill = '#cccccc'
+        elif stress <= -1.25:
+            fill = '#dc2626' # Severe
+        elif stress <= -0.5:
+            fill = '#f59e0b' # Moderate
+        elif stress <= 0.5:
+            fill = '#eab308' # Normal
+        else:
+            fill = '#22c55e' # Good
+            
+        if feature['properties'].get('shapeName') == selected_county:
+            return {'fillColor': fill, 'color': '#3b82f6', 'weight': 4, 'fillOpacity': 0.7}
+        return {'fillColor': fill, 'color': '#000000', 'weight': 0.5, 'fillOpacity': 0.7}
 
-if map_output["last_active_drawing"]:
-    clicked_county = map_output["last_active_drawing"]["properties"]["county"]
-    if clicked_county != selected_county:
-        st.session_state["selected_county"] = clicked_county
-        st.rerun()
+    folium.GeoJson(
+        geojson_data,
+        style_function=style_fn,
+        tooltip=folium.GeoJsonTooltip(
+            fields=['shapeName', 'stress_val', 'cat', 'vci', 'spei'],
+            aliases=['County:', 'Stress:', 'Category:', 'VCI:', 'SPEI-12:'],
+            localize=True
+        )
+    ).add_to(m)
 
+    # Render map and handle clicks
+    map_output = st_folium(m, width=1000, height=500, returned_objects=["last_active_drawing"], key=f"map_{selected_month_str}")
+    
+    if map_output["last_active_drawing"]:
+        clicked_county = map_output["last_active_drawing"]["properties"]["shapeName"]
+        if clicked_county != selected_county:
+            st.session_state["selected_county"] = clicked_county
+            st.rerun()
+else:
+    st.warning("No map data available.")
 col1, col2, col3, col4, col5 = st.columns(5)
 
 cat_colors = {'severe_stress': '🔴', 'moderate_stress': '🟠', 'normal': '🟡', 'good': '🟢', 'very_good': '🟢'}
