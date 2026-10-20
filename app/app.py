@@ -254,7 +254,11 @@ with col_chart1:
 
 with col_chart2:
     st.subheader('Historical Yield vs Stress')
-    scatter_data = county_df.dropna(subset=['yield_tonnes_ha', 'stress_avg'])
+    if 'yield_tonnes_ha' not in county_df.columns:
+        st.info('Yield data is not available for this dataset.')
+        scatter_data = pd.DataFrame()
+    else:
+        scatter_data = county_df.dropna(subset=['yield_tonnes_ha', 'stress_avg'])
     fig2 = px.scatter(
         scatter_data, x='stress_avg', y='yield_tonnes_ha', 
         color='stress_category',

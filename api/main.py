@@ -108,7 +108,10 @@ def get_timeseries(county: str):
 @app.get("/all_data")
 def get_all_data():
     """Returns the entire dataset for the dashboard in one fast request."""
-    with engine.connect() as conn:
-        query = text("SELECT county, month_start::text, stress_avg, stress_category, crop_stage, vci, spei_12, swvl1_mean_anomaly, rainfall_anomaly, ndvi_anomaly, crop_stage_weight FROM county_stress ORDER BY county, month_start")
-        result = conn.execute(query)
-        return [dict(row._mapping) for row in result]
+    try:
+        with engine.connect() as conn:
+            query = text("SELECT county, month_start::text, stress_avg, stress_category, crop_stage, vci, spei_12, swvl1_mean_anomaly, rainfall_anomaly, ndvi_anomaly, crop_stage_weight FROM county_stress ORDER BY county, month_start")
+            result = conn.execute(query)
+            return [dict(row._mapping) for row in result]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
