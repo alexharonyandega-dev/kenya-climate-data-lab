@@ -1,8 +1,16 @@
 import pandas as pd
 
 print("⏳ Processing MODIS LST data...")
-# FIX: Added encoding='latin-1' for GEE exports
-df = pd.read_csv('data/raw/modis_lst_raw.csv', encoding='latin-1')
+# FIX: Added on_bad_lines and engine to handle GEE CSV quirks
+df = pd.read_csv(
+    'data/raw/modis_lst_raw.csv', 
+    encoding='latin-1', 
+    on_bad_lines='skip', 
+    engine='python'
+)
+
+# Select only the columns we need to avoid hidden .geo columns
+df = df[['ADM1_NAME', 'date', 'mean']]
 df = df.rename(columns={'ADM1_NAME': 'county', 'mean': 'lst_celsius'})
 df['date'] = pd.to_datetime(df['date'])
 df['year'] = df['date'].dt.year
@@ -18,3 +26,4 @@ def calc_lst_anomaly(group):
 master['lst_anomaly'] = master.groupby('county', group_keys=False).apply(calc_lst_anomaly)
 master.to_csv('data/processed/county_monthly_stress_v3.csv', index=False)
 print("✅ LST integrated and anomaly calculated!")
+print(master[['county', 'month_start', 'lst_celsius', 'lst_anomaly']].dropna().head())
