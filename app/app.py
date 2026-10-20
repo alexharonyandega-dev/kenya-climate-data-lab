@@ -101,10 +101,11 @@ col_chart1, col_chart2 = st.columns(2)
 with col_chart1:
     st.subheader('12-Month Stress Trend')
     recent_12 = county_df[county_df['month_start'] <= selected_month].tail(12)
+    recent_12['month_str'] = recent_12['month_start'].dt.strftime('%b %Y')
     fig1 = px.bar(
-        recent_12, x='month_start', y='stress_avg', color='stress_category',
+        recent_12, x='month_str', y='stress_avg', color='stress_category',
         color_discrete_map={'severe_stress': '#dc2626', 'moderate_stress': '#f59e0b', 'normal': '#eab308', 'good': '#22c55e', 'very_good': '#16a34a'},
-        labels={'month_start': 'Month', 'stress_avg': 'Stress Score'}
+        labels={'month_str': 'Month', 'stress_avg': 'Stress Score'}
     )
     fig1.add_hline(y=-1.25, line_dash='dot', line_color='red', annotation_text='Severe Threshold')
     st.plotly_chart(fig1, width='stretch')
