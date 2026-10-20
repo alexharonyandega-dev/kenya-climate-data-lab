@@ -41,12 +41,20 @@ def load_data():
 
     # Load local mock yield data
     try:
-        yield_df = pd.read_csv('data/processed/mock_yield_data.csv')
-        if 'county' in yield_df.columns and 'month_start' in yield_df.columns:
+        import os
+        if os.path.exists('data/processed/mock_yield_data.csv'):
+            yield_df = pd.read_csv('data/processed/mock_yield_data.csv')
+            # Ensure data types match perfectly for the merge
             yield_df['month_start'] = pd.to_datetime(yield_df['month_start'])
+            df['month_start'] = pd.to_datetime(df['month_start'])
+            yield_df['county'] = yield_df['county'].astype(str).str.strip()
+            df['county'] = df['county'].astype(str).str.strip()
+            
             df = df.merge(yield_df, on=['county', 'month_start'], how='left')
-    except Exception:
-        pass
+        else:
+            st.warning('⚠️ mock_yield_data.csv not found in the repository.')
+    except Exception as e:
+        st.warning(f'⚠️ Could not merge yield data: {e}')
         
     df['year'] = df['month_start'].dt.year
     df['month'] = df['month_start'].dt.month
