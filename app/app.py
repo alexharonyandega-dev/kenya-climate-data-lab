@@ -160,12 +160,10 @@ geojson_data = load_base_geojson()
 # Create the time slider
 all_months = sorted(df['month_start'].dt.strftime('%Y-%m').unique())
 if len(all_months) > 0:
-    selected_month_str = st.slider(
+    selected_month_str = st.select_slider(
         "Select Month for Map",
-        min_value=all_months[0],
-        max_value=all_months[-1],
-        value=all_months[-1],
-        step=1
+        options=all_months,
+        value=all_months[-1]
     )
     
     # Filter the cached dataframe for the selected month
