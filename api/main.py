@@ -48,8 +48,8 @@ def get_alerts(
             SELECT county, month_start::text, stress_category, stress_avg 
             FROM county_stress 
             WHERE stress_category = :cat 
-            AND EXTRACT(YEAR FROM month_start) = :yr 
-            AND EXTRACT(MONTH FROM month_start) = :mo
+            AND EXTRACT(YEAR FROM month_start::date) = :yr 
+            AND EXTRACT(MONTH FROM month_start::date) = :mo
         """)
         result = conn.execute(query, {"cat": category, "yr": year, "mo": month})
         
@@ -79,8 +79,8 @@ def get_map_data(year: int, month: int):
                     ))
                 ) AS geojson
                 FROM county_stress
-                WHERE EXTRACT(YEAR FROM month_start) = :yr
-                AND EXTRACT(MONTH FROM month_start) = :mo
+                WHERE EXTRACT(YEAR FROM month_start::date) = :yr
+                AND EXTRACT(MONTH FROM month_start::date) = :mo
             """)
             result = conn.execute(query, {"yr": year, "mo": month}).scalar()
             if not result:
