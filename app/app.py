@@ -115,13 +115,23 @@ st.subheader('Monthly Snapshot')
 
 
 
+@st.cache_data(ttl=86400)
+def load_geojson():
+    import requests
+    url = 'https://raw.githubusercontent.com/geoffreynak/kenya-counties-geojson/master/kenya_counties.geojson'
+    res = requests.get(url)
+    res.raise_for_status()
+    return res.json()
+
 # --- Elite Interactive Map ---
 st.subheader("🗺️ Interactive Drought Map")
 st.write("Hover over any county for instant data. Click to update the dashboard.")
 
-import json
-with open('data/external/kenya_counties.geojson', 'r') as f:
-    geojson_data = json.load(f)
+try:
+    geojson_data = load_geojson()
+except Exception as e:
+    st.error(f"Failed to load map geometry: {e}")
+    st.stop()
 
 map_data = df[df['month_start'] == selected_month].copy()
 
