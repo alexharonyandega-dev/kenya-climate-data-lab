@@ -275,6 +275,27 @@ if explainer is not None and not month_row[features].isna().any():
 
 st.divider()
 
+
+st.divider()
+st.subheader("🔮 Deep Learning (LSTM) Forecast")
+try:
+    import requests
+    res = requests.get(f'https://api.kenyaclimatelab.me/lstm_forecast/{selected_county}')
+    if res.status_code == 200:
+        forecast_data = res.json()
+        forecast_val = forecast_data['forecasted_stress_avg']
+        st.metric(label=f"Next Month Stress Forecast for {selected_county}", value=f"{forecast_val:+.2f}")
+        if forecast_val <= -1.25:
+            st.error("⚠️ Warning: LSTM forecasts severe drought stress next month.")
+        elif forecast_val <= -0.5:
+            st.warning("⚠️ Caution: LSTM forecasts moderate drought stress next month.")
+        else:
+            st.success("✅ LSTM forecasts normal to good conditions next month.")
+    else:
+        st.info(f"LSTM forecast not available for {selected_county} (insufficient historical data).")
+except Exception as e:
+    st.warning(f"Could not load LSTM forecast: {e}")
+
 col_chart1, col_chart2 = st.columns(2)
 
 with col_chart1:

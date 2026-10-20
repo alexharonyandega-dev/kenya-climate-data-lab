@@ -161,3 +161,16 @@ def get_all_data():
             return [dict(row._mapping) for row in result]
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+import json
+
+@app.get("/lstm_forecast/{county}")
+def get_lstm_forecast(county: str):
+    try:
+        with open('app/lstm_forecast.json', 'r') as f:
+            forecasts = json.load(f)
+        if county in forecasts:
+            return {"county": county, "forecasted_stress_avg": forecasts[county]}
+        raise HTTPException(status_code=404, detail="County not found in LSTM forecasts")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
