@@ -10,8 +10,18 @@ import json
 st.set_page_config(page_title="Kenya Drought Monitor", page_icon="🌾", layout="wide", initial_sidebar_state="expanded")
 
 @st.cache_data
+@st.cache_data(ttl=3600)
 def load_data():
-    df = pd.read_csv('data/processed/county_monthly_stress_v3.csv', parse_dates=['month_start'])
+    import requests
+    # Fetch from live API
+    API_URL = 'https://api.kenyaclimatelab.me'
+    try:
+        res = requests.get(f'{API_URL}/all_data', timeout=60)
+        df = pd.DataFrame(res.json())
+        df['month_start'] = pd.to_datetime(df['month_start'])
+    except Exception as e:
+        st.error(f'API Error: {e}')
+        df = pd.DataFrame()
     yield_df = pd.read_csv('data/processed/mock_yield_data.csv')
     df['year'] = df['month_start'].dt.year
     df = df.merge(yield_df, on=['county', 'year'], how='left')
