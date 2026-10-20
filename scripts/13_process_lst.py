@@ -1,7 +1,8 @@
 import pandas as pd
 
 print("⏳ Processing MODIS LST data...")
-df = pd.read_csv('data/raw/modis_lst_raw.csv')
+# FIX: Added encoding='latin-1' for GEE exports
+df = pd.read_csv('data/raw/modis_lst_raw.csv', encoding='latin-1')
 df = df.rename(columns={'ADM1_NAME': 'county', 'mean': 'lst_celsius'})
 df['date'] = pd.to_datetime(df['date'])
 df['year'] = df['date'].dt.year
