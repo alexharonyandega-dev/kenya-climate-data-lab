@@ -1,0 +1,30 @@
+name: Monthly Drought Alerts
+
+on:
+  schedule:
+    # Runs at 08:00 UTC on the 1st of every month
+    - cron: '0 8 1 * *'
+  workflow_dispatch: # Allows you to run it manually
+
+jobs:
+  send_alerts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pandas requests sqlalchemy psycopg2-binary
+
+      - name: Send Alerts
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          SENDER_PASS: ${{ secrets.SENDER_PASS }}
+        run: python scripts/20_send_alerts.py
