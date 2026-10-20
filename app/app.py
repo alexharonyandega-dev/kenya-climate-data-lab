@@ -258,15 +258,18 @@ with col_chart2:
         st.info('Yield data is not available for this dataset.')
         scatter_data = pd.DataFrame()
     else:
-        scatter_data = county_df.dropna(subset=['yield_tonnes_ha', 'stress_avg'])
+        scatter_data = county_df.dropna(subset=['yield_tonnes_ha', 'stress_avg']) if 'yield_tonnes_ha' in county_df.columns else pd.DataFrame()
+    if not scatter_data.empty:
     fig2 = px.scatter(
-        scatter_data, x='stress_avg', y='yield_tonnes_ha', 
-        color='stress_category',
-        color_discrete_map={'severe_stress': '#dc2626', 'moderate_stress': '#f59e0b', 'normal': '#eab308', 'good': '#22c55e', 'very_good': '#16a34a'},
-        labels={'stress_avg': 'Stress Score (Anomaly)', 'yield_tonnes_ha': 'Yield (t/ha)'}
-    )
-    fig2.add_vline(x=-1.25, line_dash='dot', line_color='red')
-    st.plotly_chart(fig2, width='stretch')
+            scatter_data, x='stress_avg', y='yield_tonnes_ha', 
+            color='stress_category',
+            color_discrete_map={'severe_stress': '#dc2626', 'moderate_stress': '#f59e0b', 'normal': '#eab308', 'good': '#22c55e', 'very_good': '#16a34a'},
+            labels={'stress_avg': 'Stress Score (Anomaly)', 'yield_tonnes_ha': 'Yield (t/ha)'}
+        )
+        fig2.add_vline(x=-1.25, line_dash='dot', line_color='red')
+        st.plotly_chart(fig2, width='stretch')
+else:
+    st.info('Yield data is currently unavailable for this dataset.')
 
 st.divider()
 st.subheader(f"Full Historical Data for {selected_county}")
