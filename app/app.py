@@ -289,5 +289,24 @@ if 'yield_tonnes_ha' in county_df.columns:
     display_cols.insert(4, 'yield_tonnes_ha')
 st.dataframe(county_df[display_cols], width='stretch')
 
-
-
+st.divider()
+st.subheader("📬 Subscribe to Drought Alerts")
+st.write("Get an automated email if your selected county enters a severe drought.")
+with st.form("subscription_form"):
+    sub_email = st.text_input("Email Address")
+    sub_county = st.selectbox("County", df['county'].unique())
+    submit_btn = st.form_submit_button("Subscribe")
+    
+    if submit_btn:
+        if sub_email:
+            import requests
+            try:
+                res = requests.post('https://api.kenyaclimatelab.me/subscribe', json={"email": sub_email, "county": sub_county})
+                if res.status_code == 200:
+                    st.success(f"✅ Successfully subscribed {sub_email} to {sub_county} alerts!")
+                else:
+                    st.error("Failed to subscribe. Please try again.")
+            except Exception as e:
+                st.error(f"API Error: {e}")
+        else:
+            st.warning("Please enter a valid email.")

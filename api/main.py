@@ -58,6 +58,27 @@ def get_alerts(
             raise HTTPException(status_code=404, detail=f"No {category} alerts found for {year}-{month}")
         return alerts
 
+
+class Subscription(BaseModel):
+    email: str
+    county: str
+
+@app.post("/subscribe")
+def subscribe(sub: Subscription):
+    try:
+        with engine.connect() as conn:
+            # Insert or update the subscription
+            query = text("""
+                INSERT INTO subscribers (email, county) 
+                VALUES (:email, :county) 
+                ON CONFLICT (email) DO UPDATE SET county = :county
+            """)
+            conn.execute(query, {"email": sub.email, "county": sub.county})
+            conn.commit()
+        return {"status": "success", "message": f"Subscribed {sub.email} to {sub.county} alerts."}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.get("/map_data/{year}/{month}")
 def get_map_data(year: int, month: int):
     """Returns a complete GeoJSON FeatureCollection for the Folium map."""
