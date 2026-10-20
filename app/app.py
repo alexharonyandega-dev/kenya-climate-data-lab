@@ -118,7 +118,7 @@ st.subheader('Monthly Snapshot')
 @st.cache_data(ttl=86400)
 def load_geojson():
     import requests
-    url = 'https://raw.githubusercontent.com/geoffreynak/kenya-counties-geojson/master/kenya_counties.geojson'
+    url = 'https://raw.githubusercontent.com/wmgeolab/geoBoundaries/main/releaseData/gbOpen/KEN/ADM1/geoBoundaries-KEN-ADM1_simplified.geojson'
     res = requests.get(url)
     res.raise_for_status()
     return res.json()
