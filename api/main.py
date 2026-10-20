@@ -111,7 +111,7 @@ def get_all_data():
     """Returns the entire dataset for the dashboard in one fast request."""
     try:
         with engine.connect() as conn:
-            query = text("SELECT county, month_start::text, stress_avg, stress_weighted, stress_category, crop_stage, vci, spei_12, swvl1_mean_anomaly, rainfall_anomaly, ndvi_anomaly, crop_stage_weight FROM county_stress ORDER BY county, month_start")
+            query = text("SELECT county, month_start::text, stress_avg, stress_weighted, stress_category, crop_stage, vci, spei_12, swvl1_mean_anomaly, rainfall_anomaly, ndvi_anomaly, crop_stage_weight, lst_anomaly FROM county_stress ORDER BY county, month_start")
             result = conn.execute(query)
             return [dict(row._mapping) for row in result]
     except Exception as e:

@@ -13,7 +13,7 @@ df = pd.read_csv('data/processed/county_monthly_stress_v3.csv')
 df['next_month_severe'] = (df.groupby('county')['stress_category'].shift(-1) == 'severe_stress').astype(int)
 
 # 5 core features — SPEI re-added (4,277 valid rows), LST still excluded (only 96)
-features = ['swvl1_mean_anomaly', 'rainfall_anomaly', 'ndvi_anomaly', 'crop_stage_weight', 'spei_12']
+features = ['swvl1_mean_anomaly', 'rainfall_anomaly', 'ndvi_anomaly', 'crop_stage_weight', 'spei_12', 'lst_anomaly']
 X = df[features].dropna()
 y = df.loc[X.index, 'next_month_severe']
 

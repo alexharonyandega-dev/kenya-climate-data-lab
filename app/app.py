@@ -101,7 +101,7 @@ st.title('🌾 Kenya Drought Monitor')
 st.markdown(f'**Currently viewing: {selected_county} County — {selected_month_str}**')
 
 # --- ML PREDICTION & PROJECTION ---
-features = ['swvl1_mean_anomaly', 'rainfall_anomaly', 'ndvi_anomaly', 'crop_stage_weight', 'spei_12']
+features = ['swvl1_mean_anomaly', 'rainfall_anomaly', 'ndvi_anomaly', 'crop_stage_weight', 'spei_12', 'lst_anomaly']
 if month_row[features].isnull().any():
     prob = None
     pred_msg = 'Insufficient data'
