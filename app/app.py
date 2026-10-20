@@ -305,7 +305,7 @@ with st.form("subscription_form"):
                 if res.status_code == 200:
                     st.success(f"✅ Successfully subscribed {sub_email} to {sub_county} alerts!")
                 else:
-                    st.error("Failed to subscribe. Please try again.")
+                    st.error(f"API Error ({res.status_code}): {res.text}")
             except Exception as e:
                 st.error(f"API Error: {e}")
         else:
