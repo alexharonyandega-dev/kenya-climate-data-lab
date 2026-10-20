@@ -66,7 +66,7 @@ else:
     pred_msg = 'High Risk 🔴' if prob > 50 else 'Low Risk 🟢'
 
 st.subheader('Monthly Snapshot')
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3, col4, col5 = st.columns(5)
 
 cat_colors = {'severe_stress': '🔴', 'moderate_stress': '🟠', 'normal': '🟡', 'good': '🟢', 'very_good': '🟢'}
 cat_icon = cat_colors.get(month_row['stress_category'], '⚪')
@@ -79,6 +79,13 @@ if prob is not None:
     col4.metric(label=f'Next Month Risk: {pred_msg}', value=f'{prob:.1f}%')
 else:
     col4.metric(label='Next Month Risk', value='N/A')
+
+spei_val = month_row.get('spei_12', None)
+if pd.notna(spei_val):
+    spei_str = f'{spei_val:+.2f}'
+else:
+    spei_str = 'N/A'
+col5.metric(label='12-Mo SPEI', value=spei_str, help='Standardized Precipitation-Evapotranspiration Index. Below -1.0 indicates drought.')
 
 # Experimental Projection
 c = coefs.get(selected_county)
