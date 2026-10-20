@@ -186,7 +186,8 @@ cat_colors = {'severe_stress': '🔴', 'moderate_stress': '🟠', 'normal': '�
 cat_icon = cat_colors.get(month_row['stress_category'], '⚪')
 
 col1.metric(label=f'{cat_icon} Current Stress', value=f"{month_row['stress_avg']:+.2f}")
-col2.metric(label='Crop-Weighted Stress', value=f"{month_row['stress_weighted']:+.2f}")
+stress_w = month_row.get('stress_weighted', None)
+col2.metric(label='Crop-Weighted Stress', value=f'{stress_w:+.2f}' if pd.notna(stress_w) else 'N/A')
 
 vci_val = month_row.get('vci', None)
 col3.metric(label='VCI (0-100)', value=f'{vci_val:.1f}' if pd.notna(vci_val) else 'N/A', help='Vegetation Condition Index. Below 35 indicates drought.')
