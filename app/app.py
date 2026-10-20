@@ -73,7 +73,8 @@ cat_icon = cat_colors.get(month_row['stress_category'], '⚪')
 
 col1.metric(label=f'{cat_icon} Current Stress', value=f"{month_row['stress_avg']:+.2f}")
 col2.metric(label='Crop-Weighted Stress', value=f"{month_row['stress_weighted']:+.2f}")
-col3.metric(label='Maize Stage', value=str(month_row['crop_stage']).title())
+vci_val = month_row.get('vci', None)
+col3.metric(label='VCI (0-100)', value=f'{vci_val:.1f}' if pd.notna(vci_val) else 'N/A', help='Vegetation Condition Index. Below 35 indicates drought.')
 
 if prob is not None:
     col4.metric(label=f'Next Month Risk: {pred_msg}', value=f'{prob:.1f}%')
