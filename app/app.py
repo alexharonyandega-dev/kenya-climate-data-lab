@@ -1,4 +1,6 @@
 import streamlit as st
+import folium
+from streamlit_folium import st_folium
 import pandas as pd
 import plotly.express as px
 import joblib
@@ -74,6 +76,85 @@ else:
     pred_msg = 'High Risk 🔴' if prob > 50 else 'Low Risk 🟢'
 
 st.subheader('Monthly Snapshot')
+
+
+
+
+# --- Elite Interactive Map ---
+st.subheader("🗺️ Interactive Drought Map")
+st.write("Hover over any county for instant data. Click to update the dashboard.")
+
+import json
+with open('data/external/kenya_counties.geojson', 'r') as f:
+    geojson_data = json.load(f)
+
+map_data = df[df['month_start'] == selected_month].copy()
+
+# Inject rich data into the GeoJSON properties for the tooltip
+props = map_data.set_index('county')[['stress_avg', 'vci', 'spei_12']].to_dict('index')
+for feature in geojson_data['features']:
+    c_name = feature['properties'].get('shapeName')
+    if c_name in props:
+        feature['properties']['stress_str'] = f"{props[c_name]['stress_avg']:.2f}" if pd.notna(props[c_name]['stress_avg']) else 'N/A'
+        feature['properties']['vci_str'] = f"{props[c_name]['vci']:.1f}" if pd.notna(props[c_name]['vci']) else 'N/A'
+        feature['properties']['spei_str'] = f"{props[c_name]['spei_12']:.2f}" if pd.notna(props[c_name]['spei_12']) else 'N/A'
+
+# Center map on the currently selected county
+# (Approximated by taking the mean latitude/longitude of the selected county's geometry)
+center_lat, center_lon = -1.286389, 36.817223 # Default: Kenya center
+for feature in geojson_data['features']:
+    if feature['properties'].get('shapeName') == selected_county:
+        try:
+            # Very basic centroid approximation from the bounding box
+            coords = feature['geometry']['coordinates'][0]
+            lats = [c[1] for c in coords]
+            lons = [c[0] for c in coords]
+            center_lat = sum(lats) / len(lats)
+            center_lon = sum(lons) / len(lons)
+        except Exception:
+            pass
+        break
+
+m = folium.Map(location=[center_lat, center_lon], zoom_start=7, tiles='Esri.WorldGrayCanvas')
+
+# Layer 1: The Heatmap Colors
+folium.Choropleth(
+    geo_data=geojson_data,
+    name='choropleth',
+    data=map_data,
+    columns=['county', 'stress_avg'],
+    key_on='feature.properties.shapeName',
+    fill_color='RdYlGn',
+    fill_opacity=0.7,
+    line_opacity=0.1,
+    legend_name='Drought Stress (Negative = Severe)'
+).add_to(m)
+
+# Layer 2: The Interactive Layer (Hover Tooltips & Click Borders)
+def style_fn(feature):
+    if feature['properties'].get('shapeName') == selected_county:
+        return {'fillColor': '#00000000', 'color': '#3b82f6', 'weight': 4} # Bold blue border for active
+    return {'fillColor': '#00000000', 'color': '#000000', 'weight': 0.5}
+
+folium.GeoJson(
+    geojson_data,
+    style_function=style_fn,
+    tooltip=folium.GeoJsonTooltip(
+        fields=['shapeName', 'stress_str', 'vci_str', 'spei_str'],
+        aliases=['County:', 'Stress:', 'VCI:', 'SPEI-12:'],
+        localize=True,
+        sticky=False
+    )
+).add_to(m)
+
+map_output = st_folium(m, width=1000, height=500, returned_objects=["last_active_drawing"])
+
+if map_output["last_active_drawing"]:
+    clicked_county = map_output["last_active_drawing"]["properties"]["shapeName"]
+    if clicked_county != selected_county:
+        st.session_state["selected_county"] = clicked_county
+        st.rerun()
+
 col1, col2, col3, col4, col5 = st.columns(5)
 
 cat_colors = {'severe_stress': '🔴', 'moderate_stress': '🟠', 'normal': '🟡', 'good': '🟢', 'very_good': '🟢'}
@@ -151,3 +232,6 @@ with col_chart2:
 st.divider()
 st.subheader(f"Full Historical Data for {selected_county}")
 st.dataframe(county_df[['month_start', 'stress_avg', 'stress_category', 'crop_stage', 'yield_tonnes_ha', 'vci', 'spei_12']], width='stretch')
+
+
+
