@@ -1,9 +1,9 @@
 {
-    "run_timestamp_utc": "2026-10-20T04:54:00.683048Z",
+    "run_timestamp_utc": "2026-10-21T04:07:20.427343Z",
     "target_month": "2024-12-01",
     "total_rows": 4512,
     "counties_count": 47,
-    "git_sha": "ffdc277",
+    "git_sha": "dd7d010",
     "source_latencies": {
         "chirps": "~3 seconds (simulated)",
         "era5": "~5 seconds (simulated)"
